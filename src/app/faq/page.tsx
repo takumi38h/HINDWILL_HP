@@ -1,0 +1,72 @@
+"use client";
+
+import { Header } from "@/components/layout/Header";
+import { useState } from "react";
+
+const faqs = [
+    {
+        question: "依頼から納品までどのくらいの期間がかかりますか？",
+        answer: "プロジェクトの規模や内容によって異なりますが、一般的なWebサイト制作で1〜3ヶ月程度です。詳細はお打ち合わせ時にご相談ください。",
+    },
+    {
+        question: "費用の目安を教えてください。",
+        answer: "プロジェクトの内容によって大きく異なります。まずはお気軽にお問い合わせいただき、ご要望をお聞かせください。",
+    },
+    {
+        question: "遠方でも対応可能ですか？",
+        answer: "はい、オンラインでのお打ち合わせも対応しております。全国どこからでもご依頼いただけます。",
+    },
+    {
+        question: "修正は何回まで対応していますか？",
+        answer: "基本的に3回までの修正を含んだ料金設定となっております。それ以上の修正については別途ご相談となります。",
+    },
+    {
+        question: "納品後のサポートはありますか？",
+        answer: "はい、納品後の保守・運用サポートプランもご用意しております。詳細はお問い合わせください。",
+    },
+];
+
+export default function FAQPage() {
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+    return (
+        <>
+            <Header />
+            <main>
+                {/* Hero */}
+                <section className="h-[60vh] bg-black flex items-center justify-center">
+                    <div className="text-center text-white">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-4">FAQ</h1>
+                        <p className="text-lg text-gray-400">よくある質問</p>
+                    </div>
+                </section>
+
+                {/* FAQ List */}
+                <section className="py-20 bg-white">
+                    <div className="max-w-[800px] mx-auto px-6">
+                        {faqs.map((faq, index) => (
+                            <div key={index} className="border-b border-gray-200">
+                                <button
+                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                    className="w-full py-6 flex items-center justify-between text-left"
+                                >
+                                    <span className="font-bold text-lg pr-4">{faq.question}</span>
+                                    <span className="text-2xl shrink-0">
+                                        {openIndex === index ? "−" : "+"}
+                                    </span>
+                                </button>
+                                <div
+                                    className={`overflow-hidden transition-all duration-300 ${
+                                        openIndex === index ? "max-h-40 pb-6" : "max-h-0"
+                                    }`}
+                                >
+                                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            </main>
+        </>
+    );
+}

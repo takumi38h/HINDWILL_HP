@@ -1,0 +1,240 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource/dm-sans/400.css";
+@import "@fontsource/dm-sans/500.css";
+@import "@fontsource/dm-sans/700.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* KAIZOKU Color Palette */
+  --black: #040406;
+  --white: #FFFFFF;
+  --surface: #F4F4F5;
+  --text: #202020;
+  --muted: #6B7280;
+
+  /* Spacing */
+  --section-py: 80px;
+  --container-px: 40px;
+  --container-max: 1200px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-py: 60px;
+    --container-px: 20px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-noto-sans-jp), 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* Container */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-px);
+  padding-right: var(--container-px);
+}
+
+/* Section */
+.section {
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+/* Button Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--black);
+  border-radius: 0;
+  background: transparent;
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.btn-white {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.btn-white:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* Scroll Animation */
+@keyframes scroll-line {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+}
+
+.scroll-indicator {
+  animation: scroll-line 2s ease-in-out infinite;
+}
+
+/* Selection */
+::selection {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* FadeIn Animation - matching reference fadeins keyframe */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* ScrollFill Animation - matching reference scrollfill keyframe */
+@keyframes scrollFill {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+
+  50% {
+    height: 48px;
+    opacity: 1;
+  }
+
+  100% {
+    height: 48px;
+    opacity: 0.3;
+  }
+}
+
+.animate-scrollFill {
+  animation: scrollFill 2s ease-in-out infinite;
+}
+
+/* ArrowMove Animation - matching reference arrowmove keyframe */
+@keyframes arrowMove {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(8px);
+  }
+}
+
+.animate-arrowMove {
+  animation: arrowMove 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+/* Infinite scroll animation for service list */
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infiniteScroll {
+  animation: infiniteScroll 20s linear infinite;
+}
+
+.animate-infiniteScroll:hover {
+  animation-play-state: paused;
+}
+
+@layer utilities {
+  .menu-glow-corners {
+    background-image: radial-gradient(circle at 0% 0%, rgba(0, 0, 255, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 100% 0%, rgba(0, 0, 255, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 100% 100%, rgba(0, 0, 255, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, rgba(0, 0, 255, 0.05) 0%, transparent 40%);
+    box-shadow: inset 0 0 100px rgba(0, 20, 100, 0.05);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
