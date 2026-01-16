@@ -26,8 +26,7 @@ export function Hero() {
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
             >
-                {/* Dummy video - replace with actual video */}
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                <source src="/videos/hero.mp4" type="video/mp4" />
             </video>
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black/50" />
