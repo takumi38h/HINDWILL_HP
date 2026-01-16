@@ -20,7 +20,7 @@ export default function ContactPage() {
     return (
         <>
             <Header />
-            <main>
+            <main className="overflow-x-hidden">
                 {/* Hero */}
                 <section className="h-[60vh] relative flex items-center justify-center">
                     <img

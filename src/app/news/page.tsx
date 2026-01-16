@@ -16,7 +16,7 @@ export default function NewsPage() {
     return (
         <>
             <Header />
-            <main>
+            <main className="overflow-x-hidden">
                 {/* Hero - モバイル: シンプルなヘッダー / PC: 画像付きヒーロー */}
                 {/* モバイル用ヘッダー */}
                 <div className="md:hidden bg-white py-2 px-4 border-b border-gray-200">

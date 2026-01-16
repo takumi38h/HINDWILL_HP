@@ -9,7 +9,7 @@ const MENU_ITEMS = [
     { en: "WE ARE", jp: "何者？", href: "/weare" },
     { en: "SERVICE", jp: "サービス", href: "/service" },
     { en: "COMPANY", jp: "会社概要", href: "/company" },
-    { en: "BLOG", jp: "海賊のたわごと", href: "/blog" },
+    { en: "BLOG", jp: "ブログ", href: "/blog" },
     { en: "FAQ", jp: "よくある質問", href: "/faq" },
     { en: "NEWS", jp: "お知らせ", href: "/news" },
     { en: "RECRUIT", jp: "採用情報", href: "/recruit" },
@@ -83,7 +83,7 @@ export function Header() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 z-50">
                     <span className={`text-xl font-bold tracking-wider transition-colors duration-300 ${menuOpen || !isOverDark ? 'text-black' : 'text-white'}`}>
-                        KAIZOKU
+                        HINDWILL
                     </span>
                 </Link>
 
@@ -225,7 +225,7 @@ export function Header() {
                         className={`px-8 md:px-16 pb-8 flex justify-between items-end transform transition-all duration-500 ${menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
                         style={{ transitionDelay: menuOpen ? '750ms' : '0ms' }}
                     >
-                        <span className="text-gray-400 text-xs">© KAIZOKU Inc.</span>
+                        <span className="text-gray-400 text-xs">© HINDWILL Inc.</span>
                         <div className="flex gap-4">
                             <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gray-200 hover:bg-red-600 transition-colors duration-300 flex items-center justify-center group">
                                 <svg className="w-3.5 h-3.5 text-gray-600 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">

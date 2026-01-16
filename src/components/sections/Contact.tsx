@@ -10,7 +10,7 @@ export function Contact() {
 
                 {/* Description */}
                 <p className="text-[14px] text-gray-300 leading-[2] mb-10">
-                    WEB制作、デジタルマーケティング、クリエイティブ開発など、<br />
+                    セールスコンサルティングのご相談など、<br />
                     お気軽にお問い合わせください。
                 </p>
 

@@ -16,8 +16,8 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "株式会社カイゾク | KAIZOKU Inc.",
-  description: "コミュニケーション領域の課題を解決。目的達成のための仲間（パートナー）。",
+  title: "株式会社HINDWILL | HINDWILL Inc.",
+  description: "Beyond the Technology. テクノロジーが届かない、最後の1マイルを。",
 };
 
 export default function RootLayout({
@@ -26,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <body className={`${dmSans.variable} ${notoSansJP.variable} antialiased`}>
+    <html lang="ja" className="overflow-x-hidden">
+      <body className={`${dmSans.variable} ${notoSansJP.variable} antialiased overflow-x-hidden`}>
         <PageTransition>
           {children}
         </PageTransition>

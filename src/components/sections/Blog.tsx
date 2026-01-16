@@ -15,9 +15,9 @@ export function Blog() {
                     {/* Left: Title */}
                     <div className="flex items-baseline gap-4">
                         <h2 className="text-[24px] md:text-[36px] font-bold">
-                            海賊の戯言
+                            BLOG
                         </h2>
-                        <span className="text-[12px] text-gray-400 tracking-[0.1em]">BLOG</span>
+                        <span className="text-[12px] text-gray-400 tracking-[0.1em]">ブログ</span>
                     </div>
 
                     {/* Right: View All Link - same style as WE ARE? */}

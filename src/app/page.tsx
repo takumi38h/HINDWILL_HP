@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <NewsBar />
         <Mission />

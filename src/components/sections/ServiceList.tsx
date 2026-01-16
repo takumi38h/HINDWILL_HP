@@ -8,25 +8,25 @@ const services = [
         id: "planning",
         title: "PLANNING",
         description: "企業のマーケティング戦略と目指すゴール、ターゲットニーズを叶えるプロモーション施策のプランニングを行います。",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+        image: "/images/japanese_people/planning.png",
     },
     {
         id: "creative",
         title: "CREATIVE",
         description: "ターゲットユーザーに情報を的確に伝えるデザイン～感性に訴えかけ共感を呼び起こす、課題解決のためのクリエイティブ開発。",
-        image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80",
+        image: "/images/japanese_people/creative.png",
     },
     {
         id: "development",
         title: "DEVELOPMENT",
         description: "WEBシステム・アプリ開発等、テクノロジー面のパートナーとなり業務の効率化及び、新たな収益を見据えた仕組みの開発。",
-        image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
+        image: "/images/japanese_people/development.png",
     },
     {
         id: "entertainment",
         title: "ENTERTAINMENT",
         description: "音楽、映像、イベントの企画制作・運営、アーティスト・タレント育成及びキャスティング。",
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+        image: "/images/japanese_people/entertainment.png",
     },
 ];
 

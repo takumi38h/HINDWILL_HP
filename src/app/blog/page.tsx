@@ -14,7 +14,7 @@ export default function BlogPage() {
     return (
         <>
             <Header />
-            <main>
+            <main className="overflow-x-hidden">
                 {/* Hero */}
                 <section className="h-[35vh] md:h-[40vh] flex items-center relative">
                     {/* 背景画像 */}
@@ -28,7 +28,7 @@ export default function BlogPage() {
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
                         <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4">BLOG</h1>
-                        <p className="text-sm md:text-lg text-gray-300">海賊のたわごと</p>
+                        <p className="text-sm md:text-lg text-gray-300">ブログ</p>
                     </div>
                 </section>
 

@@ -10,31 +10,17 @@ export function Footer() {
                     {/* Logo */}
                     <div>
                         <Link href="/" className="text-[24px] font-bold tracking-[0.1em]">
-                            株式会社カイゾク
+                            株式会社HINDWILL
                         </Link>
                     </div>
 
                     {/* Office Info */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-[13px]">
+                    <div className="grid grid-cols-1 gap-8 text-[13px]">
                         <div>
-                            <p className="font-bold mb-2">Head Office</p>
+                            <p className="font-bold mb-2">Contact</p>
                             <p className="text-gray-400 leading-relaxed">
-                                〒150-0001<br />
-                                東京都渋谷区神宮前1-1-1
-                            </p>
-                        </div>
-                        <div>
-                            <p className="font-bold mb-2">Shibuya Office</p>
-                            <p className="text-gray-400 leading-relaxed">
-                                〒150-0002<br />
-                                東京都渋谷区渋谷2-2-2
-                            </p>
-                        </div>
-                        <div>
-                            <p className="font-bold mb-2">Harajuku Office</p>
-                            <p className="text-gray-400 leading-relaxed">
-                                〒150-0003<br />
-                                東京都渋谷区原宿3-3-3
+                                Email: takumi1127h@gmail.com<br />
+                                TEL: 080-1275-4468
                             </p>
                         </div>
                     </div>
@@ -43,7 +29,7 @@ export function Footer() {
                 {/* Bottom */}
                 <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-[11px] text-gray-500">
-                        © KAIZOKU Inc. All Rights Reserved.
+                        © HINDWILL Inc. All Rights Reserved.
                     </p>
                     <div className="flex gap-4">
                         <a href="#" className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors">

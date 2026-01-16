@@ -13,8 +13,8 @@ export function Hero() {
         return () => clearTimeout(timer);
     }, []);
 
-    const line1 = "I creative";
-    const line2 = "to win.";
+    const line1 = "Beyond the";
+    const line2 = "Technology.";
 
     return (
         <section className="relative h-screen w-full overflow-hidden bg-black">
@@ -83,7 +83,7 @@ export function Hero() {
                     }`}
                     style={{ transitionDelay: "1.2s" }}
                 >
-                    勝つための、クリエイティブを
+                    テクノロジーが届かない、最後の1マイルを。
                 </p>
             </div>
 

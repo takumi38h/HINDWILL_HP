@@ -4,29 +4,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { useEffect, useState, useRef } from "react";
 
-// 社名の由来セクション用のランダム画像
-const leftSectionImages = [
-    "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&q=80", // 海
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80", // 海岸
-    "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80", // 波
-    "https://images.unsplash.com/photo-1484291470158-b8f8d608850d?w=800&q=80", // 夕日の海
-    "https://images.unsplash.com/photo-1468413253725-0d5181091126?w=800&q=80", // 船
-    "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&q=80", // 海の冒険
-];
-
 const crewMembers = [
-    { name: "SHO", role: "Captain / Generalist", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=SHO&backgroundColor=c0aede" },
-    { name: "KAKA", role: "Creator / Designer", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=KAKA&backgroundColor=d1d4f9" },
-    { name: "YUMA", role: "Architect / Manager", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=YUMA&backgroundColor=ffd5dc" },
-    { name: "HIRONII", role: "Analyst / Director", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=HIRONII&backgroundColor=c0e8de" },
-    { name: "YUYA", role: "Strategist / Technical Director", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=YUYA&backgroundColor=ffdfbf" },
-    { name: "VOQ", role: "Designer / Musician", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=VOQ&backgroundColor=b6e3f4" },
-    { name: "MARCY", role: "Analyst / SEO Consultant", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=MARCY&backgroundColor=ffd5dc" },
-    { name: "RENN", role: "Musician / Sound Creator", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=RENN&backgroundColor=d1d4f9" },
-    { name: "GOKI", role: "Director / Choreographer", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=GOKI&backgroundColor=c0aede" },
-    { name: "SATO", role: "Casting Director", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=SATO&backgroundColor=c0e8de" },
-    { name: "KEITAN", role: "Planner / Event Director", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=KEITAN&backgroundColor=ffdfbf" },
-    { name: "OSMAN", role: "Producer", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=OSMAN&backgroundColor=b6e3f4" },
+    { name: "橋爪 拓海", role: "代表取締役", avatar: "/images/japanese_people/ceo_takumi.png" },
 ];
 
 function AnimatedText({ text, className = "" }: { text: string; className?: string }) {
@@ -41,9 +20,8 @@ function AnimatedText({ text, className = "" }: { text: string; className?: stri
             {text.split("").map((char, index) => (
                 <span
                     key={index}
-                    className={`inline-block transition-all duration-500 ease-out ${
-                        isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-                    }`}
+                    className={`inline-block transition-all duration-500 ease-out ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+                        }`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                 >
                     {char === " " ? "\u00A0" : char}
@@ -78,9 +56,8 @@ function ImageReveal({ children, className = "" }: { children: React.ReactNode; 
         <div ref={ref} className={`relative h-full overflow-hidden ${className}`}>
             {children}
             <div
-                className={`absolute inset-0 z-10 bg-gradient-to-b from-gray-300 via-gray-100 to-white transition-transform duration-500 ease-out ${
-                    isVisible ? "translate-x-full" : "translate-x-0"
-                }`}
+                className={`absolute inset-0 z-10 bg-gradient-to-b from-gray-300 via-gray-100 to-white transition-transform duration-500 ease-out ${isVisible ? "translate-x-full" : "translate-x-0"
+                    }`}
             />
         </div>
     );
@@ -110,9 +87,8 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
     return (
         <div
             ref={ref}
-            className={`transition-all duration-700 ease-out h-full ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            } ${className}`}
+            className={`transition-all duration-700 ease-out h-full ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                } ${className}`}
             style={{ transitionDelay: `${delay}ms` }}
         >
             {children}
@@ -121,25 +97,17 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
 }
 
 export default function WeArePage() {
-    const [randomImage, setRandomImage] = useState(leftSectionImages[0]);
-
-    useEffect(() => {
-        // ページ読み込み時にランダムな画像を選択
-        const randomIndex = Math.floor(Math.random() * leftSectionImages.length);
-        setRandomImage(leftSectionImages[randomIndex]);
-    }, []);
-
     return (
         <>
             <Header />
-            <main>
+            <main className="overflow-x-hidden">
                 {/* Hero */}
                 <section className="h-[35vh] md:h-[40vh] flex items-center relative">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
-                            src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=1600&q=80"
-                            alt="海賊の子供"
+                            src="/images/japanese_people/weare_hero.png"
+                            alt="Hero image"
                             className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black/50" />
@@ -153,68 +121,54 @@ export default function WeArePage() {
                     {/* Breadcrumb */}
                     <div className="absolute bottom-6 md:bottom-8 left-6 md:left-12 z-10">
                         <p className="text-[10px] md:text-xs text-gray-300 tracking-wider">
-                            KAIZOKU &gt; 何者？
+                            HINDWILL &gt; 何者？
                         </p>
                     </div>
                 </section>
 
-                {/* Best Practice Best Partner */}
+                {/* Mission Section */}
                 <section className="py-16 md:py-32 relative">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
-                            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80"
-                            alt="子供たち"
+                            src="/images/japanese_people/weare_hero.png"
+                            alt="Background"
                             className="w-full h-full object-cover grayscale"
                         />
                         <div className="absolute inset-0 bg-white/80" />
                     </div>
                     <div className="max-w-[1000px] mx-auto px-6 text-center relative z-10">
                         <AnimatedSection>
+                            <p className="text-xs md:text-sm tracking-[0.2em] text-gray-400 mb-4 md:mb-6">MISSION</p>
                             <h2 className="text-xl md:text-4xl font-bold mb-4 leading-tight">
-                                <span className="relative inline-block">
-                                    <span>Best Practice</span>
-                                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                                        <line x1="0" y1="0" x2="100" y2="100" stroke="black" strokeWidth="3" />
-                                        <line x1="100" y1="0" x2="0" y2="100" stroke="black" strokeWidth="3" />
-                                    </svg>
-                                </span><br />
-                                Best Partner
+                                Beyond the Technology.
                             </h2>
                             <p className="text-base md:text-2xl font-bold mb-8 md:mb-12 mt-6 md:mt-8 text-gray-700">
-                                最適に仕事をこなすよりも<br />
-                                最高のパフォーマンスを発揮する仲間として
+                                テクノロジーが届かない、最後の1マイルを。
                             </p>
                             <div className="mx-auto">
                                 <p className="text-gray-600 leading-[2] text-[14px] md:text-[15px] mb-6">
-                                    ユーザーとのコミュニケーション方法が多様化した現代。
-                                    ATL、BTL、マス、デジタルといった領域の垣根が無くなり、
-                                    様々な分野の専門知を融合してコミュニケーション全体を設計することが求められます。
-                                </p>
-                                <p className="text-gray-600 leading-[2] text-[14px] md:text-[15px] mb-6">
-                                    その時に課題となるのが、プロジェクトを進め構築していく
-                                    「コミュニケーションデザイン＆プロデュース力」。
+                                    効率や正解は、AIに譲ればいい。
+                                    これからの時代、最後に価値を持つのは、人の心を震わせる「熱狂」だ。
                                 </p>
                                 <p className="text-gray-600 leading-[2] text-[14px] md:text-[15px]">
-                                    言われた通りにつくるだけでは、私たちの存在意義はありません。
-                                    みなさまのベストパートナーとして、
-                                    プロジェクトごとのニーズに合った効果を上げるための
-                                    価値あるコミュニケーションをつくります。
+                                    我々は、人間だけが持つ熱量（ヒューマン・タッチ）で、
+                                    AIには埋められない「ラストワンマイル」を繋いでいく。
                                 </p>
                             </div>
                         </AnimatedSection>
                     </div>
                 </section>
 
-                {/* 理念 */}
+                {/* Vision Section */}
                 <section className="bg-white relative">
-                    {/* 理念 + STAY INNOCENT */}
+                    {/* Vision + BE THE HERO */}
                     <div className="bg-gray-100 py-6 md:py-12">
                         <AnimatedSection>
                             <div className="px-6 md:px-16">
-                                <p className="text-base md:text-2xl tracking-[0.2em] text-gray-800 mb-2 font-bold">理念</p>
+                                <p className="text-base md:text-2xl tracking-[0.2em] text-gray-800 mb-2 font-bold">VISION</p>
                                 <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold">
-                                    STAY INNOCENT
+                                    Be the Hero
                                 </h2>
                             </div>
                         </AnimatedSection>
@@ -225,21 +179,21 @@ export default function WeArePage() {
                         <AnimatedSection delay={200}>
                             <div className="px-6 md:px-16 py-6 md:py-8 pt-24 md:pt-40 relative z-10">
                                 <p className="text-xl md:text-3xl font-bold mb-6 md:mb-8 leading-tight text-gray-700">
-                                    こどものままで。<br />
-                                    自由な発想で。
+                                    子供が早く大人になりたくなる、<br />
+                                    背中を見せる。
                                 </p>
                                 <div>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        大人になると、いいも悪いも色々と制限を設けてしまう(設けられてしまうということも)。
+                                        若者が未来を諦めているのは、楽しそうに働く大人がいないからだ。
                                     </p>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        当然、ビジネスマナーやビジネスルールは守ります。そんなものは本やネットを見れば学べるし覚えて体現すれば良い事。
+                                        我々は、誰よりもストイックに、誰よりも楽しそうに働く「ビジネスアスリート」だ。
                                     </p>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        でも、大人としてこどものままで生きることは、とっても難しい。
+                                        「仕事って、こんなに面白いんだぞ」
                                     </p>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] font-medium">
-                                        こどものように発想や動きに制限なく、仕事もプライベートも人生そのものを楽しんで前向きに無邪気に取り組む事ができれば、それはもう最高であり、最強でしょう。だからこそのこの理念なんです。
+                                        そう背中で語れるカッコいい大人が増えれば、未来は勝手に明るくなる。
                                     </p>
                                 </div>
                             </div>
@@ -249,7 +203,7 @@ export default function WeArePage() {
                         <ImageReveal className="h-full">
                             <div className="h-full bg-gray-50 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
+                                    src="/images/japanese_people/weare_vision.png"
                                     alt="絶景"
                                     className="w-full h-full object-cover"
                                 />
@@ -258,72 +212,24 @@ export default function WeArePage() {
                     </div>
                 </section>
 
-                {/* 社名の由来 */}
-                <section className="py-16 md:py-32 bg-white">
-                    <div className="grid md:grid-cols-2 gap-0 items-stretch">
-                        {/* 左側：画像（ランダムで変わる） */}
-                        <ImageReveal className="h-[200px] md:h-full">
-                            <div className="h-full bg-gray-50 overflow-hidden">
-                                <img
-                                    src={randomImage}
-                                    alt="海"
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        </ImageReveal>
-
-                        {/* 右側：テキスト */}
-                        <AnimatedSection delay={200}>
-                            <div className="px-6 md:px-16 py-6 md:py-8">
-                                <p className="text-base md:text-2xl tracking-[0.2em] text-gray-800 mb-2 md:mb-4 font-bold">社名の由来</p>
-                                <h2 className="text-2xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight">
-                                    職業、<br />海賊です。
-                                </h2>
-                                <div>
-                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        日本だとはじめて会った人との会話では、パーソナルなことよりもビジネスのことを聞かれる事がとても多い。
-                                    </p>
-                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        あなたの職業は何ですか？という質問に対して、「職業、海賊です。」と言えたら面白いなと思ってこの社名になりました。
-                                    </p>
-                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        そして、よく言われるのが、「ONEPIECE（ワンピース）好きなんですね！」
-                                    </p>
-                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        そりゃあ、世界中で愛されている漫画ですから、好きですが…<br />
-                                        それよりも本当は、"海賊"自体が好きなんです。
-                                    </p>
-                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        少々荒っぽいかも知れないが、さまざまな才能を持った仲間たちが集い、根幹には大きな"志"があり、その行動には、"信念"があり、"ルール（掟や約束）"は絶対守る。といった、「海賊」の生き様が大好きなんです。
-                                    </p>
-                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] font-medium">
-                                        自分は幕末が好きです。春秋戦国時代が最高です。というのに似た感じで、カリブの大海原で自由を求めて暴れまわった「海賊」たちのように信念を持って動く会社です。
-                                    </p>
-                                </div>
-                            </div>
-                        </AnimatedSection>
-                    </div>
-                </section>
-
-                {/* CREW */}
+                {/* TEAM */}
                 <section className="py-16 md:py-32 bg-white">
                     <div className="max-w-[1200px] mx-auto px-6">
                         <AnimatedSection>
                             <div className="text-center mb-10 md:mb-16">
                                 <p className="text-xs md:text-sm tracking-[0.2em] text-gray-400 mb-4 md:mb-6">TEAM</p>
-                                <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6">CREW</h2>
+                                <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6">MEMBER</h2>
                                 <p className="text-gray-600 text-[13px] md:text-[15px] leading-relaxed">
-                                    机上の空論は嫌いですが、<br />
-                                    動くことと成果を出すことは大好物な一味。
+                                    熱狂を生み出すプロフェッショナル集団
                                 </p>
                             </div>
                         </AnimatedSection>
 
-                        <div className="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-8">
+                        <div className="flex justify-center">
                             {crewMembers.map((member, index) => (
                                 <AnimatedSection key={member.name} delay={index * 100}>
-                                    <div className="group">
-                                        <div className="aspect-square bg-gray-100 mb-2 md:mb-4 overflow-hidden rounded-full">
+                                    <div className="group text-center">
+                                        <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-100 mb-2 md:mb-4 overflow-hidden rounded-full mx-auto">
                                             <img
                                                 src={member.avatar}
                                                 alt={member.name}
@@ -347,7 +253,7 @@ export default function WeArePage() {
                                 href="/contact"
                                 className="inline-block border border-black px-8 md:px-16 py-4 md:py-5 text-xs md:text-sm tracking-wider hover:bg-black hover:text-white transition-colors duration-300"
                             >
-                                KAIZOKUに問い合わせてみる →
+                                HINDWILLに問い合わせてみる →
                             </a>
                         </AnimatedSection>
                     </div>

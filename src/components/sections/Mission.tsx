@@ -27,12 +27,12 @@ export function Mission() {
     }, []);
 
     return (
-        <section className="py-20 md:py-28 bg-white overflow-hidden">
+        <section className="py-20 md:py-28 bg-white overflow-x-hidden">
             <div className="max-w-[900px] mx-auto px-6 text-center">
                 {/* Main Copy */}
                 <h2 className="text-[22px] md:text-[32px] lg:text-[38px] font-bold leading-[1.6] mb-10">
-                    コミュニケーション領域の課題を解決<br />
-                    目的達成のための"仲間（パートナー）"
+                    Beyond the Technology.<br />
+                    テクノロジーが届かない、最後の1マイルを。
                 </h2>
 
                 {/* CTA Button */}
@@ -51,7 +51,7 @@ export function Mission() {
                     <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
                         {/* Background Image */}
                         <img
-                            src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1600&q=80"
+                            src="/images/japanese_people/weare_hero.png"
                             alt="Creative digital"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
@@ -61,9 +61,8 @@ export function Mission() {
                 </div>
                 {/* The feature text - aligned to page right edge, partially hidden */}
                 <span
-                    className={`absolute bottom-0 right-0 text-[12vw] md:text-[10vw] font-bold text-gray-200 whitespace-nowrap tracking-tighter leading-none select-none pointer-events-none transition-all duration-1000 ease-out ${
-                        isVisible ? 'translate-x-[15%] translate-y-1/2 opacity-100' : 'translate-x-full translate-y-1/2 opacity-0'
-                    }`}
+                    className={`absolute bottom-0 right-0 text-[12vw] md:text-[10vw] font-bold text-gray-200 whitespace-nowrap tracking-tighter leading-none select-none pointer-events-none transition-all duration-1000 ease-out ${isVisible ? 'translate-x-[15%] translate-y-1/2 opacity-100' : 'translate-x-full translate-y-1/2 opacity-0'
+                        }`}
                 >
                     The feature
                 </span>

@@ -7,24 +7,20 @@ import { useState } from "react";
 
 const faqs = [
     {
-        question: "依頼から納品までどのくらいの期間がかかりますか？",
-        answer: "プロジェクトの規模や内容によって異なりますが、一般的なWebサイト制作で1〜3ヶ月程度です。詳細はお打ち合わせ時にご相談ください。",
+        question: "どのようなサービスを提供していますか？",
+        answer: "セールスコンサルティング事業を中心に、お客様のビジネス成長をサポートするサービスを提供しています。",
     },
     {
-        question: "費用の目安を教えてください。",
-        answer: "プロジェクトの内容によって大きく異なります。まずはお気軽にお問い合わせいただき、ご要望をお聞かせください。",
+        question: "相談は無料ですか？",
+        answer: "はい、初回のご相談は無料で承っております。お気軽にお問い合わせください。",
     },
     {
         question: "遠方でも対応可能ですか？",
         answer: "はい、オンラインでのお打ち合わせも対応しております。全国どこからでもご依頼いただけます。",
     },
     {
-        question: "修正は何回まで対応していますか？",
-        answer: "基本的に3回までの修正を含んだ料金設定となっております。それ以上の修正については別途ご相談となります。",
-    },
-    {
-        question: "納品後のサポートはありますか？",
-        answer: "はい、納品後の保守・運用サポートプランもご用意しております。詳細はお問い合わせください。",
+        question: "どのような業種の企業が対象ですか？",
+        answer: "業種を問わず、様々な企業様のご相談を承っております。まずはお気軽にご相談ください。",
     },
 ];
 
@@ -34,14 +30,14 @@ export default function FAQPage() {
     return (
         <>
             <Header />
-            <main>
+            <main className="overflow-x-hidden">
                 {/* Hero */}
                 <section className="h-[35vh] md:h-[40vh] flex items-center relative">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
                             src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80"
-                            alt="子供"
+                            alt="FAQ"
                             className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black/50" />
@@ -85,7 +81,7 @@ export default function FAQPage() {
                             href="/contact"
                             className="inline-block border border-black px-8 md:px-16 py-4 md:py-5 text-xs md:text-sm tracking-wider hover:bg-black hover:text-white transition-colors duration-300"
                         >
-                            KAIZOKUに問い合わせてみる →
+                            HINDWILLに問い合わせてみる →
                         </Link>
                     </div>
                 </section>

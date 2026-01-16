@@ -7,7 +7,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* KAIZOKU Color Palette */
+  /* HINDWILL Color Palette */
   --black: #040406;
   --white: #FFFFFF;
   --surface: #F4F4F5;
@@ -33,6 +33,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -42,6 +43,7 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Typography */
