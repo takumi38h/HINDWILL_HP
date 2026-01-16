@@ -1,6 +1,8 @@
 "use client";
 
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import Link from "next/link";
 import { useState } from "react";
 
 const faqs = [
@@ -34,10 +36,19 @@ export default function FAQPage() {
             <Header />
             <main>
                 {/* Hero */}
-                <section className="h-[60vh] bg-black flex items-center justify-center">
-                    <div className="text-center text-white">
+                <section className="h-[40vh] flex items-center relative">
+                    {/* 背景画像 */}
+                    <div className="absolute inset-0">
+                        <img
+                            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80"
+                            alt="子供"
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/50" />
+                    </div>
+                    <div className="text-left text-white relative z-10 px-8 md:px-16">
                         <h1 className="text-4xl md:text-6xl font-bold mb-4">FAQ</h1>
-                        <p className="text-lg text-gray-400">よくある質問</p>
+                        <p className="text-lg text-gray-300">よくある質問</p>
                     </div>
                 </section>
 
@@ -66,7 +77,20 @@ export default function FAQPage() {
                         ))}
                     </div>
                 </section>
+
+                {/* お問い合わせ */}
+                <section className="pt-4 pb-16 md:pt-5 md:pb-20 bg-white">
+                    <div className="max-w-[800px] mx-auto px-6 text-center">
+                        <Link
+                            href="/contact"
+                            className="inline-block border border-black px-16 py-5 text-sm tracking-wider hover:bg-black hover:text-white transition-colors duration-300"
+                        >
+                            KAIZOKUに問い合わせてみる →
+                        </Link>
+                    </div>
+                </section>
             </main>
+            <Footer />
         </>
     );
 }

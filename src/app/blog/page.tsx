@@ -16,10 +16,19 @@ export default function BlogPage() {
             <Header />
             <main>
                 {/* Hero */}
-                <section className="h-[60vh] bg-black flex items-center justify-center">
-                    <div className="text-center text-white">
+                <section className="h-[40vh] flex items-center relative">
+                    {/* 背景画像 */}
+                    <div className="absolute inset-0">
+                        <img
+                            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1600&q=80"
+                            alt="地図"
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/50" />
+                    </div>
+                    <div className="text-left text-white relative z-10 px-8 md:px-16">
                         <h1 className="text-4xl md:text-6xl font-bold mb-4">BLOG</h1>
-                        <p className="text-lg text-gray-400">海賊のたわごと</p>
+                        <p className="text-lg text-gray-300">海賊のたわごと</p>
                     </div>
                 </section>
 

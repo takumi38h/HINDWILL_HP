@@ -117,14 +117,14 @@ export function Header() {
                             MENU
                         </span>
                     )}
-                    <div className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${menuOpen ? 'border-gray-400 hover:bg-gray-100' : isOverDark ? 'border-white/50 hover:bg-white/10' : 'border-black/50 hover:bg-black/10'}`}>
+                    <div className={`w-14 h-14 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${menuOpen ? 'border-gray-400 hover:bg-gray-100' : isOverDark ? 'border-white/70 hover:bg-white/10' : 'border-black/70 hover:bg-black/10'}`}>
                         {menuOpen ? (
-                            <X className="w-4 h-4 text-black" />
+                            <X className="w-5 h-5 text-black" />
                         ) : (
-                            <div className="flex flex-col gap-1">
-                                <span className={`w-4 h-[1px] transition-colors duration-300 ${isOverDark ? 'bg-white' : 'bg-black'}`}></span>
-                                <span className={`w-4 h-[1px] transition-colors duration-300 ${isOverDark ? 'bg-white' : 'bg-black'}`}></span>
-                                <span className={`w-4 h-[1px] transition-colors duration-300 ${isOverDark ? 'bg-white' : 'bg-black'}`}></span>
+                            <div className="flex flex-col gap-1.5">
+                                <span className={`w-5 h-[1.5px] transition-colors duration-300 ${isOverDark ? 'bg-white' : 'bg-black'}`}></span>
+                                <span className={`w-5 h-[1.5px] transition-colors duration-300 ${isOverDark ? 'bg-white' : 'bg-black'}`}></span>
+                                <span className={`w-5 h-[1.5px] transition-colors duration-300 ${isOverDark ? 'bg-white' : 'bg-black'}`}></span>
                             </div>
                         )}
                     </div>
