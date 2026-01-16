@@ -4,6 +4,16 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { useEffect, useState, useRef } from "react";
 
+// 社名の由来セクション用のランダム画像
+const leftSectionImages = [
+    "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&q=80", // 海
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80", // 海岸
+    "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80", // 波
+    "https://images.unsplash.com/photo-1484291470158-b8f8d608850d?w=800&q=80", // 夕日の海
+    "https://images.unsplash.com/photo-1468413253725-0d5181091126?w=800&q=80", // 船
+    "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&q=80", // 海の冒険
+];
+
 const crewMembers = [
     { name: "SHO", role: "Captain / Generalist", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=SHO&backgroundColor=c0aede" },
     { name: "KAKA", role: "Creator / Designer", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=KAKA&backgroundColor=d1d4f9" },
@@ -111,12 +121,20 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
 }
 
 export default function WeArePage() {
+    const [randomImage, setRandomImage] = useState(leftSectionImages[0]);
+
+    useEffect(() => {
+        // ページ読み込み時にランダムな画像を選択
+        const randomIndex = Math.floor(Math.random() * leftSectionImages.length);
+        setRandomImage(leftSectionImages[randomIndex]);
+    }, []);
+
     return (
         <>
             <Header />
             <main>
                 {/* Hero */}
-                <section className="h-[40vh] flex items-center relative">
+                <section className="h-[35vh] md:h-[40vh] flex items-center relative">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
@@ -126,22 +144,22 @@ export default function WeArePage() {
                         />
                         <div className="absolute inset-0 bg-black/50" />
                     </div>
-                    <div className="text-left text-white px-8 md:px-16 relative z-10">
-                        <p className="text-sm tracking-[0.3em] text-gray-300 mb-4">何者？</p>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold">
+                    <div className="text-left text-white px-6 md:px-16 relative z-10">
+                        <p className="text-xs md:text-sm tracking-[0.3em] text-gray-300 mb-2 md:mb-4">何者？</p>
+                        <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold">
                             <AnimatedText text="WE ARE" />
                         </h1>
                     </div>
                     {/* Breadcrumb */}
-                    <div className="absolute bottom-8 left-6 md:left-12 z-10">
-                        <p className="text-xs text-gray-300 tracking-wider">
+                    <div className="absolute bottom-6 md:bottom-8 left-6 md:left-12 z-10">
+                        <p className="text-[10px] md:text-xs text-gray-300 tracking-wider">
                             KAIZOKU &gt; 何者？
                         </p>
                     </div>
                 </section>
 
                 {/* Best Practice Best Partner */}
-                <section className="py-24 md:py-32 relative">
+                <section className="py-16 md:py-32 relative">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
@@ -153,7 +171,7 @@ export default function WeArePage() {
                     </div>
                     <div className="max-w-[1000px] mx-auto px-6 text-center relative z-10">
                         <AnimatedSection>
-                            <h2 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
+                            <h2 className="text-xl md:text-4xl font-bold mb-4 leading-tight">
                                 <span className="relative inline-block">
                                     <span>Best Practice</span>
                                     <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -163,24 +181,24 @@ export default function WeArePage() {
                                 </span><br />
                                 Best Partner
                             </h2>
-                            <p className="text-xl md:text-2xl font-bold mb-12 mt-8 text-gray-700">
+                            <p className="text-base md:text-2xl font-bold mb-8 md:mb-12 mt-6 md:mt-8 text-gray-700">
                                 最適に仕事をこなすよりも<br />
                                 最高のパフォーマンスを発揮する仲間として
                             </p>
                             <div className="mx-auto">
-                                <p className="text-gray-600 leading-[2] text-[15px] mb-6">
-                                    ユーザーとのコミュニケーション方法が多様化した現代。<br />
-                                    ATL、BTL、マス、デジタルといった領域の垣根が無くなり、<br />
+                                <p className="text-gray-600 leading-[2] text-[14px] md:text-[15px] mb-6">
+                                    ユーザーとのコミュニケーション方法が多様化した現代。
+                                    ATL、BTL、マス、デジタルといった領域の垣根が無くなり、
                                     様々な分野の専門知を融合してコミュニケーション全体を設計することが求められます。
                                 </p>
-                                <p className="text-gray-600 leading-[2] text-[15px] mb-6">
-                                    その時に課題となるのが、プロジェクトを進め構築していく<br />
+                                <p className="text-gray-600 leading-[2] text-[14px] md:text-[15px] mb-6">
+                                    その時に課題となるのが、プロジェクトを進め構築していく
                                     「コミュニケーションデザイン＆プロデュース力」。
                                 </p>
-                                <p className="text-gray-600 leading-[2] text-[15px]">
-                                    言われた通りにつくるだけでは、私たちの存在意義はありません。<br />
-                                    みなさまのベストパートナーとして、<br />
-                                    プロジェクトごとのニーズに合った効果を上げるための<br />
+                                <p className="text-gray-600 leading-[2] text-[14px] md:text-[15px]">
+                                    言われた通りにつくるだけでは、私たちの存在意義はありません。
+                                    みなさまのベストパートナーとして、
+                                    プロジェクトごとのニーズに合った効果を上げるための
                                     価値あるコミュニケーションをつくります。
                                 </p>
                             </div>
@@ -191,36 +209,36 @@ export default function WeArePage() {
                 {/* 理念 */}
                 <section className="bg-white relative">
                     {/* 理念 + STAY INNOCENT */}
-                    <div className="bg-gray-100 py-8 md:py-12">
+                    <div className="bg-gray-100 py-6 md:py-12">
                         <AnimatedSection>
-                            <div className="px-8 md:px-16">
-                                <p className="text-xl md:text-2xl tracking-[0.2em] text-gray-800 mb-2 font-bold">理念</p>
-                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold whitespace-nowrap">
+                            <div className="px-6 md:px-16">
+                                <p className="text-base md:text-2xl tracking-[0.2em] text-gray-800 mb-2 font-bold">理念</p>
+                                <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold">
                                     STAY INNOCENT
                                 </h2>
                             </div>
                         </AnimatedSection>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-0 items-stretch -mt-24 md:-mt-32">
+                    <div className="grid md:grid-cols-2 gap-0 items-stretch -mt-16 md:-mt-32">
                         {/* 左側：テキスト */}
                         <AnimatedSection delay={200}>
-                            <div className="px-8 md:px-16 py-8 pt-32 md:pt-40 relative z-10">
-                                <p className="text-2xl md:text-3xl font-bold mb-8 leading-tight text-gray-700">
+                            <div className="px-6 md:px-16 py-6 md:py-8 pt-24 md:pt-40 relative z-10">
+                                <p className="text-xl md:text-3xl font-bold mb-6 md:mb-8 leading-tight text-gray-700">
                                     こどものままで。<br />
                                     自由な発想で。
                                 </p>
                                 <div>
-                                    <p className="text-gray-700 leading-[2] text-[15px] mb-6 font-medium">
+                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
                                         大人になると、いいも悪いも色々と制限を設けてしまう(設けられてしまうということも)。
                                     </p>
-                                    <p className="text-gray-700 leading-[2] text-[15px] mb-6 font-medium">
+                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
                                         当然、ビジネスマナーやビジネスルールは守ります。そんなものは本やネットを見れば学べるし覚えて体現すれば良い事。
                                     </p>
-                                    <p className="text-gray-700 leading-[2] text-[15px] mb-6 font-medium">
+                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
                                         でも、大人としてこどものままで生きることは、とっても難しい。
                                     </p>
-                                    <p className="text-gray-700 leading-[2] text-[15px] font-medium">
+                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] font-medium">
                                         こどものように発想や動きに制限なく、仕事もプライベートも人生そのものを楽しんで前向きに無邪気に取り組む事ができれば、それはもう最高であり、最強でしょう。だからこそのこの理念なんです。
                                     </p>
                                 </div>
@@ -241,13 +259,13 @@ export default function WeArePage() {
                 </section>
 
                 {/* 社名の由来 */}
-                <section className="py-24 md:py-32 bg-white">
+                <section className="py-16 md:py-32 bg-white">
                     <div className="grid md:grid-cols-2 gap-0 items-stretch">
-                        {/* 左側：画像 */}
-                        <ImageReveal className="h-full">
+                        {/* 左側：画像（ランダムで変わる） */}
+                        <ImageReveal className="h-[200px] md:h-full">
                             <div className="h-full bg-gray-50 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&q=80"
+                                    src={randomImage}
                                     alt="海"
                                     className="w-full h-full object-cover"
                                 />
@@ -256,29 +274,29 @@ export default function WeArePage() {
 
                         {/* 右側：テキスト */}
                         <AnimatedSection delay={200}>
-                            <div className="px-8 md:px-16 py-8">
-                                <p className="text-xl md:text-2xl tracking-[0.2em] text-gray-800 mb-4 font-bold">社名の由来</p>
-                                <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+                            <div className="px-6 md:px-16 py-6 md:py-8">
+                                <p className="text-base md:text-2xl tracking-[0.2em] text-gray-800 mb-2 md:mb-4 font-bold">社名の由来</p>
+                                <h2 className="text-2xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight">
                                     職業、<br />海賊です。
                                 </h2>
                                 <div>
-                                    <p className="text-gray-700 leading-[2] text-[15px] mb-6 font-medium">
+                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
                                         日本だとはじめて会った人との会話では、パーソナルなことよりもビジネスのことを聞かれる事がとても多い。
                                     </p>
-                                    <p className="text-gray-700 leading-[2] text-[15px] mb-6 font-medium">
+                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
                                         あなたの職業は何ですか？という質問に対して、「職業、海賊です。」と言えたら面白いなと思ってこの社名になりました。
                                     </p>
-                                    <p className="text-gray-700 leading-[2] text-[15px] mb-6 font-medium">
+                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
                                         そして、よく言われるのが、「ONEPIECE（ワンピース）好きなんですね！」
                                     </p>
-                                    <p className="text-gray-700 leading-[2] text-[15px] mb-6 font-medium">
+                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
                                         そりゃあ、世界中で愛されている漫画ですから、好きですが…<br />
                                         それよりも本当は、"海賊"自体が好きなんです。
                                     </p>
-                                    <p className="text-gray-700 leading-[2] text-[15px] mb-6 font-medium">
+                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
                                         少々荒っぽいかも知れないが、さまざまな才能を持った仲間たちが集い、根幹には大きな"志"があり、その行動には、"信念"があり、"ルール（掟や約束）"は絶対守る。といった、「海賊」の生き様が大好きなんです。
                                     </p>
-                                    <p className="text-gray-700 leading-[2] text-[15px] font-medium">
+                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] font-medium">
                                         自分は幕末が好きです。春秋戦国時代が最高です。というのに似た感じで、カリブの大海原で自由を求めて暴れまわった「海賊」たちのように信念を持って動く会社です。
                                     </p>
                                 </div>
@@ -288,32 +306,32 @@ export default function WeArePage() {
                 </section>
 
                 {/* CREW */}
-                <section className="py-24 md:py-32 bg-white">
+                <section className="py-16 md:py-32 bg-white">
                     <div className="max-w-[1200px] mx-auto px-6">
                         <AnimatedSection>
-                            <div className="text-center mb-16">
-                                <p className="text-sm tracking-[0.2em] text-gray-400 mb-6">TEAM</p>
-                                <h2 className="text-3xl md:text-5xl font-bold mb-6">CREW</h2>
-                                <p className="text-gray-600 text-[15px] leading-relaxed">
+                            <div className="text-center mb-10 md:mb-16">
+                                <p className="text-xs md:text-sm tracking-[0.2em] text-gray-400 mb-4 md:mb-6">TEAM</p>
+                                <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6">CREW</h2>
+                                <p className="text-gray-600 text-[13px] md:text-[15px] leading-relaxed">
                                     机上の空論は嫌いですが、<br />
                                     動くことと成果を出すことは大好物な一味。
                                 </p>
                             </div>
                         </AnimatedSection>
 
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                        <div className="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-8">
                             {crewMembers.map((member, index) => (
                                 <AnimatedSection key={member.name} delay={index * 100}>
                                     <div className="group">
-                                        <div className="aspect-square bg-gray-100 mb-4 overflow-hidden rounded-full">
+                                        <div className="aspect-square bg-gray-100 mb-2 md:mb-4 overflow-hidden rounded-full">
                                             <img
                                                 src={member.avatar}
                                                 alt={member.name}
                                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                             />
                                         </div>
-                                        <p className="text-xs text-gray-400 mb-1">{member.role}</p>
-                                        <p className="text-lg font-bold">{member.name}</p>
+                                        <p className="text-[10px] md:text-xs text-gray-400 mb-0.5 md:mb-1">{member.role}</p>
+                                        <p className="text-sm md:text-lg font-bold">{member.name}</p>
                                     </div>
                                 </AnimatedSection>
                             ))}
@@ -322,12 +340,12 @@ export default function WeArePage() {
                 </section>
 
                 {/* お問い合わせ */}
-                <section className="pt-4 pb-16 md:pt-5 md:pb-20 bg-white">
+                <section className="pt-4 pb-12 md:pt-5 md:pb-20 bg-white">
                     <div className="max-w-[800px] mx-auto px-6 text-center">
                         <AnimatedSection>
                             <a
                                 href="/contact"
-                                className="inline-block border border-black px-16 py-5 text-sm tracking-wider hover:bg-black hover:text-white transition-colors duration-300"
+                                className="inline-block border border-black px-8 md:px-16 py-4 md:py-5 text-xs md:text-sm tracking-wider hover:bg-black hover:text-white transition-colors duration-300"
                             >
                                 KAIZOKUに問い合わせてみる →
                             </a>

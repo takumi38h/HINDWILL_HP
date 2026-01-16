@@ -16,7 +16,7 @@ export default function BlogPage() {
             <Header />
             <main>
                 {/* Hero */}
-                <section className="h-[40vh] flex items-center relative">
+                <section className="h-[35vh] md:h-[40vh] flex items-center relative">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
@@ -26,14 +26,14 @@ export default function BlogPage() {
                         />
                         <div className="absolute inset-0 bg-black/50" />
                     </div>
-                    <div className="text-left text-white relative z-10 px-8 md:px-16">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4">BLOG</h1>
-                        <p className="text-lg text-gray-300">海賊のたわごと</p>
+                    <div className="text-left text-white relative z-10 px-6 md:px-16">
+                        <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4">BLOG</h1>
+                        <p className="text-sm md:text-lg text-gray-300">海賊のたわごと</p>
                     </div>
                 </section>
 
                 {/* Blog Grid */}
-                <section className="py-20 bg-[#F5F5F5]">
+                <section className="py-12 md:py-20 bg-[#F5F5F5]">
                     <div className="max-w-[1200px] mx-auto px-6">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {blogPosts.map((post) => (

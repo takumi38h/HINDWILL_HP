@@ -11,10 +11,10 @@ export function Blog() {
         <section className="py-16 md:py-24 bg-[#F5F5F5]">
             <div className="max-w-[1200px] mx-auto px-6">
                 {/* Header - Title on left, Link on right */}
-                <div className="flex items-end justify-between mb-12">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-12">
                     {/* Left: Title */}
                     <div className="flex items-baseline gap-4">
-                        <h2 className="text-[28px] md:text-[36px] font-bold">
+                        <h2 className="text-[24px] md:text-[36px] font-bold">
                             海賊の戯言
                         </h2>
                         <span className="text-[12px] text-gray-400 tracking-[0.1em]">BLOG</span>
@@ -23,7 +23,7 @@ export function Blog() {
                     {/* Right: View All Link - same style as WE ARE? */}
                     <Link
                         href="/blog"
-                        className="inline-flex items-center gap-4 px-8 py-3 border border-black text-black text-[13px] font-medium tracking-wide hover:bg-black hover:text-white transition-all duration-300 group"
+                        className="inline-flex items-center gap-4 px-6 md:px-8 py-3 border border-black text-black text-[13px] font-medium tracking-wide hover:bg-black hover:text-white transition-all duration-300 group self-start md:self-auto"
                     >
                         <span>ブログ一覧</span>
                         <span className="animate-arrowMove text-lg">→</span>

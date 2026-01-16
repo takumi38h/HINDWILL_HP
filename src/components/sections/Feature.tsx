@@ -24,9 +24,9 @@ export function Feature() {
     }, []);
 
     return (
-        <section className="py-16 md:py-24 bg-white overflow-visible">
+        <section className="py-16 md:py-24 bg-white overflow-hidden md:overflow-visible">
             <div className="max-w-[1200px] mx-auto px-6">
-                <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
                     {/* Left: Text */}
                     <div className="flex-1">
                         <h2 className="text-[36px] md:text-[56px] lg:text-[64px] font-bold leading-[1.4] mb-8">
@@ -88,18 +88,18 @@ export function Feature() {
 
                     {/* Right: Star/Compass - All rotating together */}
                     <div className="flex-1 flex justify-center">
-                        <div ref={frameRef} className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]">
-                            {/* 3-sided frame - animated in sequence: top, left, bottom */}
+                        <div ref={frameRef} className="relative w-[280px] h-[280px] md:w-[400px] md:h-[400px]">
+                            {/* 3-sided frame - animated in sequence: top, left, bottom (hidden on mobile) */}
                             {/* Top line */}
                             <div
-                                className={`absolute -top-12 -left-16 h-[5px] bg-black origin-left transition-transform duration-700 ease-out ${
+                                className={`hidden md:block absolute -top-12 -left-16 h-[5px] bg-black origin-left transition-transform duration-700 ease-out ${
                                     isVisible ? "scale-x-100" : "scale-x-0"
                                 }`}
                                 style={{ width: '100vw' }}
                             />
                             {/* Left vertical line */}
                             <div
-                                className={`absolute -top-12 -left-16 w-[5px] bg-black origin-top transition-transform duration-700 ease-out ${
+                                className={`hidden md:block absolute -top-12 -left-16 w-[5px] bg-black origin-top transition-transform duration-700 ease-out ${
                                     isVisible ? "scale-y-100" : "scale-y-0"
                                 }`}
                                 style={{
@@ -109,7 +109,7 @@ export function Feature() {
                             />
                             {/* Bottom line */}
                             <div
-                                className={`absolute -bottom-12 -left-16 h-[5px] bg-black origin-left transition-transform duration-700 ease-out ${
+                                className={`hidden md:block absolute -bottom-12 -left-16 h-[5px] bg-black origin-left transition-transform duration-700 ease-out ${
                                     isVisible ? "scale-x-100" : "scale-x-0"
                                 }`}
                                 style={{
@@ -131,26 +131,26 @@ export function Feature() {
                                 {/* Labels - rotate with star */}
                                 {/* Top-Right - STRATEGY/戦略 */}
                                 <div className="absolute top-[18%] right-[18%] text-center">
-                                    <span className="block text-[11px] md:text-[13px] text-gray-400 tracking-[0.1em]">STRATEGY</span>
-                                    <span className="block text-[20px] md:text-[24px] font-bold">戦略</span>
+                                    <span className="block text-[9px] md:text-[13px] text-gray-400 tracking-[0.1em]">STRATEGY</span>
+                                    <span className="block text-[16px] md:text-[24px] font-bold">戦略</span>
                                 </div>
 
                                 {/* Bottom-Right - ENTERTAINMENT/ワクワク */}
-                                <div className="absolute bottom-[18%] right-[12%] text-center">
-                                    <span className="block text-[11px] md:text-[13px] text-gray-400 tracking-[0.1em]">ENTERTAINMENT</span>
-                                    <span className="block text-[20px] md:text-[24px] font-bold">ワクワク</span>
+                                <div className="absolute bottom-[18%] right-[8%] md:right-[12%] text-center">
+                                    <span className="block text-[8px] md:text-[13px] text-gray-400 tracking-[0.1em]">ENTERTAINMENT</span>
+                                    <span className="block text-[14px] md:text-[24px] font-bold">ワクワク</span>
                                 </div>
 
                                 {/* Bottom-Left - TECHNOLOGY/技術 */}
-                                <div className="absolute bottom-[18%] left-[18%] text-center">
-                                    <span className="block text-[11px] md:text-[13px] text-gray-400 tracking-[0.1em]">TECHNOLOGY</span>
-                                    <span className="block text-[20px] md:text-[24px] font-bold">技術</span>
+                                <div className="absolute bottom-[18%] left-[14%] md:left-[18%] text-center">
+                                    <span className="block text-[9px] md:text-[13px] text-gray-400 tracking-[0.1em]">TECHNOLOGY</span>
+                                    <span className="block text-[16px] md:text-[24px] font-bold">技術</span>
                                 </div>
 
                                 {/* Top-Left - DESIGN/デザイン */}
                                 <div className="absolute top-[18%] left-[18%] text-center">
-                                    <span className="block text-[11px] md:text-[13px] text-gray-400 tracking-[0.1em]">DESIGN</span>
-                                    <span className="block text-[20px] md:text-[24px] font-bold">デザイン</span>
+                                    <span className="block text-[9px] md:text-[13px] text-gray-400 tracking-[0.1em]">DESIGN</span>
+                                    <span className="block text-[16px] md:text-[24px] font-bold">デザイン</span>
                                 </div>
                             </div>
 

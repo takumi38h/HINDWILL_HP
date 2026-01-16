@@ -37,12 +37,12 @@ export function NewsBar() {
         <section className="border-t border-b border-black">
             <div className="flex">
                 {/* Left: NEWS Label */}
-                <div className="bg-black text-white px-6 py-4 flex items-center gap-4 shrink-0">
-                    <span className="text-[13px] font-bold tracking-[0.05em]">NEWS</span>
-                    <span className="text-[11px] text-gray-400">お知らせ</span>
+                <div className="bg-black text-white px-3 py-2 md:px-6 md:py-4 flex items-center gap-2 md:gap-4 shrink-0">
+                    <span className="text-[11px] md:text-[13px] font-bold tracking-[0.05em]">NEWS</span>
+                    <span className="text-[9px] md:text-[11px] text-gray-400">お知らせ</span>
                     <Link
                         href="/news"
-                        className="flex items-center gap-2 text-[11px] text-white/70 hover:text-white transition-colors ml-2"
+                        className="hidden md:flex items-center gap-2 text-[11px] text-white/70 hover:text-white transition-colors ml-2"
                     >
                         <span>VIEW ALL</span>
                         <span>→</span>
@@ -50,15 +50,15 @@ export function NewsBar() {
                 </div>
 
                 {/* Right: Single News Item with left slide transition */}
-                <div className="flex-1 flex items-center px-6 py-4 overflow-hidden">
+                <div className="flex-1 flex items-center px-3 py-2 md:px-6 md:py-4 overflow-hidden">
                     <Link
                         href="/news"
-                        className={`flex items-center gap-4 hover:opacity-60 transition-all duration-300 ${
+                        className={`flex items-center gap-2 md:gap-4 hover:opacity-60 transition-all duration-300 ${
                             isSliding ? "-translate-x-full opacity-0" : "translate-x-0 opacity-100"
                         }`}
                     >
-                        <span className="text-[12px] text-gray-500">{currentNews.date}</span>
-                        <span className="text-[13px]">{currentNews.title}</span>
+                        <span className="text-[10px] md:text-[12px] text-gray-500 shrink-0">{currentNews.date}</span>
+                        <span className="text-[11px] md:text-[13px] line-clamp-1">{currentNews.title}</span>
                     </Link>
                 </div>
             </div>

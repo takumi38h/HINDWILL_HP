@@ -36,7 +36,7 @@ export default function FAQPage() {
             <Header />
             <main>
                 {/* Hero */}
-                <section className="h-[40vh] flex items-center relative">
+                <section className="h-[35vh] md:h-[40vh] flex items-center relative">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
@@ -46,32 +46,32 @@ export default function FAQPage() {
                         />
                         <div className="absolute inset-0 bg-black/50" />
                     </div>
-                    <div className="text-left text-white relative z-10 px-8 md:px-16">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4">FAQ</h1>
-                        <p className="text-lg text-gray-300">よくある質問</p>
+                    <div className="text-left text-white relative z-10 px-6 md:px-16">
+                        <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4">FAQ</h1>
+                        <p className="text-sm md:text-lg text-gray-300">よくある質問</p>
                     </div>
                 </section>
 
                 {/* FAQ List */}
-                <section className="py-20 bg-white">
+                <section className="py-12 md:py-20 bg-white">
                     <div className="max-w-[800px] mx-auto px-6">
                         {faqs.map((faq, index) => (
                             <div key={index} className="border-b border-gray-200">
                                 <button
                                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                    className="w-full py-6 flex items-center justify-between text-left"
+                                    className="w-full py-4 md:py-6 flex items-center justify-between text-left"
                                 >
-                                    <span className="font-bold text-lg pr-4">{faq.question}</span>
-                                    <span className="text-2xl shrink-0">
+                                    <span className="font-bold text-sm md:text-lg pr-4">{faq.question}</span>
+                                    <span className="text-xl md:text-2xl shrink-0">
                                         {openIndex === index ? "−" : "+"}
                                     </span>
                                 </button>
                                 <div
                                     className={`overflow-hidden transition-all duration-300 ${
-                                        openIndex === index ? "max-h-40 pb-6" : "max-h-0"
+                                        openIndex === index ? "max-h-40 pb-4 md:pb-6" : "max-h-0"
                                     }`}
                                 >
-                                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">{faq.answer}</p>
                                 </div>
                             </div>
                         ))}
@@ -79,11 +79,11 @@ export default function FAQPage() {
                 </section>
 
                 {/* お問い合わせ */}
-                <section className="pt-4 pb-16 md:pt-5 md:pb-20 bg-white">
+                <section className="pt-4 pb-12 md:pt-5 md:pb-20 bg-white">
                     <div className="max-w-[800px] mx-auto px-6 text-center">
                         <Link
                             href="/contact"
-                            className="inline-block border border-black px-16 py-5 text-sm tracking-wider hover:bg-black hover:text-white transition-colors duration-300"
+                            className="inline-block border border-black px-8 md:px-16 py-4 md:py-5 text-xs md:text-sm tracking-wider hover:bg-black hover:text-white transition-colors duration-300"
                         >
                             KAIZOKUに問い合わせてみる →
                         </Link>

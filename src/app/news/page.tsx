@@ -17,8 +17,16 @@ export default function NewsPage() {
         <>
             <Header />
             <main>
-                {/* Hero */}
-                <section className="h-[40vh] flex items-center relative">
+                {/* Hero - モバイル: シンプルなヘッダー / PC: 画像付きヒーロー */}
+                {/* モバイル用ヘッダー */}
+                <div className="md:hidden bg-white py-2 px-4 border-b border-gray-200">
+                    <div className="flex items-baseline gap-2">
+                        <h1 className="text-sm font-bold">NEWS</h1>
+                        <p className="text-[10px] text-gray-400">お知らせ</p>
+                    </div>
+                </div>
+                {/* PC用ヒーロー */}
+                <section className="hidden md:flex h-[40vh] items-center relative">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
@@ -28,39 +36,39 @@ export default function NewsPage() {
                         />
                         <div className="absolute inset-0 bg-black/50" />
                     </div>
-                    <div className="text-left text-white relative z-10 px-8 md:px-16">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4">NEWS</h1>
+                    <div className="text-left text-white relative z-10 px-16">
+                        <h1 className="text-6xl font-bold mb-4">NEWS</h1>
                         <p className="text-lg text-gray-300">お知らせ</p>
                     </div>
                 </section>
 
                 {/* News List */}
-                <section className="py-20 bg-white">
-                    <div className="max-w-[800px] mx-auto px-6">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-10">お知らせ一覧</h2>
+                <section className="py-8 md:py-20 bg-white">
+                    <div className="max-w-[800px] mx-auto px-4 md:px-6">
+                        <h2 className="text-lg md:text-3xl font-bold mb-4 md:mb-10">お知らせ一覧</h2>
                         {newsItems.map((news, index) => (
                             <div
                                 key={index}
-                                className="py-6 border-b border-gray-200 flex items-start gap-6 hover:bg-gray-50 transition-colors cursor-pointer"
+                                className="py-3 md:py-6 border-b border-gray-200 flex flex-col md:flex-row md:items-start gap-1 md:gap-6 hover:bg-gray-50 transition-colors cursor-pointer"
                             >
-                                <span className="text-sm text-gray-500 shrink-0">{news.date}</span>
-                                <span className="text-base">{news.title}</span>
+                                <span className="text-[11px] md:text-sm text-gray-500 shrink-0">{news.date}</span>
+                                <span className="text-[13px] md:text-base">{news.title}</span>
                             </div>
                         ))}
                     </div>
                 </section>
 
                 {/* 最新お知らせ */}
-                <section className="py-20 bg-[#f8f8f8]">
-                    <div className="max-w-[800px] mx-auto px-6">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-10">最新お知らせ</h2>
+                <section className="py-8 md:py-20 bg-[#f8f8f8]">
+                    <div className="max-w-[800px] mx-auto px-4 md:px-6">
+                        <h2 className="text-lg md:text-3xl font-bold mb-4 md:mb-10">最新お知らせ</h2>
                         {newsItems.slice(0, 3).map((news, index) => (
                             <div
                                 key={index}
-                                className="py-6 border-b border-gray-300 flex items-start gap-6 hover:bg-gray-100 transition-colors cursor-pointer"
+                                className="py-3 md:py-6 border-b border-gray-300 flex flex-col md:flex-row md:items-start gap-1 md:gap-6 hover:bg-gray-100 transition-colors cursor-pointer"
                             >
-                                <span className="text-sm text-gray-500 shrink-0">{news.date}</span>
-                                <span className="text-base">{news.title}</span>
+                                <span className="text-[11px] md:text-sm text-gray-500 shrink-0">{news.date}</span>
+                                <span className="text-[13px] md:text-base">{news.title}</span>
                             </div>
                         ))}
                     </div>
