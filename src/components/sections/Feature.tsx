@@ -98,7 +98,7 @@ export function Feature() {
                                         {char}
                                     </span>
                                 ))}
-                                {["を", "生", "む", "。"].map((char, i) => (
+                                {["を", "生", "む。"].map((char, i) => (
                                     <span
                                         key={`line3b-${i}`}
                                         className={`inline-block transition-all duration-600 ease-out ${
@@ -108,7 +108,7 @@ export function Feature() {
                                         }`}
                                         style={{
                                             transitionDelay: `${(i + 11) * 0.1}s`,
-                                            textShadow: char === "。" ? "none" : "2px 2px 0 rgba(249, 115, 22, 0.1)"
+                                            textShadow: char === "む。" ? "none" : "2px 2px 0 rgba(249, 115, 22, 0.1)"
                                         }}
                                     >
                                         {char}

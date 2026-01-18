@@ -116,16 +116,24 @@ export default function WeArePage() {
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white px-6 md:px-16 relative z-10">
-                        <p className="text-xs md:text-sm tracking-[0.3em] text-gray-300 mb-2 md:mb-4">何者？</p>
-                        <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold">
+                        <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-2 md:mb-4">
                             <AnimatedText text="WE ARE" />
                         </h1>
+                        <p className="text-xs md:text-sm tracking-[0.3em] text-gray-300">何者？</p>
                     </div>
                     {/* Breadcrumb */}
-                    <div className="absolute bottom-6 md:bottom-8 left-6 md:left-12 z-10">
-                        <p className="text-[10px] md:text-xs text-gray-300 tracking-wider">
-                            HINDWILL &gt; 何者？
-                        </p>
+                    <div className="absolute bottom-6 md:bottom-8 left-6 md:left-16 z-10">
+                        <div className="flex items-center gap-2 text-[10px] md:text-xs text-white/70">
+                            <a href="/" className="hover:text-white transition-colors">
+                                <svg className="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                                </svg>
+                            </a>
+                            <span>&gt;</span>
+                            <a href="/" className="hover:text-white transition-colors">HINDWILL</a>
+                            <span>&gt;</span>
+                            <span className="text-white">何者？</span>
+                        </div>
                     </div>
                 </section>
 

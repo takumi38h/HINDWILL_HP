@@ -12,10 +12,14 @@ const blogPosts = [
     { id: 4, title: "AIに負けない営業マンの育て方", date: "2025.11.20", category: "人材育成", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" },
     { id: 5, title: "ラストワンマイルを繋ぐ営業の極意", date: "2025.10.15", category: "営業術", image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" },
     { id: 6, title: "新規プロジェクト始動のお知らせ", date: "2025.09.10", category: "お知らせ", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80" },
+    { id: 7, title: "営業成績を上げるためのマインドセット", date: "2025.08.25", category: "営業術", image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" },
+    { id: 8, title: "顧客との信頼関係を築く5つのポイント", date: "2025.08.10", category: "コラム", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80" },
+    { id: 9, title: "夏季休業のお知らせ", date: "2025.07.20", category: "お知らせ", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" },
 ];
 
 export default function BlogPage() {
     const [isLoaded, setIsLoaded] = useState(false);
+    const [visibleCount, setVisibleCount] = useState(6);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -25,6 +29,11 @@ export default function BlogPage() {
     }, []);
 
     const title = "BLOG";
+    const hasMore = visibleCount < blogPosts.length;
+
+    const handleLoadMore = () => {
+        setVisibleCount((prev) => Math.min(prev + 3, blogPosts.length));
+    };
 
     return (
         <>
@@ -68,6 +77,20 @@ export default function BlogPage() {
                             ブログ
                         </p>
                     </div>
+                    {/* Breadcrumb */}
+                    <div className="absolute bottom-6 md:bottom-8 left-6 md:left-16 z-10">
+                        <div className="flex items-center gap-2 text-[10px] md:text-xs text-white/70">
+                            <a href="/" className="hover:text-white transition-colors">
+                                <svg className="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                                </svg>
+                            </a>
+                            <span>&gt;</span>
+                            <a href="/" className="hover:text-white transition-colors">HINDWILL</a>
+                            <span>&gt;</span>
+                            <span className="text-white">ブログ</span>
+                        </div>
+                    </div>
                 </section>
 
                 {/* Blog List Header */}
@@ -84,7 +107,7 @@ export default function BlogPage() {
                 <section className="py-12 md:py-20 bg-gradient-to-b from-orange-50 to-white">
                     <div className="max-w-[1200px] mx-auto px-6">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {blogPosts.map((post) => (
+                            {blogPosts.slice(0, visibleCount).map((post) => (
                                 <Link
                                     key={post.id}
                                     href={`/blog/${post.id}`}
@@ -113,14 +136,19 @@ export default function BlogPage() {
                         </div>
 
                         {/* もっと見る */}
-                        <div className="mt-12 md:mt-16 text-center">
-                            <button className="inline-flex items-center gap-3 px-8 py-4 border-2 border-gray-300 text-gray-700 font-medium hover:border-orange-500 hover:text-orange-500 transition-colors">
-                                <span>もっと見る</span>
-                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                        </div>
+                        {hasMore && (
+                            <div className="mt-12 md:mt-16 text-center">
+                                <button
+                                    onClick={handleLoadMore}
+                                    className="inline-flex items-center gap-3 px-8 py-4 border-2 border-gray-300 text-gray-700 font-medium hover:border-orange-500 hover:text-orange-500 transition-colors"
+                                >
+                                    <span>もっと見る</span>
+                                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </section>
             </main>

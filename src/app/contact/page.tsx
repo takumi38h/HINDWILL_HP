@@ -1,9 +1,10 @@
 "use client";
 
 import { Header } from "@/components/layout/Header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ContactPage() {
+    const [isLoaded, setIsLoaded] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         company: "",
@@ -11,6 +12,15 @@ export default function ContactPage() {
         phone: "",
         message: "",
     });
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoaded(true);
+        }, 100);
+        return () => clearTimeout(timer);
+    }, []);
+
+    const title = "CONTACT";
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -30,8 +40,45 @@ export default function ContactPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     <div className="text-center text-white relative z-10">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4">CONTACT</h1>
-                        <p className="text-lg text-gray-300">お問い合わせ</p>
+                        <h1 className="text-4xl md:text-6xl font-bold mb-4 overflow-hidden">
+                            {title.split("").map((char, index) => (
+                                <span
+                                    key={index}
+                                    className={`inline-block transition-all duration-500 ${
+                                        isLoaded
+                                            ? "opacity-100 translate-x-0"
+                                            : "opacity-0 translate-x-8"
+                                    }`}
+                                    style={{
+                                        transitionDelay: `${(title.length - 1 - index) * 0.08}s`,
+                                    }}
+                                >
+                                    {char}
+                                </span>
+                            ))}
+                        </h1>
+                        <p
+                            className={`text-lg text-gray-300 transition-all duration-700 ${
+                                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                            }`}
+                            style={{ transitionDelay: "0.7s" }}
+                        >
+                            お問い合わせ
+                        </p>
+                    </div>
+                    {/* Breadcrumb */}
+                    <div className="absolute bottom-6 md:bottom-8 left-6 md:left-16 z-10">
+                        <div className="flex items-center gap-2 text-[10px] md:text-xs text-white/70">
+                            <a href="/" className="hover:text-white transition-colors">
+                                <svg className="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                                </svg>
+                            </a>
+                            <span>&gt;</span>
+                            <a href="/" className="hover:text-white transition-colors">HINDWILL</a>
+                            <span>&gt;</span>
+                            <span className="text-white">お問い合わせ</span>
+                        </div>
                     </div>
                 </section>
 

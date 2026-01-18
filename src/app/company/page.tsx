@@ -1,8 +1,22 @@
+"use client";
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function CompanyPage() {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoaded(true);
+        }, 100);
+        return () => clearTimeout(timer);
+    }, []);
+
+    const title = "COMPANY";
+
     return (
         <>
             <Header />
@@ -19,8 +33,45 @@ export default function CompanyPage() {
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
-                        <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4">COMPANY</h1>
-                        <p className="text-sm md:text-lg text-gray-300">会社概要</p>
+                        <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4 overflow-hidden">
+                            {title.split("").map((char, index) => (
+                                <span
+                                    key={index}
+                                    className={`inline-block transition-all duration-500 ${
+                                        isLoaded
+                                            ? "opacity-100 translate-x-0"
+                                            : "opacity-0 translate-x-8"
+                                    }`}
+                                    style={{
+                                        transitionDelay: `${(title.length - 1 - index) * 0.08}s`,
+                                    }}
+                                >
+                                    {char}
+                                </span>
+                            ))}
+                        </h1>
+                        <p
+                            className={`text-sm md:text-lg text-gray-300 transition-all duration-700 ${
+                                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                            }`}
+                            style={{ transitionDelay: "0.7s" }}
+                        >
+                            会社概要
+                        </p>
+                    </div>
+                    {/* Breadcrumb */}
+                    <div className="absolute bottom-6 md:bottom-8 left-6 md:left-16 z-10">
+                        <div className="flex items-center gap-2 text-[10px] md:text-xs text-white/70">
+                            <a href="/" className="hover:text-white transition-colors">
+                                <svg className="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                                </svg>
+                            </a>
+                            <span>&gt;</span>
+                            <a href="/" className="hover:text-white transition-colors">HINDWILL</a>
+                            <span>&gt;</span>
+                            <span className="text-white">会社概要</span>
+                        </div>
                     </div>
                 </section>
 

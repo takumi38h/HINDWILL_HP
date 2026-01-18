@@ -169,10 +169,19 @@ export default function ServicePage() {
                         </p>
                     </div>
 
-                    {/* Scroll indicator */}
-                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-                        <span className="text-white/60 text-[10px] tracking-widest">SCROLL</span>
-                        <div className="w-px h-8 bg-gradient-to-b from-white/60 to-transparent animate-pulse" />
+                    {/* Breadcrumb */}
+                    <div className="absolute bottom-6 md:bottom-8 left-6 md:left-16 z-10">
+                        <div className="flex items-center gap-2 text-[10px] md:text-xs text-white/70">
+                            <a href="/" className="hover:text-white transition-colors">
+                                <svg className="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                                </svg>
+                            </a>
+                            <span>&gt;</span>
+                            <a href="/" className="hover:text-white transition-colors">HINDWILL</a>
+                            <span>&gt;</span>
+                            <span className="text-white">サービス</span>
+                        </div>
                     </div>
                 </section>
 
