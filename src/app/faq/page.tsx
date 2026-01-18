@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePageReady } from "@/contexts/LoadingContext";
 
 const faqs = [
     {
@@ -43,13 +44,20 @@ const faqs = [
 export default function FAQPage() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [animationKey, setAnimationKey] = useState(0);
+    const { isPageReady } = usePageReady();
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoaded(true);
-        }, 100);
-        return () => clearTimeout(timer);
-    }, []);
+        if (isPageReady) {
+            setAnimationKey(prev => prev + 1);
+            const timer = setTimeout(() => {
+                setIsLoaded(true);
+            }, 50);
+            return () => clearTimeout(timer);
+        } else {
+            setIsLoaded(false);
+        }
+    }, [isPageReady]);
 
     const title = "FAQ";
 
@@ -69,7 +77,7 @@ export default function FAQPage() {
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
-                        <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4 overflow-hidden">
+                        <h1 key={animationKey} className="text-3xl md:text-6xl font-bold mb-2 md:mb-4 overflow-hidden">
                             {title.split("").map((char, index) => (
                                 <span
                                     key={index}

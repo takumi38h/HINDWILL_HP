@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { PageTransition } from "@/components/PageTransition";
+import { LoadingProvider } from "@/contexts/LoadingContext";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -28,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="ja" className="overflow-x-hidden">
       <body className={`${dmSans.variable} ${notoSansJP.variable} antialiased overflow-x-hidden`}>
-        <PageTransition>
-          {children}
-        </PageTransition>
+        <LoadingProvider>
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </LoadingProvider>
       </body>
     </html>
   );

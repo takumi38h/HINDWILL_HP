@@ -3,6 +3,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { useEffect, useState, useRef } from "react";
+import { usePageReady } from "@/contexts/LoadingContext";
 
 const crewMembers = [
     { name: "橋爪 拓海", role: "代表取締役", avatar: "/images/japanese_people/ceo_takumi.png" },
@@ -10,16 +11,23 @@ const crewMembers = [
 
 function AnimatedText({ text, className = "" }: { text: string; className?: string }) {
     const [isLoaded, setIsLoaded] = useState(false);
+    const [animationKey, setAnimationKey] = useState(0);
+    const { isPageReady } = usePageReady();
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoaded(true);
-        }, 100);
-        return () => clearTimeout(timer);
-    }, []);
+        if (isPageReady) {
+            setAnimationKey(prev => prev + 1);
+            const timer = setTimeout(() => {
+                setIsLoaded(true);
+            }, 50);
+            return () => clearTimeout(timer);
+        } else {
+            setIsLoaded(false);
+        }
+    }, [isPageReady]);
 
     return (
-        <span className={className}>
+        <span key={animationKey} className={className}>
             {text.split("").map((char, index) => (
                 <span
                     key={index}

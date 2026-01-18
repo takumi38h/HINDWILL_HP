@@ -3,6 +3,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { useEffect, useState } from "react";
+import { usePageReady } from "@/contexts/LoadingContext";
 
 const newsItems = [
     { date: "2026.01.10", title: "営業研修プログラムをリニューアルしました" },
@@ -17,13 +18,20 @@ const newsItems = [
 
 export default function NewsPage() {
     const [isLoaded, setIsLoaded] = useState(false);
+    const [animationKey, setAnimationKey] = useState(0);
+    const { isPageReady } = usePageReady();
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoaded(true);
-        }, 100);
-        return () => clearTimeout(timer);
-    }, []);
+        if (isPageReady) {
+            setAnimationKey(prev => prev + 1);
+            const timer = setTimeout(() => {
+                setIsLoaded(true);
+            }, 50);
+            return () => clearTimeout(timer);
+        } else {
+            setIsLoaded(false);
+        }
+    }, [isPageReady]);
 
     const title = "NEWS";
 
@@ -51,7 +59,7 @@ export default function NewsPage() {
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-16">
-                        <h1 className="text-6xl font-bold mb-4 overflow-hidden">
+                        <h1 key={animationKey} className="text-6xl font-bold mb-4 overflow-hidden">
                             {title.split("").map((char, index) => (
                                 <span
                                     key={index}
