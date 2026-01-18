@@ -8,6 +8,7 @@ import { ServiceList } from "@/components/sections/ServiceList";
 import { Blog } from "@/components/sections/Blog";
 import { CompanyRecruit } from "@/components/sections/CompanyRecruit";
 import { Contact } from "@/components/sections/Contact";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

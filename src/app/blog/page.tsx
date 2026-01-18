@@ -1,5 +1,9 @@
+"use client";
+
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const blogPosts = [
     { id: 1, title: "営業チームの熱量を高める3つの方法", date: "2026.01.10", category: "営業術", image: "https://images.unsplash.com/photo-1552581234-26160f608093?w=600&q=80" },
@@ -11,12 +15,23 @@ const blogPosts = [
 ];
 
 export default function BlogPage() {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoaded(true);
+        }, 100);
+        return () => clearTimeout(timer);
+    }, []);
+
+    const title = "BLOG";
+
     return (
         <>
             <Header />
             <main className="overflow-x-hidden">
                 {/* Hero */}
-                <section className="h-[35vh] md:h-[40vh] flex items-center relative">
+                <section className="h-[35vh] md:h-[40vh] flex items-center relative" data-header-theme="dark">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
@@ -27,8 +42,41 @@ export default function BlogPage() {
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
-                        <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4">BLOG</h1>
-                        <p className="text-sm md:text-lg text-gray-300">ブログ</p>
+                        <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4 overflow-hidden">
+                            {title.split("").map((char, index) => (
+                                <span
+                                    key={index}
+                                    className={`inline-block transition-all duration-500 ${
+                                        isLoaded
+                                            ? "opacity-100 translate-x-0"
+                                            : "opacity-0 translate-x-8"
+                                    }`}
+                                    style={{
+                                        transitionDelay: `${(title.length - 1 - index) * 0.08}s`,
+                                    }}
+                                >
+                                    {char}
+                                </span>
+                            ))}
+                        </h1>
+                        <p
+                            className={`text-sm md:text-lg text-gray-300 transition-all duration-700 ${
+                                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                            }`}
+                            style={{ transitionDelay: "0.5s" }}
+                        >
+                            ブログ
+                        </p>
+                    </div>
+                </section>
+
+                {/* Blog List Header */}
+                <section className="py-6 md:py-8 bg-white border-b border-gray-100">
+                    <div className="max-w-[1200px] mx-auto px-6">
+                        <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3">
+                            <span className="w-3 h-3 bg-orange-500 rounded-full"></span>
+                            ブログ一覧
+                        </h2>
                     </div>
                 </section>
 
@@ -63,9 +111,20 @@ export default function BlogPage() {
                                 </Link>
                             ))}
                         </div>
+
+                        {/* もっと見る */}
+                        <div className="mt-12 md:mt-16 text-center">
+                            <button className="inline-flex items-center gap-3 px-8 py-4 border-2 border-gray-300 text-gray-700 font-medium hover:border-orange-500 hover:text-orange-500 transition-colors">
+                                <span>もっと見る</span>
+                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </section>
             </main>
+            <Footer />
         </>
     );
 }

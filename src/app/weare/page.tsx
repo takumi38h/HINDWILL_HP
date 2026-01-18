@@ -12,7 +12,10 @@ function AnimatedText({ text, className = "" }: { text: string; className?: stri
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        setIsLoaded(true);
+        const timer = setTimeout(() => {
+            setIsLoaded(true);
+        }, 100);
+        return () => clearTimeout(timer);
     }, []);
 
     return (
@@ -20,9 +23,9 @@ function AnimatedText({ text, className = "" }: { text: string; className?: stri
             {text.split("").map((char, index) => (
                 <span
                     key={index}
-                    className={`inline-block transition-all duration-500 ease-out ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+                    className={`inline-block transition-all duration-500 ease-out ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
                         }`}
-                    style={{ transitionDelay: `${index * 100}ms` }}
+                    style={{ transitionDelay: `${(text.length - 1 - index) * 0.08}s` }}
                 >
                     {char === " " ? "\u00A0" : char}
                 </span>
@@ -102,7 +105,7 @@ export default function WeArePage() {
             <Header />
             <main className="overflow-x-hidden">
                 {/* Hero */}
-                <section className="h-[35vh] md:h-[40vh] flex items-center relative">
+                <section className="h-[35vh] md:h-[40vh] flex items-center relative" data-header-theme="dark">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
@@ -127,34 +130,56 @@ export default function WeArePage() {
                 </section>
 
                 {/* Mission Section */}
-                <section className="py-16 md:py-32 relative">
+                <section className="py-20 md:py-36 relative">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
                             src="/images/japanese_people/weare_hero.png"
                             alt="Background"
-                            className="w-full h-full object-cover grayscale"
+                            className="w-full h-full object-cover grayscale opacity-40"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-orange-50/90 to-white/90" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/90 to-white" />
                     </div>
-                    <div className="max-w-[1000px] mx-auto px-6 text-center relative z-10">
+                    <div className="max-w-[900px] mx-auto px-6 text-center relative z-10">
                         <AnimatedSection>
-                            <p className="text-xs md:text-sm tracking-[0.2em] text-gray-400 mb-4 md:mb-6">MISSION</p>
-                            <h2 className="text-xl md:text-4xl font-bold mb-4 leading-tight">
+                            {/* Label with decorative lines */}
+                            <div className="flex items-center justify-center gap-4 mb-8 md:mb-10">
+                                <div className="w-12 md:w-20 h-px bg-orange-300" />
+                                <p className="text-xs md:text-sm tracking-[0.3em] text-orange-500 font-medium">MISSION</p>
+                                <div className="w-12 md:w-20 h-px bg-orange-300" />
+                            </div>
+
+                            {/* Main title */}
+                            <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 leading-tight text-gray-900">
                                 Beyond the Technology.
                             </h2>
-                            <p className="text-base md:text-2xl font-bold mb-8 md:mb-12 mt-6 md:mt-8 text-gray-700">
-                                テクノロジーが届かない、最後の1マイルを。
-                            </p>
-                            <div className="mx-auto">
-                                <p className="text-gray-600 leading-[2] text-[14px] md:text-[15px] mb-6">
-                                    効率や正解は、AIに譲ればいい。
-                                    これからの時代、最後に価値を持つのは、人の心を震わせる「熱狂」だ。
+
+                            {/* Subtitle with background accent */}
+                            <div className="inline-block mb-10 md:mb-14">
+                                <p className="text-lg md:text-2xl font-bold text-gray-800 relative">
+                                    <span className="relative z-10">テクノロジーが届かない、最後の1マイルを。</span>
+                                    <span className="absolute bottom-0 left-0 w-full h-2 md:h-3 bg-orange-200/60 -z-0" />
                                 </p>
-                                <p className="text-gray-600 leading-[2] text-[14px] md:text-[15px]">
-                                    我々は、人間だけが持つ熱量（ヒューマン・タッチ）で、
-                                    AIには埋められない「ラストワンマイル」を繋いでいく。
-                                </p>
+                            </div>
+
+                            {/* Description cards */}
+                            <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-[800px] mx-auto">
+                                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-sm border border-gray-100 text-left">
+                                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                                        <span className="text-orange-500 font-bold text-lg">01</span>
+                                    </div>
+                                    <p className="text-gray-700 leading-[1.9] text-sm md:text-base">
+                                        効率や正解は、AIに譲ればいい。これからの時代、最後に価値を持つのは、人の心を震わせる<span className="font-bold text-orange-600">「熱狂」</span>だ。
+                                    </p>
+                                </div>
+                                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-sm border border-gray-100 text-left">
+                                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                                        <span className="text-orange-500 font-bold text-lg">02</span>
+                                    </div>
+                                    <p className="text-gray-700 leading-[1.9] text-sm md:text-base">
+                                        我々は、人間だけが持つ熱量（ヒューマン・タッチ）で、AIには埋められない<span className="font-bold text-orange-600">「ラストワンマイル」</span>を繋いでいく。
+                                    </p>
+                                </div>
                             </div>
                         </AnimatedSection>
                     </div>
@@ -251,7 +276,7 @@ export default function WeArePage() {
                         <AnimatedSection>
                             <a
                                 href="/contact"
-                                className="inline-block border-2 border-orange-500 text-orange-500 px-8 md:px-16 py-4 md:py-5 text-xs md:text-sm tracking-wider hover:bg-orange-500 hover:text-white transition-colors duration-300"
+                                className="inline-block border border-orange-500 text-orange-500 px-5 md:px-16 py-3 md:py-5 text-[11px] md:text-sm tracking-wider hover:bg-orange-500 hover:text-white transition-colors duration-300"
                             >
                                 HINDWILLに問い合わせてみる →
                             </a>

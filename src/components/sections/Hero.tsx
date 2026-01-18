@@ -1,9 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 export function Hero() {
     const [isLoaded, setIsLoaded] = useState(false);
+
+    // Generate particles only once on mount
+    const particles = useMemo(() =>
+        [...Array(30)].map((_, i) => ({
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            delay: `${Math.random() * 5}s`,
+            duration: `${3 + Math.random() * 4}s`,
+            size: `${2 + Math.random() * 4}px`,
+            opacity: 0.1 + Math.random() * 0.3,
+        }))
+    , []);
 
     useEffect(() => {
         // Start animation after mount
@@ -17,59 +29,108 @@ export function Hero() {
     const line2 = "Technology.";
 
     return (
-        <section className="relative h-screen w-full overflow-hidden bg-black">
+        <section className="relative h-screen w-full overflow-hidden bg-black" data-header-theme="dark">
             {/* Background Video */}
             <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover scale-105"
+                style={{ animation: "slowZoom 20s ease-in-out infinite alternate" }}
             >
                 <source src="/videos/hero.mp4" type="video/mp4" />
             </video>
-            {/* Gradient Overlay - warm orange tint */}
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-950/70 via-black/50 to-black/60" />
-            {/* Subtle orange accent at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-orange-400 to-transparent" />
+
+            {/* Dynamic Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-950/80 via-black/60 to-orange-900/40" />
+
+            {/* Animated gradient mesh */}
+            <div
+                className="absolute inset-0 opacity-30"
+                style={{
+                    background: "radial-gradient(ellipse at 20% 80%, rgba(249, 115, 22, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(251, 191, 36, 0.3) 0%, transparent 50%)",
+                    animation: "gradientShift 8s ease-in-out infinite alternate"
+                }}
+            />
+
+            {/* Floating particles */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                {particles.map((particle, i) => (
+                    <div
+                        key={i}
+                        className="absolute rounded-full bg-orange-400"
+                        style={{
+                            left: particle.left,
+                            top: particle.top,
+                            width: particle.size,
+                            height: particle.size,
+                            opacity: particle.opacity,
+                            animation: `floatParticle ${particle.duration} ease-in-out infinite`,
+                            animationDelay: particle.delay,
+                        }}
+                    />
+                ))}
+            </div>
+
+            {/* Accent lines */}
+            <div className="absolute left-0 top-1/4 w-32 md:w-48 h-px bg-gradient-to-r from-orange-500/60 to-transparent"
+                 style={{ animation: "slideIn 1.5s ease-out forwards", animationDelay: "0.8s", opacity: 0, transform: "translateX(-100%)" }} />
+            <div className="absolute left-0 top-1/3 w-20 md:w-32 h-px bg-gradient-to-r from-orange-400/40 to-transparent"
+                 style={{ animation: "slideIn 1.5s ease-out forwards", animationDelay: "1s", opacity: 0, transform: "translateX(-100%)" }} />
+
+            {/* Bottom accent line - animated */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-orange-600 via-orange-400 to-yellow-500"
+                     style={{ animation: "shimmer 3s linear infinite" }} />
+            </div>
 
             {/* Content */}
             <div className="relative z-10 h-full flex flex-col justify-end pb-20 md:pb-28 px-6 md:px-12">
+                {/* Glow effect behind text */}
+                <div
+                    className={`absolute bottom-32 md:bottom-40 left-0 w-[500px] h-[200px] bg-orange-500/20 blur-[100px] rounded-full transition-opacity duration-1000 ${
+                        isLoaded ? "opacity-100" : "opacity-0"
+                    }`}
+                    style={{ transitionDelay: "0.5s" }}
+                />
+
                 {/* Main Heading */}
                 <h1
-                    className="text-white font-medium"
+                    className="text-white font-bold relative"
                     style={{
-                        fontSize: 'clamp(42px, 8vw, 90px)',
-                        lineHeight: '1.1',
+                        fontSize: 'clamp(42px, 8vw, 100px)',
+                        lineHeight: '1.05',
                         letterSpacing: '-0.02em',
+                        textShadow: '0 0 60px rgba(249, 115, 22, 0.3)',
                     }}
                 >
-                    {/* Line 1: I creative */}
+                    {/* Line 1 */}
                     <span className="block overflow-hidden">
                         {line1.split("").map((char, index) => (
                             <span
                                 key={`line1-${index}`}
-                                className={`inline-block transition-all duration-500 ${
-                                    isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"
+                                className={`inline-block transition-all duration-700 ${
+                                    isLoaded ? "opacity-100 translate-y-0 blur-0" : "opacity-0 translate-y-full blur-sm"
                                 }`}
                                 style={{
-                                    transitionDelay: `${0.4 + index * 0.05}s`,
+                                    transitionDelay: `${0.3 + index * 0.04}s`,
                                 }}
                             >
                                 {char === " " ? "\u00A0" : char}
                             </span>
                         ))}
                     </span>
-                    {/* Line 2: to win. */}
+                    {/* Line 2 with accent color */}
                     <span className="block overflow-hidden">
                         {line2.split("").map((char, index) => (
                             <span
                                 key={`line2-${index}`}
-                                className={`inline-block transition-all duration-500 ${
-                                    isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"
-                                }`}
+                                className={`inline-block transition-all duration-700 ${
+                                    isLoaded ? "opacity-100 translate-y-0 blur-0" : "opacity-0 translate-y-full blur-sm"
+                                } ${char === "." ? "text-orange-400" : ""}`}
                                 style={{
-                                    transitionDelay: `${0.4 + (line1.length + index) * 0.05}s`,
+                                    transitionDelay: `${0.3 + (line1.length + index) * 0.04}s`,
                                 }}
                             >
                                 {char === " " ? "\u00A0" : char}
@@ -77,15 +138,24 @@ export function Hero() {
                         ))}
                     </span>
                 </h1>
-                {/* Subtitle - Below main heading */}
-                <p
-                    className={`text-white text-[13px] md:text-[14px] mt-6 tracking-[0.02em] transition-all duration-700 ${
-                        isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                    }`}
-                    style={{ transitionDelay: "1.2s" }}
-                >
-                    テクノロジーが届かない、最後の1マイルを。
-                </p>
+
+                {/* Subtitle with animated underline */}
+                <div className="relative mt-6 md:mt-8">
+                    <p
+                        className={`text-white/90 text-[14px] md:text-[16px] tracking-[0.05em] transition-all duration-700 ${
+                            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                        }`}
+                        style={{ transitionDelay: "1.2s" }}
+                    >
+                        テクノロジーが届かない、最後の1マイルを。
+                    </p>
+                    <div
+                        className={`mt-3 h-0.5 bg-gradient-to-r from-orange-500 to-transparent transition-all duration-1000 ${
+                            isLoaded ? "w-48 md:w-64 opacity-100" : "w-0 opacity-0"
+                        }`}
+                        style={{ transitionDelay: "1.4s" }}
+                    />
+                </div>
             </div>
 
             {/* Social Icons - Right Side */}

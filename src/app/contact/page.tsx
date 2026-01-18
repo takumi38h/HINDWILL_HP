@@ -22,7 +22,7 @@ export default function ContactPage() {
             <Header />
             <main className="overflow-x-hidden">
                 {/* Hero */}
-                <section className="h-[60vh] relative flex items-center justify-center">
+                <section className="h-[60vh] relative flex items-center justify-center" data-header-theme="dark">
                     <img
                         src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=80"
                         alt=""

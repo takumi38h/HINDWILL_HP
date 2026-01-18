@@ -7,7 +7,7 @@ export default function PrivacyPage() {
             <Header />
             <main className="overflow-x-hidden">
                 {/* Hero */}
-                <section className="h-[35vh] md:h-[40vh] flex items-center relative">
+                <section className="h-[35vh] md:h-[40vh] flex items-center relative" data-header-theme="dark">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img

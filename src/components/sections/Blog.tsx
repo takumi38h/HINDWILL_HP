@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState, useRef } from "react";
 
 const blogPosts = [
     { id: 1, title: "営業チームの熱量を高める3つの方法", date: "2026.01.10", category: "営業術", image: "https://images.unsplash.com/photo-1552581234-26160f608093?w=600&q=80" },
@@ -7,58 +10,127 @@ const blogPosts = [
 ];
 
 export function Blog() {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.2 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section className="py-16 md:py-24 bg-gradient-to-b from-orange-50 to-white">
-            <div className="max-w-[1200px] mx-auto px-6">
+        <section ref={sectionRef} className="relative py-20 md:py-28 overflow-hidden">
+            {/* Background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-orange-50/80 via-white to-white" />
+
+            {/* Decorative element */}
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-orange-100/50 to-transparent" />
+
+            <div className="relative max-w-[1200px] mx-auto px-6">
                 {/* Header - Title on left, Link on right */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-12">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-14">
                     {/* Left: Title */}
-                    <div className="flex items-baseline gap-4">
-                        <h2 className="text-[24px] md:text-[36px] font-bold">
-                            BLOG
-                        </h2>
-                        <span className="text-[12px] text-gray-400 tracking-[0.1em]">ブログ</span>
+                    <div
+                        className={`transition-all duration-700 ${
+                            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                        }`}
+                    >
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="w-8 h-0.5 bg-gradient-to-r from-orange-500 to-orange-300" />
+                            <span className="text-[11px] text-orange-500 tracking-[0.2em] font-medium">INSIGHTS</span>
+                        </div>
+                        <div className="flex items-baseline gap-4">
+                            <h2 className="text-[28px] md:text-[40px] font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                                BLOG
+                            </h2>
+                            <span className="text-[12px] text-gray-400 tracking-[0.1em]">ブログ</span>
+                        </div>
                     </div>
 
-                    {/* Right: View All Link - same style as WE ARE? */}
-                    <Link
-                        href="/blog"
-                        className="inline-flex items-center gap-4 px-6 md:px-8 py-3 border-2 border-orange-500 text-orange-500 text-[13px] font-medium tracking-wide hover:bg-orange-500 hover:text-white transition-all duration-300 group self-start md:self-auto"
+                    {/* Right: View All Link */}
+                    <div
+                        className={`transition-all duration-700 ${
+                            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                        }`}
+                        style={{ transitionDelay: "0.2s" }}
                     >
-                        <span>ブログ一覧</span>
-                        <span className="animate-arrowMove text-lg">→</span>
-                    </Link>
+                        <Link
+                            href="/blog"
+                            className="relative inline-flex items-center gap-4 px-8 py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-[13px] font-bold tracking-wide hover:from-orange-600 hover:to-orange-700 transition-all duration-300 group overflow-hidden shadow-lg shadow-orange-500/25"
+                        >
+                            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500" />
+                            <span className="relative">ブログ一覧</span>
+                            <svg
+                                className="relative w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2.5"
+                            >
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Blog Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {blogPosts.map((post) => (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {blogPosts.map((post, index) => (
                         <Link
                             key={post.id}
                             href={`/blog/${post.id}`}
-                            className="bg-white group block"
+                            className={`bg-white group block rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ${
+                                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                            }`}
+                            style={{ transitionDelay: `${0.3 + index * 0.15}s` }}
                         >
                             {/* Image */}
-                            <div className="aspect-[4/3] bg-gray-300 relative overflow-hidden">
+                            <div className="aspect-[4/3] bg-gradient-to-br from-orange-100 to-amber-50 relative overflow-hidden">
                                 <img
                                     src={post.image}
                                     alt={post.title}
-                                    className="absolute inset-0 w-full h-full object-cover"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
-                            </div>
-
-                            {/* Content */}
-                            <div className="p-5">
-                                <div className="flex items-center gap-3 mb-3">
-                                    <span className="text-[12px] text-gray-500">{post.date}</span>
-                                    <span className="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600">
+                                {/* Overlay on hover */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                {/* Category badge on hover */}
+                                <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                    <span className="px-3 py-1.5 bg-white/90 backdrop-blur-sm text-orange-600 text-[11px] font-bold">
                                         {post.category}
                                     </span>
                                 </div>
-                                <h3 className="text-[14px] font-medium group-hover:opacity-70 transition-opacity">
+                            </div>
+
+                            {/* Content */}
+                            <div className="p-6">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <span className="text-[12px] text-gray-400">{post.date}</span>
+                                    <span className="text-[10px] px-2 py-0.5 bg-orange-50 text-orange-500 font-medium">
+                                        {post.category}
+                                    </span>
+                                </div>
+                                <h3 className="text-[15px] font-bold text-gray-800 group-hover:text-orange-600 transition-colors duration-300 leading-relaxed">
                                     {post.title}
                                 </h3>
+                                {/* Read more indicator */}
+                                <div className="mt-4 flex items-center gap-2 text-orange-500 text-[12px] font-medium opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300">
+                                    <span>READ MORE</span>
+                                    <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </div>
                             </div>
                         </Link>
                     ))}

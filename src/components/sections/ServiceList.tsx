@@ -108,16 +108,23 @@ export function ServiceList() {
     const translateX = currentIndex * (cardWidth + gap);
 
     return (
-        <section ref={sectionRef} className="py-16 md:py-24 bg-white">
+        <section ref={sectionRef} className="relative py-20 md:py-28 overflow-hidden">
+            {/* Background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-orange-50/30 to-white" />
+
+            {/* Decorative elements */}
+            <div className="absolute top-20 right-0 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-20 left-0 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl" />
+
             {/* Container with left margin area and slider */}
-            <div className="flex">
+            <div className="relative flex">
                 {/* Left margin area - fixed, cards won't enter here */}
                 <div
-                    className="shrink-0 flex items-start justify-center pt-2"
+                    className="shrink-0 flex flex-col items-center justify-start pt-2 gap-8"
                     style={{ width: `${leftOffset}px` }}
                 >
                     <h2
-                        className={`text-[14px] md:text-[16px] lg:text-[18px] font-bold tracking-[0.3em] text-black transition-all duration-1000 ease-out ${
+                        className={`text-[14px] md:text-[16px] lg:text-[18px] font-bold tracking-[0.3em] text-gray-900 transition-all duration-1000 ease-out ${
                             isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "opacity-0 translate-y-8"
@@ -126,7 +133,27 @@ export function ServiceList() {
                     >
                         SERVICE LIST
                     </h2>
+
+                    {/* Progress indicators */}
+                    <div
+                        className={`hidden md:flex flex-col gap-2 transition-all duration-1000 ${
+                            isVisible ? "opacity-100" : "opacity-0"
+                        }`}
+                        style={{ transitionDelay: "1.2s" }}
+                    >
+                        {services.map((_, i) => (
+                            <div
+                                key={i}
+                                className={`w-1.5 h-8 rounded-full transition-all duration-300 ${
+                                    (currentIndex % services.length) === i
+                                        ? "bg-gradient-to-b from-orange-500 to-orange-400 scale-y-110"
+                                        : "bg-gray-200"
+                                }`}
+                            />
+                        ))}
+                    </div>
                 </div>
+
                 {/* Slider Container - overflow hidden so cards clip here */}
                 <div
                     className={`flex-1 overflow-hidden transition-all duration-1000 ease-out ${
@@ -134,14 +161,14 @@ export function ServiceList() {
                             ? "opacity-100 translate-x-0"
                             : "opacity-0 translate-x-24"
                     }`}
-                    style={{ transitionDelay: '1s' }}
+                    style={{ transitionDelay: '0.8s' }}
                 >
                     {/* Slider Track */}
                     <div
                         className="flex"
                         style={{
                             transform: `translateX(-${translateX}px)`,
-                            transition: isTransitioning ? "transform 0.5s ease-out" : "none",
+                            transition: isTransitioning ? "transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)" : "none",
                         }}
                     >
                     {duplicatedServices.map((service, index) => (
@@ -151,34 +178,38 @@ export function ServiceList() {
                             className="shrink-0 mr-6 group"
                             style={{ width: cardWidth }}
                         >
-                            {/* Image */}
-                            <div className="relative aspect-[4/3] bg-white overflow-hidden mb-6">
+                            {/* Image with hover glow */}
+                            <div className="relative aspect-[4/3] bg-gradient-to-br from-orange-100 to-amber-50 overflow-hidden mb-6 rounded-sm">
+                                {/* Hover glow effect */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 to-orange-500/0 group-hover:from-orange-400/10 group-hover:to-orange-500/20 transition-all duration-500 z-10" />
                                 <img
                                     src={service.image}
                                     alt={service.title}
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[0.85]"
+                                    className="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                                 />
+                                {/* Bottom gradient */}
+                                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </div>
 
                             {/* Content - letter overlaps image bottom */}
                             <div className="flex items-start justify-between -mt-12 relative z-10">
                                 <div className="flex-1">
                                     <div className="flex items-baseline mb-4">
-                                        <span className="text-5xl md:text-6xl font-bold leading-none tracking-tight">
+                                        <span className="text-5xl md:text-6xl font-bold leading-none tracking-tight bg-gradient-to-br from-orange-600 to-orange-500 bg-clip-text text-transparent group-hover:from-orange-500 group-hover:to-amber-500 transition-all duration-300">
                                             {service.title.charAt(0)}
                                         </span>
-                                        <span className="text-lg md:text-xl font-bold tracking-wide ml-1">
+                                        <span className="text-lg md:text-xl font-bold tracking-wide ml-1 text-gray-800">
                                             {service.title.slice(1)}
                                         </span>
                                     </div>
-                                    <p className="text-[13px] text-gray-600 leading-relaxed pr-4">
+                                    <p className="text-[13px] text-gray-600 leading-relaxed pr-4 group-hover:text-gray-800 transition-colors duration-300">
                                         {service.description}
                                     </p>
                                 </div>
-                                {/* Arrow */}
-                                <div className="mt-2">
+                                {/* Arrow with hover animation */}
+                                <div className="mt-2 p-2 rounded-full bg-transparent group-hover:bg-orange-100 transition-all duration-300">
                                     <svg
-                                        className="w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-300"
+                                        className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transform group-hover:translate-x-1 transition-all duration-300"
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         stroke="currentColor"

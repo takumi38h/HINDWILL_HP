@@ -8,7 +8,7 @@ export default function CompanyPage() {
             <Header />
             <main className="overflow-x-hidden">
                 {/* Hero */}
-                <section className="h-[35vh] md:h-[40vh] flex items-center relative">
+                <section className="h-[35vh] md:h-[40vh] flex items-center relative" data-header-theme="dark">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
@@ -107,7 +107,7 @@ export default function CompanyPage() {
                     <div className="max-w-[800px] mx-auto px-6 text-center">
                         <Link
                             href="/contact"
-                            className="inline-block border-2 border-orange-500 text-orange-500 px-8 md:px-16 py-4 md:py-5 text-xs md:text-sm tracking-wider hover:bg-orange-500 hover:text-white transition-colors duration-300"
+                            className="inline-block border border-orange-500 text-orange-500 px-5 md:px-16 py-3 md:py-5 text-[11px] md:text-sm tracking-wider hover:bg-orange-500 hover:text-white transition-colors duration-300"
                         >
                             HINDWILLに問い合わせてみる →
                         </Link>

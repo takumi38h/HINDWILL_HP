@@ -64,7 +64,7 @@ export function Mission() {
                     className={`absolute bottom-0 right-0 text-[12vw] md:text-[10vw] font-bold text-orange-200 whitespace-nowrap tracking-tighter leading-none select-none pointer-events-none transition-all duration-1000 ease-out ${isVisible ? 'translate-x-[15%] translate-y-1/2 opacity-100' : 'translate-x-full translate-y-1/2 opacity-0'
                         }`}
                 >
-                    The feature
+                    Be the Hero
                 </span>
             </div>
         </section>

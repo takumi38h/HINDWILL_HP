@@ -36,8 +36,66 @@ export function Header() {
                 header.style.pointerEvents = originalPointerEvents;
 
                 if (elementBehind) {
-                    // Get computed background color
+                    // Method 1: Use closest() to find ancestor with data-header-theme
+                    const themedElement = elementBehind.closest('[data-header-theme]');
+                    if (themedElement) {
+                        const theme = themedElement.getAttribute('data-header-theme');
+                        setIsOverDark(theme === 'dark');
+                        return;
+                    }
+
+                    // Method 2: Check if inside a section with dark background image/video
+                    const section = elementBehind.closest('section');
+                    if (section) {
+                        // Check for video
+                        if (section.querySelector('video')) {
+                            setIsOverDark(true);
+                            return;
+                        }
+                        // Check for dark overlay divs (common pattern)
+                        const overlay = section.querySelector('[class*="bg-gradient"]') ||
+                                        section.querySelector('[class*="bg-black"]') ||
+                                        section.querySelector('[class*="bg-orange-950"]');
+                        if (overlay && section.querySelector('img')) {
+                            setIsOverDark(true);
+                            return;
+                        }
+                    }
+
+                    // Method 3: Check computed styles going up the tree
                     let el: Element | null = elementBehind;
+                    while (el && el !== document.body) {
+                        const style = window.getComputedStyle(el);
+                        const bg = style.backgroundColor;
+
+                        // Check for backgrounds
+                        if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
+                            const match = bg.match(/\d+/g);
+                            if (match) {
+                                const [r, g, b] = match.map(Number);
+
+                                // Check for orange backgrounds (use black text)
+                                // Orange typically has high R, medium G, low B
+                                if (r > 180 && g > 80 && g < 180 && b < 100) {
+                                    setIsOverDark(false);
+                                    return;
+                                }
+
+                                const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+                                if (luminance < 128) {
+                                    setIsOverDark(true);
+                                    return;
+                                } else if (luminance > 200) {
+                                    setIsOverDark(false);
+                                    return;
+                                }
+                            }
+                        }
+                        el = el.parentElement;
+                    }
+
+                    // Fallback: Get computed background color
+                    el = elementBehind;
                     let bgColor = 'rgb(255, 255, 255)';
 
                     while (el) {
@@ -205,17 +263,11 @@ export function Header() {
                             <Link
                                 href="/contact"
                                 onClick={() => setMenuOpen(false)}
-                                className="relative flex items-center gap-4 px-10 py-8 text-white overflow-hidden group"
+                                className="flex items-center gap-2 px-4 py-3 md:px-10 md:py-6 bg-white text-black border border-black hover:bg-black hover:text-white transition-colors duration-300 group"
                             >
-                                <img
-                                    src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80"
-                                    alt="お問い合わせ"
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-300" />
-                                <Mail className="w-5 h-5 relative z-10" />
-                                <span className="relative z-10 text-base font-bold tracking-wider">お問い合わせはこちら</span>
-                                <span className="relative z-10 ml-auto text-xl">→</span>
+                                <Mail className="w-3.5 h-3.5 md:w-5 md:h-5" />
+                                <span className="text-xs md:text-base font-bold tracking-wider">お問い合わせはこちら</span>
+                                <span className="ml-auto text-sm md:text-xl group-hover:translate-x-1 transition-transform">→</span>
                             </Link>
                         </div>
                     </div>
