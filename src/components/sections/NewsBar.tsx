@@ -4,14 +4,14 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const newsItems = [
-    { date: "2026.01.10", title: "新規プロジェクト始動！クリエイティブの力で世界を変える" },
+    { date: "2026.01.10", title: "営業研修プログラムをリニューアルしました" },
     { date: "2026.01.05", title: "2026年も宜しくお願いします。" },
     { date: "2025.12.20", title: "年末年始休業のお知らせ（12/28〜1/4）" },
-    { date: "2025.11.15", title: "新しいメンバーが加わりました！チーム拡大中" },
-    { date: "2025.10.01", title: "オフィス移転のお知らせ" },
+    { date: "2025.11.15", title: "営業コンサルティング実績100社突破" },
+    { date: "2025.10.01", title: "新サービス「営業伴走支援」を開始しました" },
     { date: "2025.09.10", title: "WEBサイトをリニューアルしました" },
     { date: "2025.08.20", title: "夏季休業のお知らせ（8/13〜8/16）" },
-    { date: "2025.07.01", title: "新サービス「クリエイティブコンサル」開始" },
+    { date: "2025.07.01", title: "セールスコンサルティング事業を本格始動" },
 ];
 
 export function NewsBar() {
@@ -34,10 +34,10 @@ export function NewsBar() {
     const currentNews = newsItems[currentIndex];
 
     return (
-        <section className="border-t border-b border-black">
+        <section className="border-t border-b border-orange-200">
             <div className="flex">
                 {/* Left: NEWS Label */}
-                <div className="bg-black text-white px-3 py-2 md:px-6 md:py-4 flex items-center gap-2 md:gap-4 shrink-0">
+                <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-3 py-2 md:px-6 md:py-4 flex items-center gap-2 md:gap-4 shrink-0">
                     <span className="text-[11px] md:text-[13px] font-bold tracking-[0.05em]">NEWS</span>
                     <span className="text-[9px] md:text-[11px] text-gray-400">お知らせ</span>
                     <Link

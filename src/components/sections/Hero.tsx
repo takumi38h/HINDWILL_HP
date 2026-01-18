@@ -28,8 +28,10 @@ export function Hero() {
             >
                 <source src="/videos/hero.mp4" type="video/mp4" />
             </video>
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/50" />
+            {/* Gradient Overlay - warm orange tint */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-950/70 via-black/50 to-black/60" />
+            {/* Subtle orange accent at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-orange-400 to-transparent" />
 
             {/* Content */}
             <div className="relative z-10 h-full flex flex-col justify-end pb-20 md:pb-28 px-6 md:px-12">
@@ -96,7 +98,7 @@ export function Hero() {
                 {/* Facebook */}
                 <a
                     href="#"
-                    className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+                    className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-orange-400 transition-colors"
                     aria-label="Facebook"
                 >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -106,7 +108,7 @@ export function Hero() {
                 {/* X (Twitter) */}
                 <a
                     href="#"
-                    className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+                    className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-orange-400 transition-colors"
                     aria-label="X"
                 >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -116,7 +118,7 @@ export function Hero() {
                 {/* Instagram */}
                 <a
                     href="#"
-                    className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+                    className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-orange-400 transition-colors"
                     aria-label="Instagram"
                 >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -139,7 +141,7 @@ export function Hero() {
                     SCROLL
                 </span>
                 <div className="w-[1px] h-10 bg-white/30 relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-full bg-white animate-scrollFill" />
+                    <div className="absolute top-0 left-0 w-full h-full bg-orange-400 animate-scrollFill" />
                 </div>
             </div>
         </section>

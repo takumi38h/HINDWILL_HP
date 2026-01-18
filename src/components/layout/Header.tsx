@@ -144,7 +144,7 @@ export function Header() {
                         playsInline
                         className="absolute inset-0 w-full h-full object-cover"
                     >
-                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                        <source src="/videos/hero.mp4" type="video/mp4" />
                     </video>
                     <div className="absolute inset-0 bg-black/30" />
                     {/* Simple large wave divider */}
@@ -208,8 +208,8 @@ export function Header() {
                                 className="relative flex items-center gap-4 px-10 py-8 text-white overflow-hidden group"
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&q=80"
-                                    alt=""
+                                    src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80"
+                                    alt="お問い合わせ"
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-300" />

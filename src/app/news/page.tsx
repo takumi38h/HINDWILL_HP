@@ -2,14 +2,14 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 const newsItems = [
-    { date: "2026.01.10", title: "新規プロジェクト始動！クリエイティブの力で世界を変える" },
+    { date: "2026.01.10", title: "営業研修プログラムをリニューアルしました" },
     { date: "2026.01.05", title: "2026年も宜しくお願いします。" },
     { date: "2025.12.20", title: "年末年始休業のお知らせ（12/28〜1/4）" },
-    { date: "2025.11.15", title: "新しいメンバーが加わりました！チーム拡大中" },
-    { date: "2025.10.01", title: "オフィス移転のお知らせ" },
+    { date: "2025.11.15", title: "営業コンサルティング実績100社突破" },
+    { date: "2025.10.01", title: "新サービス「営業伴走支援」を開始しました" },
     { date: "2025.09.10", title: "WEBサイトをリニューアルしました" },
     { date: "2025.08.20", title: "夏季休業のお知らせ（8/13〜8/16）" },
-    { date: "2025.07.01", title: "新サービス「クリエイティブコンサル」開始" },
+    { date: "2025.07.01", title: "セールスコンサルティング事業を本格始動" },
 ];
 
 export default function NewsPage() {
@@ -30,11 +30,11 @@ export default function NewsPage() {
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
-                            src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1600&q=80"
-                            alt="スイスの絶景"
+                            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600&q=80"
+                            alt="ビジネスニュース"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-16">
                         <h1 className="text-6xl font-bold mb-4">NEWS</h1>
@@ -59,7 +59,7 @@ export default function NewsPage() {
                 </section>
 
                 {/* 最新お知らせ */}
-                <section className="py-8 md:py-20 bg-[#f8f8f8]">
+                <section className="py-8 md:py-20 bg-gradient-to-b from-orange-50 to-white">
                     <div className="max-w-[800px] mx-auto px-4 md:px-6">
                         <h2 className="text-lg md:text-3xl font-bold mb-4 md:mb-10">最新お知らせ</h2>
                         {newsItems.slice(0, 3).map((news, index) => (

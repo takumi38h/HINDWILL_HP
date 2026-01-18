@@ -36,11 +36,11 @@ export default function FAQPage() {
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
-                            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80"
-                            alt="FAQ"
+                            src="https://images.unsplash.com/photo-1552581234-26160f608093?w=1600&q=80"
+                            alt="ビジネスミーティング"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
                         <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4">FAQ</h1>

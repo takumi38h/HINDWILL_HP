@@ -16,7 +16,7 @@ export default function RecruitPage() {
                             alt="絶景"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
                         <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4">RECRUIT</h1>
@@ -40,7 +40,7 @@ export default function RecruitPage() {
                 </section>
 
                 {/* Vision */}
-                <section className="py-12 md:py-20 bg-[#F5F5F5]">
+                <section className="py-12 md:py-20 bg-gradient-to-b from-orange-50 to-white">
                     <div className="max-w-[800px] mx-auto px-6">
                         <div className="bg-white p-6 md:p-10">
                             <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">私たちが目指すこと</h3>

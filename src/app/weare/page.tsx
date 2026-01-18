@@ -110,7 +110,7 @@ export default function WeArePage() {
                             alt="Hero image"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white px-6 md:px-16 relative z-10">
                         <p className="text-xs md:text-sm tracking-[0.3em] text-gray-300 mb-2 md:mb-4">何者？</p>
@@ -135,7 +135,7 @@ export default function WeArePage() {
                             alt="Background"
                             className="w-full h-full object-cover grayscale"
                         />
-                        <div className="absolute inset-0 bg-white/80" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-orange-50/90 to-white/90" />
                     </div>
                     <div className="max-w-[1000px] mx-auto px-6 text-center relative z-10">
                         <AnimatedSection>
@@ -163,7 +163,7 @@ export default function WeArePage() {
                 {/* Vision Section */}
                 <section className="bg-white relative">
                     {/* Vision + BE THE HERO */}
-                    <div className="bg-gray-100 py-6 md:py-12">
+                    <div className="bg-gradient-to-r from-orange-100 to-orange-50 py-6 md:py-12">
                         <AnimatedSection>
                             <div className="px-6 md:px-16">
                                 <p className="text-base md:text-2xl tracking-[0.2em] text-gray-800 mb-2 font-bold">VISION</p>

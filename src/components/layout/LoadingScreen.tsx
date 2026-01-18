@@ -34,10 +34,24 @@ export function LoadingScreen() {
             {/* Center Logo */}
             <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isAnimating ? 'opacity-100' : 'opacity-0'}`}>
                 <div className="flex items-center gap-3">
-                    <svg className="w-12 h-12 text-black animate-pulse" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12c0 3.69 2.47 6.86 6 8.25V22h8v-1.75c3.53-1.39 6-4.56 6-8.25 0-5.52-4.48-10-10-10zm-2 15c-.83 0-1.5-.67-1.5-1.5S9.17 14 10 14s1.5.67 1.5 1.5S10.83 17 10 17zm4 0c-.83 0-1.5-.67-1.5-1.5S13.17 14 14 14s1.5.67 1.5 1.5S14.83 17 14 17zm-2-5c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                    {/* 炎アイコン - 熱狂を表現 */}
+                    <svg className="w-10 h-10 animate-pulse" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M12 2C8.5 6 6 9.5 6 13C6 17.4 8.7 20 12 20C15.3 20 18 17.4 18 13C18 9.5 15.5 6 12 2Z"
+                            fill="url(#flame-gradient)"
+                        />
+                        <path
+                            d="M12 8C10.5 10 9.5 11.5 9.5 13.5C9.5 15.4 10.6 17 12 17C13.4 17 14.5 15.4 14.5 13.5C14.5 11.5 13.5 10 12 8Z"
+                            fill="#FBBF24"
+                        />
+                        <defs>
+                            <linearGradient id="flame-gradient" x1="12" y1="2" x2="12" y2="20" gradientUnits="userSpaceOnUse">
+                                <stop stopColor="#F97316"/>
+                                <stop offset="1" stopColor="#EA580C"/>
+                            </linearGradient>
+                        </defs>
                     </svg>
-                    <span className="text-3xl font-bold tracking-[0.15em] text-black">HINDWILL</span>
+                    <span className="text-3xl font-bold tracking-[0.15em] text-orange-950">HINDWILL</span>
                 </div>
             </div>
         </div>

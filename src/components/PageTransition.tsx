@@ -37,71 +37,52 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
                     isLoading ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                 }`}
             >
-                {/* Ship Illustration */}
+                {/* 炎アイコン - 熱狂を表現 */}
                 <div className="relative mb-8">
                     <svg
-                        width="120"
+                        width="80"
                         height="100"
-                        viewBox="0 0 120 100"
+                        viewBox="0 0 24 30"
                         fill="none"
-                        className="animate-bounce"
-                        style={{ animationDuration: "2s" }}
+                        className="animate-pulse"
+                        style={{ animationDuration: "1.5s" }}
                     >
-                        {/* 船体 */}
+                        {/* 外側の炎 */}
                         <path
-                            d="M10 70 Q20 85 60 85 Q100 85 110 70 L100 70 Q90 75 60 75 Q30 75 20 70 Z"
-                            fill="#2D2D2D"
+                            d="M12 2C7 8 4 13 4 18C4 24 7.5 28 12 28C16.5 28 20 24 20 18C20 13 17 8 12 2Z"
+                            fill="url(#flame-main)"
                         />
-                        {/* 船のデッキ */}
-                        <rect x="25" y="55" width="70" height="15" rx="2" fill="#4A4A4A" />
-                        {/* マスト */}
-                        <rect x="58" y="15" width="4" height="55" fill="#5C4033" />
-                        {/* 帆 */}
+                        {/* 内側の炎 */}
                         <path
-                            d="M62 20 L62 55 L95 45 Z"
-                            fill="#F5F5F5"
-                            stroke="#DDDDDD"
-                            strokeWidth="1"
+                            d="M12 10C9.5 14 8 16.5 8 19C8 22 9.5 24 12 24C14.5 24 16 22 16 19C16 16.5 14.5 14 12 10Z"
+                            fill="url(#flame-inner)"
                         />
+                        {/* 中心の明るい部分 */}
                         <path
-                            d="M58 20 L58 55 L25 45 Z"
-                            fill="#F5F5F5"
-                            stroke="#DDDDDD"
-                            strokeWidth="1"
+                            d="M12 16C11 18 10.5 19 10.5 20.5C10.5 22 11 23 12 23C13 23 13.5 22 13.5 20.5C13.5 19 13 18 12 16Z"
+                            fill="#FEF3C7"
                         />
-                        {/* 旗 */}
-                        <path
-                            d="M58 10 L58 20 L45 15 Z"
-                            fill="#E53E3E"
-                        />
-                        {/* ドクロマーク（海賊風） */}
-                        <circle cx="60" cy="40" r="6" fill="#2D2D2D" />
-                        <circle cx="57" cy="38" r="1.5" fill="white" />
-                        <circle cx="63" cy="38" r="1.5" fill="white" />
-                        <path d="M57 43 L63 43" stroke="white" strokeWidth="1" />
+                        <defs>
+                            <linearGradient id="flame-main" x1="12" y1="2" x2="12" y2="28" gradientUnits="userSpaceOnUse">
+                                <stop stopColor="#F97316"/>
+                                <stop offset="0.5" stopColor="#EA580C"/>
+                                <stop offset="1" stopColor="#C2410C"/>
+                            </linearGradient>
+                            <linearGradient id="flame-inner" x1="12" y1="10" x2="12" y2="24" gradientUnits="userSpaceOnUse">
+                                <stop stopColor="#FBBF24"/>
+                                <stop offset="1" stopColor="#F59E0B"/>
+                            </linearGradient>
+                        </defs>
                     </svg>
-
-                    {/* 波のアニメーション */}
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-32">
-                        <svg viewBox="0 0 120 20" className="w-full">
-                            <path
-                                d="M0 10 Q15 0 30 10 Q45 20 60 10 Q75 0 90 10 Q105 20 120 10"
-                                fill="none"
-                                stroke="#60A5FA"
-                                strokeWidth="2"
-                                className="animate-pulse"
-                            />
-                        </svg>
-                    </div>
                 </div>
 
                 {/* Loading Text */}
                 <div className="flex items-center gap-1">
-                    <span className="text-sm text-gray-500 tracking-widest">LOADING</span>
+                    <span className="text-sm text-orange-600 tracking-widest font-medium">LOADING</span>
                     <span className="flex gap-1">
-                        <span className="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }}></span>
-                        <span className="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }}></span>
-                        <span className="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }}></span>
+                        <span className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }}></span>
+                        <span className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }}></span>
+                        <span className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }}></span>
                     </span>
                 </div>
             </div>

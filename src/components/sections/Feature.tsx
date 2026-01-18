@@ -30,7 +30,7 @@ export function Feature() {
                     {/* Left: Text */}
                     <div className="flex-1">
                         <h2 className="text-[36px] md:text-[56px] lg:text-[64px] font-bold leading-[1.4] mb-8">
-                            {["つ", "く", "る", "。"].map((char, i) => (
+                            {["届", "け", "る", "。"].map((char, i) => (
                                 <span
                                     key={`line1-${i}`}
                                     className={`inline-block transition-all duration-500 ease-out ${
@@ -44,7 +44,7 @@ export function Feature() {
                                 </span>
                             ))}
                             <br />
-                            {["う", "る", "。"].map((char, i) => (
+                            {["響", "か", "せ", "る", "。"].map((char, i) => (
                                 <span
                                     key={`line2-${i}`}
                                     className={`inline-block transition-all duration-500 ease-out ${
@@ -58,7 +58,7 @@ export function Feature() {
                                 </span>
                             ))}
                             <br />
-                            {["心", "を", "う", "ご", "か", "す", "。"].map((char, i) => (
+                            {["熱", "狂", "を", "生", "む", "。"].map((char, i) => (
                                 <span
                                     key={`line3-${i}`}
                                     className={`inline-block transition-all duration-500 ease-out ${
@@ -66,7 +66,7 @@ export function Feature() {
                                             ? "opacity-100 translate-x-0"
                                             : "opacity-0 -translate-x-4"
                                     }`}
-                                    style={{ transitionDelay: `${(i + 7) * 0.15}s` }}
+                                    style={{ transitionDelay: `${(i + 9) * 0.15}s` }}
                                 >
                                     {char}
                                 </span>
@@ -80,9 +80,9 @@ export function Feature() {
                             }`}
                             style={{ transitionDelay: '2.2s' }}
                         >
-                            クリエイティブの力でコンバージョンを。<br />
-                            エンターテイメントの力で笑顔を。<br />
-                            ビジネス成長のための『宝物』見つけます。
+                            AIには届かない、最後の1マイルを繋ぐ。<br />
+                            人間だけが持つ熱量で、心を動かす。<br />
+                            あなたのビジネスに『熱狂』を届けます。
                         </p>
                     </div>
 
@@ -129,28 +129,28 @@ export function Feature() {
                                 </svg>
 
                                 {/* Labels - rotate with star */}
-                                {/* Top-Right - STRATEGY/戦略 */}
+                                {/* Top-Right - PASSION/熱狂 */}
                                 <div className="absolute top-[18%] right-[18%] text-center">
-                                    <span className="block text-[9px] md:text-[13px] text-gray-400 tracking-[0.1em]">STRATEGY</span>
-                                    <span className="block text-[16px] md:text-[24px] font-bold">戦略</span>
+                                    <span className="block text-[9px] md:text-[13px] text-gray-400 tracking-[0.1em]">PASSION</span>
+                                    <span className="block text-[16px] md:text-[24px] font-bold">熱狂</span>
                                 </div>
 
-                                {/* Bottom-Right - ENTERTAINMENT/ワクワク */}
+                                {/* Bottom-Right - HUMAN TOUCH/人間力 */}
                                 <div className="absolute bottom-[18%] right-[8%] md:right-[12%] text-center">
-                                    <span className="block text-[8px] md:text-[13px] text-gray-400 tracking-[0.1em]">ENTERTAINMENT</span>
-                                    <span className="block text-[14px] md:text-[24px] font-bold">ワクワク</span>
+                                    <span className="block text-[8px] md:text-[13px] text-gray-400 tracking-[0.1em]">HUMAN TOUCH</span>
+                                    <span className="block text-[14px] md:text-[24px] font-bold">人間力</span>
                                 </div>
 
-                                {/* Bottom-Left - TECHNOLOGY/技術 */}
+                                {/* Bottom-Left - RESULTS/成果 */}
                                 <div className="absolute bottom-[18%] left-[14%] md:left-[18%] text-center">
-                                    <span className="block text-[9px] md:text-[13px] text-gray-400 tracking-[0.1em]">TECHNOLOGY</span>
-                                    <span className="block text-[16px] md:text-[24px] font-bold">技術</span>
+                                    <span className="block text-[9px] md:text-[13px] text-gray-400 tracking-[0.1em]">RESULTS</span>
+                                    <span className="block text-[16px] md:text-[24px] font-bold">成果</span>
                                 </div>
 
-                                {/* Top-Left - DESIGN/デザイン */}
+                                {/* Top-Left - TRUST/信頼 */}
                                 <div className="absolute top-[18%] left-[18%] text-center">
-                                    <span className="block text-[9px] md:text-[13px] text-gray-400 tracking-[0.1em]">DESIGN</span>
-                                    <span className="block text-[16px] md:text-[24px] font-bold">デザイン</span>
+                                    <span className="block text-[9px] md:text-[13px] text-gray-400 tracking-[0.1em]">TRUST</span>
+                                    <span className="block text-[16px] md:text-[24px] font-bold">信頼</span>
                                 </div>
                             </div>
 

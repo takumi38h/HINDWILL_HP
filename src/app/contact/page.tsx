@@ -24,11 +24,11 @@ export default function ContactPage() {
                 {/* Hero */}
                 <section className="h-[60vh] relative flex items-center justify-center">
                     <img
-                        src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1600&q=80"
+                        src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=80"
                         alt=""
                         className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/50" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     <div className="text-center text-white relative z-10">
                         <h1 className="text-4xl md:text-6xl font-bold mb-4">CONTACT</h1>
                         <p className="text-lg text-gray-300">お問い合わせ</p>

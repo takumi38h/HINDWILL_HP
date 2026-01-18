@@ -27,7 +27,7 @@ export function Mission() {
     }, []);
 
     return (
-        <section className="py-20 md:py-28 bg-white overflow-x-hidden">
+        <section className="py-20 md:py-28 bg-gradient-to-b from-white to-orange-50 overflow-x-hidden">
             <div className="max-w-[900px] mx-auto px-6 text-center">
                 {/* Main Copy */}
                 <h2 className="text-[22px] md:text-[32px] lg:text-[38px] font-bold leading-[1.6] mb-10">
@@ -55,13 +55,13 @@ export function Mission() {
                             alt="Creative digital"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
-                        {/* Dark Overlay */}
-                        <div className="absolute inset-0 bg-black/30" />
+                        {/* Warm Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/40 to-black/30" />
                     </div>
                 </div>
                 {/* The feature text - aligned to page right edge, partially hidden */}
                 <span
-                    className={`absolute bottom-0 right-0 text-[12vw] md:text-[10vw] font-bold text-gray-200 whitespace-nowrap tracking-tighter leading-none select-none pointer-events-none transition-all duration-1000 ease-out ${isVisible ? 'translate-x-[15%] translate-y-1/2 opacity-100' : 'translate-x-full translate-y-1/2 opacity-0'
+                    className={`absolute bottom-0 right-0 text-[12vw] md:text-[10vw] font-bold text-orange-200 whitespace-nowrap tracking-tighter leading-none select-none pointer-events-none transition-all duration-1000 ease-out ${isVisible ? 'translate-x-[15%] translate-y-1/2 opacity-100' : 'translate-x-full translate-y-1/2 opacity-0'
                         }`}
                 >
                     The feature

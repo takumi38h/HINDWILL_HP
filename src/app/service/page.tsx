@@ -16,7 +16,7 @@ export default function ServicePage() {
                             alt="サービス"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
                         <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4">SERVICE</h1>
@@ -35,19 +35,62 @@ export default function ServicePage() {
                     </div>
                 </section>
 
-                {/* サービス内容 */}
-                <section className="py-12 md:py-20 bg-[#f8f8f8]">
-                    <div className="max-w-[1000px] mx-auto px-6">
-                        <div className="bg-white p-8 md:p-12 text-center">
-                            <h3 className="text-xl md:text-3xl font-bold mb-6 md:mb-8">セールスコンサルティング事業</h3>
-                            <p className="text-gray-600 leading-[2] text-[13px] md:text-[15px] mb-6">
-                                お客様のビジネス成長をサポートするセールスコンサルティングサービスを提供しています。
-                            </p>
+                {/* サービス一覧 */}
+                <section className="py-12 md:py-20 bg-gradient-to-b from-orange-50 to-white">
+                    <div className="max-w-[1000px] mx-auto px-6 space-y-8 md:space-y-12">
+
+                        {/* CONSULTING */}
+                        <div id="consulting" className="bg-white p-6 md:p-10 border-l-4 border-orange-500">
+                            <div className="flex items-baseline gap-3 mb-4">
+                                <span className="text-3xl md:text-4xl font-bold text-orange-500">C</span>
+                                <span className="text-lg md:text-xl font-bold">ONSULTING</span>
+                                <span className="text-sm text-gray-400 ml-2">戦略コンサルティング</span>
+                            </div>
                             <p className="text-gray-600 leading-[2] text-[13px] md:text-[15px]">
-                                テクノロジーだけでは解決できない課題に対して、<br />
-                                人間ならではの熱量とコミュニケーション力で価値を提供します。
+                                営業戦略の立案から組織構築まで、御社のビジネス成長を加速させる最適なソリューションをご提案。<br />
+                                数字だけでなく、チームの熱量を引き出し、持続的な成果を実現します。
                             </p>
                         </div>
+
+                        {/* TRAINING */}
+                        <div id="training" className="bg-white p-6 md:p-10 border-l-4 border-orange-400">
+                            <div className="flex items-baseline gap-3 mb-4">
+                                <span className="text-3xl md:text-4xl font-bold text-orange-400">T</span>
+                                <span className="text-lg md:text-xl font-bold">RAINING</span>
+                                <span className="text-sm text-gray-400 ml-2">人材育成・研修</span>
+                            </div>
+                            <p className="text-gray-600 leading-[2] text-[13px] md:text-[15px]">
+                                「売れる営業」ではなく「熱狂を生む営業」を育成。<br />
+                                実践型研修で、お客様の心を動かすヒューマン・タッチの技術を伝授します。
+                            </p>
+                        </div>
+
+                        {/* SUPPORT */}
+                        <div id="support" className="bg-white p-6 md:p-10 border-l-4 border-amber-500">
+                            <div className="flex items-baseline gap-3 mb-4">
+                                <span className="text-3xl md:text-4xl font-bold text-amber-500">S</span>
+                                <span className="text-lg md:text-xl font-bold">UPPORT</span>
+                                <span className="text-sm text-gray-400 ml-2">営業伴走支援</span>
+                            </div>
+                            <p className="text-gray-600 leading-[2] text-[13px] md:text-[15px]">
+                                営業現場に伴走し、リアルタイムで課題を解決。<br />
+                                AIでは埋められない「ラストワンマイル」を、私たちが一緒に繋ぎます。
+                            </p>
+                        </div>
+
+                        {/* OUTSOURCING */}
+                        <div id="outsourcing" className="bg-white p-6 md:p-10 border-l-4 border-yellow-500">
+                            <div className="flex items-baseline gap-3 mb-4">
+                                <span className="text-3xl md:text-4xl font-bold text-yellow-500">O</span>
+                                <span className="text-lg md:text-xl font-bold">UTSOURCING</span>
+                                <span className="text-sm text-gray-400 ml-2">営業代行</span>
+                            </div>
+                            <p className="text-gray-600 leading-[2] text-[13px] md:text-[15px]">
+                                御社の営業部隊として、新規開拓から既存顧客のフォローまで代行。<br />
+                                ビジネスアスリートが、成果にコミットします。
+                            </p>
+                        </div>
+
                     </div>
                 </section>
 
