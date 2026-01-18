@@ -92,14 +92,14 @@ export function Feature() {
                             {/* 3-sided frame - animated in sequence: top, left, bottom (hidden on mobile) */}
                             {/* Top line */}
                             <div
-                                className={`hidden md:block absolute -top-12 -left-16 h-[5px] bg-black origin-left transition-transform duration-700 ease-out ${
+                                className={`hidden md:block absolute -top-12 -left-16 h-[5px] bg-orange-500 origin-left transition-transform duration-700 ease-out ${
                                     isVisible ? "scale-x-100" : "scale-x-0"
                                 }`}
                                 style={{ width: '100vw' }}
                             />
                             {/* Left vertical line */}
                             <div
-                                className={`hidden md:block absolute -top-12 -left-16 w-[5px] bg-black origin-top transition-transform duration-700 ease-out ${
+                                className={`hidden md:block absolute -top-12 -left-16 w-[5px] bg-orange-500 origin-top transition-transform duration-700 ease-out ${
                                     isVisible ? "scale-y-100" : "scale-y-0"
                                 }`}
                                 style={{
@@ -109,7 +109,7 @@ export function Feature() {
                             />
                             {/* Bottom line */}
                             <div
-                                className={`hidden md:block absolute -bottom-12 -left-16 h-[5px] bg-black origin-left transition-transform duration-700 ease-out ${
+                                className={`hidden md:block absolute -bottom-12 -left-16 h-[5px] bg-orange-500 origin-left transition-transform duration-700 ease-out ${
                                     isVisible ? "scale-x-100" : "scale-x-0"
                                 }`}
                                 style={{
@@ -124,7 +124,7 @@ export function Feature() {
                                 <svg viewBox="0 0 100 100" className="w-full h-full">
                                     <path
                                         d="M50 5 L54 46 L95 50 L54 54 L50 95 L46 54 L5 50 L46 46 Z"
-                                        fill="black"
+                                        fill="#F97316"
                                     />
                                 </svg>
 
@@ -155,7 +155,7 @@ export function Feature() {
                             </div>
 
                             {/* Center dot - Fixed */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-black rounded-full z-20" />
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-orange-500 rounded-full z-20" />
                         </div>
                     </div>
                 </div>

@@ -7,12 +7,18 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* HINDWILL Color Palette */
-  --black: #040406;
+  /* HINDWILL Color Palette - Sunset Warmth */
+  --primary: #F97316;
+  --secondary: #FB923C;
+  --accent: #FBBF24;
+  --background: #FFF7ED;
+  --text: #7C2D12;
+
+  /* Legacy colors */
+  --black: #7C2D12;
   --white: #FFFFFF;
-  --surface: #F4F4F5;
-  --text: #202020;
-  --muted: #6B7280;
+  --surface: #FFF7ED;
+  --muted: #9A3412;
 
   /* Spacing */
   --section-py: 80px;
@@ -83,17 +89,17 @@ h6 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border: 2px solid var(--black);
+  border: 2px solid var(--primary);
   border-radius: 0;
   background: transparent;
-  color: var(--black);
+  color: var(--primary);
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .btn:hover {
-  background: var(--black);
+  background: var(--primary);
   color: var(--white);
 }
 
@@ -128,7 +134,7 @@ h6 {
 
 /* Selection */
 ::selection {
-  background: var(--black);
+  background: var(--primary);
   color: var(--white);
 }
 

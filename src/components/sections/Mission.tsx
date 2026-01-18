@@ -38,7 +38,7 @@ export function Mission() {
                 {/* CTA Button */}
                 <Link
                     href="/weare"
-                    className="inline-flex items-center gap-4 px-8 py-3 border border-black text-black text-[13px] font-medium tracking-wide hover:bg-black hover:text-white transition-all duration-300 group"
+                    className="inline-flex items-center gap-4 px-8 py-3 border-2 border-orange-500 text-orange-500 text-[13px] font-medium tracking-wide hover:bg-orange-500 hover:text-white transition-all duration-300 group"
                 >
                     <span>WE ARE?</span>
                     <span className="animate-arrowMove text-lg">→</span>

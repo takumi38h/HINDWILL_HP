@@ -46,7 +46,7 @@ export default function ContactPage() {
                                     required
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-4 py-3 border border-gray-300 focus:border-black outline-none transition-colors"
+                                    className="w-full px-4 py-3 border border-gray-300 focus:border-orange-500 outline-none transition-colors"
                                 />
                             </div>
                             <div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
                                     type="text"
                                     value={formData.company}
                                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                                    className="w-full px-4 py-3 border border-gray-300 focus:border-black outline-none transition-colors"
+                                    className="w-full px-4 py-3 border border-gray-300 focus:border-orange-500 outline-none transition-colors"
                                 />
                             </div>
                             <div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
                                     required
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full px-4 py-3 border border-gray-300 focus:border-black outline-none transition-colors"
+                                    className="w-full px-4 py-3 border border-gray-300 focus:border-orange-500 outline-none transition-colors"
                                 />
                             </div>
                             <div>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                                     type="tel"
                                     value={formData.phone}
                                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                    className="w-full px-4 py-3 border border-gray-300 focus:border-black outline-none transition-colors"
+                                    className="w-full px-4 py-3 border border-gray-300 focus:border-orange-500 outline-none transition-colors"
                                 />
                             </div>
                             <div>
@@ -84,13 +84,13 @@ export default function ContactPage() {
                                     rows={6}
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full px-4 py-3 border border-gray-300 focus:border-black outline-none transition-colors resize-none"
+                                    className="w-full px-4 py-3 border border-gray-300 focus:border-orange-500 outline-none transition-colors resize-none"
                                 />
                             </div>
                             <div className="pt-4">
                                 <button
                                     type="submit"
-                                    className="w-full py-4 bg-black text-white font-bold tracking-wider hover:bg-gray-800 transition-colors"
+                                    className="w-full py-4 bg-orange-500 text-white font-bold tracking-wider hover:bg-orange-600 transition-colors"
                                 >
                                     送信する
                                 </button>

@@ -251,7 +251,7 @@ export default function WeArePage() {
                         <AnimatedSection>
                             <a
                                 href="/contact"
-                                className="inline-block border border-black px-8 md:px-16 py-4 md:py-5 text-xs md:text-sm tracking-wider hover:bg-black hover:text-white transition-colors duration-300"
+                                className="inline-block border-2 border-orange-500 text-orange-500 px-8 md:px-16 py-4 md:py-5 text-xs md:text-sm tracking-wider hover:bg-orange-500 hover:text-white transition-colors duration-300"
                             >
                                 HINDWILLに問い合わせてみる →
                             </a>

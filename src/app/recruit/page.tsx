@@ -55,7 +55,7 @@ export default function RecruitPage() {
                         <div className="mt-8 md:mt-12 text-center">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-4 px-6 md:px-8 py-3 bg-black text-white text-xs md:text-sm font-bold tracking-wider hover:bg-gray-800 transition-colors"
+                                className="inline-flex items-center gap-4 px-6 md:px-8 py-3 bg-orange-500 text-white text-xs md:text-sm font-bold tracking-wider hover:bg-orange-600 transition-colors"
                             >
                                 <span>応募・お問い合わせ</span>
                                 <span>→</span>
