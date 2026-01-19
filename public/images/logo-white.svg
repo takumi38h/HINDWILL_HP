@@ -1,0 +1,11 @@
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Icon -->
+    <g transform="translate(0, 5)">
+        <rect x="6" y="8" width="8" height="24" rx="1" fill="#FFFFFF"/>
+        <rect x="26" y="8" width="8" height="24" rx="1" fill="#FFFFFF"/>
+        <path d="M16 16L24 20L16 24V16Z" fill="#F97316"/>
+    </g>
+    
+    <!-- Text HINDWILL -->
+    <text x="45" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="24" letter-spacing="0.1em" fill="#FFFFFF">HINDWILL</text>
+</svg>

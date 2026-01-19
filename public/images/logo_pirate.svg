@@ -1,0 +1,62 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Definitions for gradients and filters -->
+    <defs>
+        <linearGradient id="blade-gradient" x1="0" y1="0" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#E2E8F0"/>
+            <stop offset="50%" stop-color="#94A3B8"/>
+            <stop offset="100%" stop-color="#475569"/>
+        </linearGradient>
+        <radialGradient id="skull-glow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="#000000" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="rough-edge">
+             <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise" />
+             <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+        </filter>
+    </defs>
+
+    <!-- Background (Dark Ocean) -->
+    <rect width="400" height="400" fill="#0f172a"/>
+
+    <!-- Jolly Roger / HINDWILL Emblem -->
+    <g transform="translate(200, 180)">
+        
+        <!-- Crossed Cutlasses (Forming an implied X/H base) -->
+        <g transform="rotate(45)">
+            <!-- Sword 1 -->
+            <path d="M-10 -100 L10 -100 L15 60 L-15 60 Z" fill="url(#blade-gradient)" filter="url(#rough-edge)"/>
+            <rect x="-25" y="60" width="50" height="10" rx="2" fill="#B45309"/> <!-- Guard -->
+            <rect x="-8" y="70" width="16" height="40" rx="4" fill="#78350F"/> <!-- Hilt -->
+        </g>
+        <g transform="rotate(-45)">
+            <!-- Sword 2 -->
+            <path d="M-10 -100 L10 -100 L15 60 L-15 60 Z" fill="url(#blade-gradient)" filter="url(#rough-edge)"/>
+            <rect x="-25" y="60" width="50" height="10" rx="2" fill="#B45309"/>
+            <rect x="-8" y="70" width="16" height="40" rx="4" fill="#78350F"/>
+        </g>
+
+        <!-- Central Skull/H Element -->
+        <rect x="-40" y="-50" width="80" height="90" rx="25" fill="#f8fafc" filter="url(#rough-edge)"/> <!-- Skull Head -->
+        <rect x="-25" y="40" width="50" height="20" rx="5" fill="#f8fafc" filter="url(#rough-edge)"/> <!-- Jaw -->
+        
+        <!-- Eyes (HINDWILL Spark Eye) -->
+        <circle cx="-20" cy="-10" r="12" fill="#1e293b"/>
+        <!-- Right Eye is the Logo Spark! -->
+        <path d="M10 -15 L30 -5 L10 5 V-15 Z" fill="#F97316"/> <!-- Spark Arrow Eye -->
+
+        <!-- Nose -->
+        <path d="M0 10 L5 20 L-5 20 Z" fill="#1e293b"/>
+        
+        <!-- Bandana/Headband -->
+        <path d="M-42 -30 C-42 -60 42 -60 42 -30 C42 -15 55 0 65 10 L42 -10 Z" fill="#F97316"/>
+    </g>
+
+    <!-- Text -->
+    <text x="200" y="350" font-family="Courier New, monospace" font-weight="bold" font-size="42" text-anchor="middle" letter-spacing="0.1em" fill="#F97316" style="filter: drop-shadow(2px 2px 0px #000);">
+        HINDWILL
+    </text>
+     <text x="200" y="380" font-family="Courier New, monospace" font-size="14" text-anchor="middle" letter-spacing="0.3em" fill="#94A3B8">
+        PIRATE EDITION
+    </text>
+</svg>

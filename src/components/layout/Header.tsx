@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { X, Mail } from "lucide-react";
+import { Logo } from "@/components/common/Logo";
 
 const MENU_ITEMS = [
     { en: "TOP", jp: "トップページ", href: "/" },
@@ -54,8 +55,8 @@ export function Header() {
                         }
                         // Check for dark overlay divs (common pattern)
                         const overlay = section.querySelector('[class*="bg-gradient"]') ||
-                                        section.querySelector('[class*="bg-black"]') ||
-                                        section.querySelector('[class*="bg-orange-950"]');
+                            section.querySelector('[class*="bg-black"]') ||
+                            section.querySelector('[class*="bg-orange-950"]');
                         if (overlay && section.querySelector('img')) {
                             setIsOverDark(true);
                             return;
@@ -140,9 +141,7 @@ export function Header() {
             <header className="fixed top-0 left-0 right-0 z-50 h-[70px] flex items-center justify-between px-6 md:px-10">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 z-50">
-                    <span className={`text-xl font-bold tracking-wider transition-colors duration-300 ${menuOpen || !isOverDark ? 'text-black' : 'text-white'}`}>
-                        HINDWILL
-                    </span>
+                    <Logo variant={menuOpen || !isOverDark ? "dark" : "light"} />
                 </Link>
 
                 {/* Desktop Navigation */}
