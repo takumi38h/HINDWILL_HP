@@ -4,12 +4,21 @@
 @import "@fontsource/dm-sans/500.css";
 @import "@fontsource/dm-sans/700.css";
 
+@theme {
+  /* Human Orange Palette - Warmer, Earthy */
+  --color-orange-300: #F4A261;
+  --color-orange-400: #E76F51;
+  --color-orange-500: #E06A3B; /* Base Human Orange */
+  --color-orange-600: #C24E2B;
+  --color-orange-700: #9A3412;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* HINDWILL Color Palette - Sunset Warmth */
-  --primary: #F97316;
-  --secondary: #FB923C;
+  /* HINDWILL Color Palette - Human Warmth */
+  --primary: #E06A3B;
+  --secondary: #F4A261;
   --accent: #FBBF24;
   --background: #FFF7ED;
   --text: #7C2D12;
