@@ -21,6 +21,7 @@ const services = [
         ),
         color: "from-orange-500 to-orange-600",
         bgColor: "bg-orange-500",
+        image: "/images/japanese_people/planning.png",
     },
     {
         id: "training",
@@ -37,6 +38,7 @@ const services = [
         ),
         color: "from-orange-400 to-orange-500",
         bgColor: "bg-orange-400",
+        image: "/images/japanese_people/creative.png",
     },
     {
         id: "support",
@@ -52,6 +54,7 @@ const services = [
         ),
         color: "from-amber-500 to-orange-500",
         bgColor: "bg-amber-500",
+        image: "/images/japanese_people/development.png",
     },
     {
         id: "outsourcing",
@@ -67,6 +70,7 @@ const services = [
         ),
         color: "from-yellow-500 to-amber-500",
         bgColor: "bg-yellow-500",
+        image: "/images/japanese_people/entertainment.png",
     },
 ];
 
@@ -143,9 +147,8 @@ export default function ServicePage() {
 
                     <div className="relative z-10 px-6 md:px-16 max-w-[1200px] mx-auto w-full">
                         <p
-                            className={`text-orange-400 text-sm tracking-[0.3em] mb-4 transition-all duration-700 ${
-                                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                            }`}
+                            className={`text-orange-400 text-sm tracking-[0.3em] mb-4 transition-all duration-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                                }`}
                         >
                             WHAT WE DO
                         </p>
@@ -153,11 +156,10 @@ export default function ServicePage() {
                             {title.split("").map((char, index) => (
                                 <span
                                     key={index}
-                                    className={`inline-block transition-all duration-500 ${
-                                        isLoaded
-                                            ? "opacity-100 translate-x-0"
-                                            : "opacity-0 translate-x-8"
-                                    }`}
+                                    className={`inline-block transition-all duration-500 ${isLoaded
+                                        ? "opacity-100 translate-x-0"
+                                        : "opacity-0 translate-x-8"
+                                        }`}
                                     style={{
                                         transitionDelay: `${(title.length - 1 - index) * 0.08}s`,
                                     }}
@@ -167,9 +169,8 @@ export default function ServicePage() {
                             ))}
                         </h1>
                         <p
-                            className={`text-lg md:text-xl text-gray-300 max-w-xl transition-all duration-700 ${
-                                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                            }`}
+                            className={`text-lg md:text-xl text-gray-300 max-w-xl transition-all duration-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                                }`}
                             style={{ transitionDelay: "0.7s" }}
                         >
                             人間だけが持つ熱量で、<br className="md:hidden" />
@@ -182,7 +183,7 @@ export default function ServicePage() {
                         <div className="flex items-center gap-2 text-[10px] md:text-xs text-white/70">
                             <a href="/" className="hover:text-white transition-colors">
                                 <svg className="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                                 </svg>
                             </a>
                             <span>&gt;</span>
@@ -194,24 +195,25 @@ export default function ServicePage() {
                 </section>
 
                 {/* OUR SERVICE - Intro */}
-                <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+                <section className="py-20 md:py-32 bg-white relative overflow-hidden">
                     {/* Background decoration */}
                     <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-orange-50 to-transparent" />
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
                     <div className="max-w-[1200px] mx-auto px-6 relative">
                         <AnimatedSection>
-                            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+                            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 md:mb-20">
                                 <div>
-                                    <div className="flex items-center gap-3 mb-4">
+                                    <div className="flex items-center gap-3 mb-5">
                                         <div className="w-12 h-0.5 bg-orange-500" />
                                         <span className="text-orange-500 text-sm tracking-[0.2em] font-medium">OUR SERVICE</span>
                                     </div>
-                                    <h2 className="text-3xl md:text-5xl font-bold">
+                                    <h2 className="text-3xl md:text-5xl font-bold leading-tight">
                                         <span className="text-orange-500">4</span>つのソリューションで<br />
                                         ビジネスを加速
                                     </h2>
                                 </div>
-                                <p className="text-gray-600 leading-relaxed max-w-md text-[14px] md:text-[15px]">
+                                <p className="text-gray-600 leading-relaxed max-w-md text-sm md:text-base">
                                     AIには届かない「ラストワンマイル」を繋ぐ。<br />
                                     人間だけが持つ熱量（ヒューマン・タッチ）で、<br />
                                     御社のビジネス成長をサポートします。
@@ -219,31 +221,63 @@ export default function ServicePage() {
                             </div>
                         </AnimatedSection>
 
-                        {/* Service Overview Cards */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                        {/* Service Overview Cards - New Human Design */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                             {services.map((service, index) => (
                                 <AnimatedSection key={service.id} delay={index * 100}>
                                     <a
                                         href={`#${service.id}`}
-                                        className="group block bg-white border border-gray-100 rounded-xl p-5 md:p-6 hover:shadow-xl hover:border-orange-200 transition-all duration-300"
+                                        className="group block relative h-[240px] md:h-[320px] lg:h-[400px] rounded-2xl overflow-hidden cursor-pointer"
                                         onMouseEnter={() => setActiveService(service.id)}
                                         onMouseLeave={() => setActiveService(null)}
                                     >
-                                        <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform`}>
-                                            {service.icon}
+                                        {/* Background Image with Zoom Effect */}
+                                        <div className="absolute inset-0">
+                                            <img
+                                                src={service.image}
+                                                alt={service.subtitle}
+                                                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                                            />
+                                            {/* Gradient Overlay */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:via-black/40 transition-colors duration-500" />
                                         </div>
-                                        <div className="flex items-baseline gap-1 mb-2">
-                                            <span className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>
-                                                {service.letter}
-                                            </span>
-                                            <span className="text-sm md:text-base font-bold text-gray-800">{service.title}</span>
-                                        </div>
-                                        <p className="text-[11px] md:text-xs text-gray-500">{service.subtitle}</p>
-                                        <div className="mt-4 flex items-center gap-2 text-orange-500 text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <span>詳しく見る</span>
-                                            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M5 12h14M12 5l7 7-7 7" />
-                                            </svg>
+
+                                        {/* Content */}
+                                        <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                                            {/* Number */}
+                                            <div className="absolute top-6 right-6 md:top-8 md:right-8 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white font-bold text-base md:text-lg opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-y-2 group-hover:translate-y-0">
+                                                {String(index + 1).padStart(2, '0')}
+                                            </div>
+
+                                            {/* Large Letter */}
+                                            <div className="mb-2 transform transition-transform duration-500 group-hover:-translate-y-2">
+                                                <span className={`text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-br ${service.color} bg-clip-text text-transparent opacity-90`}>
+                                                    {service.letter}
+                                                </span>
+                                            </div>
+
+                                            {/* Title & Subtitle */}
+                                            <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
+                                                <div className="flex items-baseline gap-2 md:gap-3 mb-1 md:mb-2">
+                                                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white tracking-wide">
+                                                        {service.title.substring(1)}
+                                                    </h3>
+                                                    <div className={`h-px w-8 md:w-12 bg-gradient-to-r ${service.color}`} />
+                                                </div>
+                                                <p className="text-white/90 font-medium text-base md:text-lg">
+                                                    {service.subtitle}
+                                                </p>
+                                            </div>
+
+                                            {/* View More Button */}
+                                            <div className="hidden lg:flex mt-6 items-center gap-2 text-white/80 text-sm font-bold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                                                <span>View Detail</span>
+                                                <div className={`w-8 h-8 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm group-hover:bg-gradient-to-r ${service.color}`}>
+                                                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                                    </svg>
+                                                </div>
+                                            </div>
                                         </div>
                                     </a>
                                 </AnimatedSection>
