@@ -335,39 +335,43 @@ export default function ServicePage() {
 
                                         {/* Visual */}
                                         <div className="flex-1 w-full">
-                                            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
-                                                {/* Gradient background */}
-                                                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-10`} />
+                                            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-2xl">
+                                                {/* Image */}
+                                                <img
+                                                    src={service.image}
+                                                    alt={service.title}
+                                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                />
 
-                                                {/* Icon display */}
-                                                <div className="absolute inset-0 flex items-center justify-center">
-                                                    <div className="relative">
-                                                        {/* Glow effect */}
-                                                        <div className={`absolute inset-0 bg-gradient-to-br ${service.color} blur-3xl opacity-30 scale-150`} />
+                                                {/* Overlay Gradient */}
+                                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
 
-                                                        {/* Large icon */}
-                                                        <div className={`relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center text-white shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
-                                                            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
-                                                                {service.id === 'consulting' && <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />}
-                                                                {service.id === 'training' && <><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></>}
-                                                                {service.id === 'support' && <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />}
-                                                                {service.id === 'outsourcing' && <path d="M13 10V3L4 14h7v7l9-11h-7z" />}
+                                                {/* Badge/Icon Overlay (Optional - kept minimal) */}
+                                                <div className="absolute bottom-6 right-6 w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-lg">
+                                                    <div className={`text-${service.id === 'outsourcing' ? 'yellow' : 'orange'}-500`}>
+                                                        {service.id === 'consulting' && (
+                                                            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                                <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                                             </svg>
-                                                        </div>
-
-                                                        {/* Orbiting dots */}
-                                                        <div className="absolute inset-0 animate-[spin_10s_linear_infinite]">
-                                                            <div className={`absolute -top-2 left-1/2 w-3 h-3 rounded-full ${service.bgColor} opacity-60`} />
-                                                        </div>
-                                                        <div className="absolute inset-0 animate-[spin_15s_linear_infinite_reverse]">
-                                                            <div className={`absolute top-1/2 -right-2 w-2 h-2 rounded-full ${service.bgColor} opacity-40`} />
-                                                        </div>
+                                                        )}
+                                                        {service.id === 'training' && (
+                                                            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                                            </svg>
+                                                        )}
+                                                        {service.id === 'support' && (
+                                                            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                            </svg>
+                                                        )}
+                                                        {service.id === 'outsourcing' && (
+                                                            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                            </svg>
+                                                        )}
                                                     </div>
                                                 </div>
-
-                                                {/* Corner accents */}
-                                                <div className={`absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 ${service.bgColor.replace('bg-', 'border-')} opacity-50`} />
-                                                <div className={`absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 ${service.bgColor.replace('bg-', 'border-')} opacity-50`} />
                                             </div>
                                         </div>
                                     </div>
