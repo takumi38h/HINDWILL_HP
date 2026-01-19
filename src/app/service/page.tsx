@@ -343,36 +343,72 @@ export default function ServicePage() {
                     </div>
                 </section>
 
-                {/* Process Flow */}
-                <section className="py-16 md:py-24 bg-white">
+                {/* BUSINESS - Sales Consulting */}
+                <section className="py-16 md:py-28 bg-white" id="business">
                     <div className="max-w-[1200px] mx-auto px-6">
+                        {/* Section Header */}
                         <AnimatedSection>
-                            <div className="text-center mb-12">
-                                <span className="text-orange-500 text-sm tracking-[0.2em] font-medium">FLOW</span>
-                                <h2 className="text-2xl md:text-4xl font-bold mt-2">ご依頼の流れ</h2>
+                            <div className="text-center mb-12 md:mb-16">
+                                <div className="flex items-center justify-center gap-4 mb-6">
+                                    <div className="w-12 md:w-20 h-px bg-orange-300" />
+                                    <span className="text-orange-500 text-sm tracking-[0.3em] font-medium">BUSINESS</span>
+                                    <div className="w-12 md:w-20 h-px bg-orange-300" />
+                                </div>
+                                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3">
+                                    Sales Consulting
+                                </h2>
+                                <p className="text-lg md:text-xl text-gray-600 mb-6">営業支援</p>
+                                <p className="text-gray-700 leading-[1.9] text-sm md:text-base max-w-2xl mx-auto">
+                                    「勝てる戦略」と「動ける現場」を同時に構築。<br />
+                                    成果にコミットする、ハンズオン型コンサルティングサービスです。
+                                </p>
                             </div>
                         </AnimatedSection>
 
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4">
+                        {/* 6 Steps Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                             {[
-                                { step: "01", title: "お問い合わせ", desc: "まずはお気軽にご相談ください" },
-                                { step: "02", title: "ヒアリング", desc: "御社の課題を詳しくお伺いします" },
-                                { step: "03", title: "ご提案", desc: "最適なソリューションをご提案" },
-                                { step: "04", title: "サービス開始", desc: "成果にコミットして伴走します" },
+                                {
+                                    step: "01",
+                                    title: "現状把握・分析",
+                                    desc: "市場環境や運営体制を深く掘り下げ、売上拡大に向けた課題と改善の余地を明確にします。"
+                                },
+                                {
+                                    step: "02",
+                                    title: "戦略設計",
+                                    desc: "ターゲットニーズや競合優位性を分析し、目標（KGI/KPI）達成に向けた最短ルートの戦略を策定します。"
+                                },
+                                {
+                                    step: "03",
+                                    title: "導入準備",
+                                    desc: "営業リスト、トークスクリプト、管理フォーマットなど、現場が即座に動けるための基盤を整備します。"
+                                },
+                                {
+                                    step: "04",
+                                    title: "テスト運用",
+                                    desc: "実務への同席や代行を通じてPDCAを高速で回し、現場のリアルな動きをブラッシュアップします。"
+                                },
+                                {
+                                    step: "05",
+                                    title: "仕組みの最適化",
+                                    desc: "運用データに基づき、成功確率の高い「営業の型」を構築。仮説検証を繰り返し、再現性を高めます。"
+                                },
+                                {
+                                    step: "06",
+                                    title: "本運用・拡大",
+                                    desc: "完成した「型」をチーム全体へ展開。組織の拡大と継続的なコンサルティングで、成果を最大化させます。"
+                                },
                             ].map((item, index) => (
                                 <AnimatedSection key={index} delay={index * 100}>
-                                    <div className="relative">
-                                        {/* Connector line */}
-                                        {index < 3 && (
-                                            <div className="hidden md:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-orange-300 to-orange-100 z-0" />
-                                        )}
-
-                                        <div className="relative bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg hover:border-orange-200 transition-all z-10">
-                                            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-xl font-bold mb-4 mx-auto">
+                                    <div className="bg-white border border-gray-100 rounded-xl p-6 md:p-8 hover:shadow-lg hover:border-orange-200 transition-all h-full">
+                                        <div className="flex items-start gap-4">
+                                            <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-lg">
                                                 {item.step}
                                             </div>
-                                            <h3 className="text-lg font-bold text-center mb-2">{item.title}</h3>
-                                            <p className="text-sm text-gray-500 text-center">{item.desc}</p>
+                                            <div className="flex-1">
+                                                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                                                <p className="text-gray-600 text-sm md:text-[15px] leading-[1.9]">{item.desc}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </AnimatedSection>
