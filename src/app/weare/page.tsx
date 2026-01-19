@@ -146,7 +146,7 @@ export default function WeArePage() {
                 </section>
 
                 {/* Mission Section */}
-                <section className="py-20 md:py-36 relative">
+                <section className="py-20 md:py-32 relative">
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
@@ -166,62 +166,42 @@ export default function WeArePage() {
                             </div>
 
                             {/* Main title */}
-                            <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 leading-tight text-gray-900">
-                                Beyond the Technology.
+                            <h2 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight text-gray-900">
+                                熱狂で、世界を動かす。
                             </h2>
 
-                            {/* Subtitle with background accent */}
-                            <div className="inline-block mb-10 md:mb-14">
-                                <p className="text-lg md:text-2xl font-bold text-gray-800 relative">
-                                    <span className="relative z-10">テクノロジーが届かない、最後の1マイルを。</span>
-                                    <span className="absolute bottom-0 left-0 w-full h-2 md:h-3 bg-orange-200/60 -z-0" />
-                                </p>
-                            </div>
-
-                            {/* Description cards */}
-                            <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-[800px] mx-auto">
-                                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-sm border border-gray-100 text-left">
-                                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                                        <span className="text-orange-500 font-bold text-lg">01</span>
-                                    </div>
-                                    <p className="text-gray-700 leading-[1.9] text-sm md:text-base">
-                                        効率や正解は、AIに譲ればいい。これからの時代、最後に価値を持つのは、人の心を震わせる<span className="font-bold text-orange-600">「熱狂」</span>だ。
-                                    </p>
-                                </div>
-                                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-sm border border-gray-100 text-left">
-                                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                                        <span className="text-orange-500 font-bold text-lg">02</span>
-                                    </div>
-                                    <p className="text-gray-700 leading-[1.9] text-sm md:text-base">
-                                        我々は、人間だけが持つ熱量（ヒューマン・タッチ）で、AIには埋められない<span className="font-bold text-orange-600">「ラストワンマイル」</span>を繋いでいく。
-                                    </p>
-                                </div>
-                            </div>
+                            {/* English subtitle */}
+                            <p className="text-sm md:text-lg tracking-[0.15em] text-orange-500 font-medium italic">
+                                Ignite the World.
+                            </p>
                         </AnimatedSection>
                     </div>
                 </section>
 
                 {/* Vision Section */}
                 <section className="bg-white relative">
-                    {/* Vision + BE THE HERO */}
-                    <div className="bg-gradient-to-r from-orange-100 to-orange-50 py-6 md:py-12">
+                    {/* Vision header */}
+                    <div className="bg-gradient-to-r from-orange-100 to-orange-50 py-8 md:py-14">
                         <AnimatedSection>
-                            <div className="px-6 md:px-16">
-                                <p className="text-base md:text-2xl tracking-[0.2em] text-gray-800 mb-2 font-bold">VISION</p>
-                                <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold">
-                                    Be the Hero
+                            <div className="px-6 md:px-16 text-center md:text-left">
+                                <p className="text-xs md:text-sm tracking-[0.3em] text-orange-500 font-medium mb-3">VISION</p>
+                                <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">
+                                    誇れる航海を、誇れる仲間と。
                                 </h2>
+                                <p className="text-sm md:text-lg tracking-[0.15em] text-orange-500 font-medium italic">
+                                    A Voyage Worth Living.
+                                </p>
                             </div>
                         </AnimatedSection>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-0 items-stretch -mt-16 md:-mt-32">
+                    <div className="grid md:grid-cols-2 gap-0 items-stretch">
                         {/* 左側：テキスト */}
                         <AnimatedSection delay={200}>
-                            <div className="px-6 md:px-16 py-6 md:py-8 pt-24 md:pt-40 relative z-10">
-                                <p className="text-xl md:text-3xl font-bold mb-6 md:mb-8 leading-tight text-gray-700">
-                                    子供が早く大人になりたくなる、<br />
-                                    背中を見せる。
+                            <div className="px-6 md:px-16 py-10 md:py-16 relative z-10">
+                                <p className="text-xl md:text-2xl font-bold mb-6 md:mb-8 leading-tight text-gray-800">
+                                    本気で生きる人が集まり、<br />
+                                    背中で語り合える組織であり続ける。
                                 </p>
                                 <div>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
@@ -229,9 +209,6 @@ export default function WeArePage() {
                                     </p>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
                                         我々は、誰よりもストイックに、誰よりも楽しそうに働く「ビジネスアスリート」だ。
-                                    </p>
-                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        「仕事って、こんなに面白いんだぞ」
                                     </p>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] font-medium">
                                         そう背中で語れるカッコいい大人が増えれば、未来は勝手に明るくなる。
@@ -242,7 +219,7 @@ export default function WeArePage() {
 
                         {/* 右側：画像 */}
                         <ImageReveal className="h-full">
-                            <div className="h-full bg-gray-50 overflow-hidden">
+                            <div className="h-full bg-gray-50 overflow-hidden min-h-[300px] md:min-h-[400px]">
                                 <img
                                     src="/images/japanese_people/weare_vision.png"
                                     alt="絶景"
@@ -250,6 +227,120 @@ export default function WeArePage() {
                                 />
                             </div>
                         </ImageReveal>
+                    </div>
+                </section>
+
+                {/* Values Section */}
+                <section className="py-16 md:py-28 bg-gradient-to-b from-gray-50 to-white">
+                    <div className="max-w-[1100px] mx-auto px-6">
+                        <AnimatedSection>
+                            <div className="text-center mb-12 md:mb-16">
+                                <div className="flex items-center justify-center gap-4 mb-6">
+                                    <div className="w-12 md:w-20 h-px bg-orange-300" />
+                                    <p className="text-xs md:text-sm tracking-[0.3em] text-orange-500 font-medium">VALUES</p>
+                                    <div className="w-12 md:w-20 h-px bg-orange-300" />
+                                </div>
+                                <h2 className="text-2xl md:text-4xl font-bold text-gray-900">私たちの価値観</h2>
+                            </div>
+                        </AnimatedSection>
+
+                        <div className="space-y-6 md:space-y-8">
+                            {/* Value 1 */}
+                            <AnimatedSection delay={100}>
+                                <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div className="flex items-start gap-4 md:gap-6">
+                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                                            01
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">人生を、本気で使え</h3>
+                                            <p className="text-sm md:text-base text-orange-500 italic mb-4">Life Is the Voyage.</p>
+                                            <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
+                                                <p>時間は有限だ。<br />惰性で生きるほど、人生は長くない。</p>
+                                                <p>志を掲げて、熱狂しよう。<br />人の心を動かす仕事は、熱量からしか生まれない。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </AnimatedSection>
+
+                            {/* Value 2 */}
+                            <AnimatedSection delay={200}>
+                                <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div className="flex items-start gap-4 md:gap-6">
+                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                                            02
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">かっこよくあれ</h3>
+                                            <p className="text-sm md:text-base text-orange-500 italic mb-4">Stay Cool. Stay Foolish.</p>
+                                            <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
+                                                <p>人生も、仕事も、振る舞いも。<br />自分の生き方を、自分で誇れるか。</p>
+                                                <p>ダサいことはしない。<br />人のせいにしない。<br />誰のことも見下さない。</p>
+                                                <p className="font-medium text-gray-800">楽な道より、誇れる選択を。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </AnimatedSection>
+
+                            {/* Value 3 */}
+                            <AnimatedSection delay={300}>
+                                <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div className="flex items-start gap-4 md:gap-6">
+                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                                            03
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">逆境を楽しめ</h3>
+                                            <p className="text-sm md:text-base text-orange-500 italic mb-4">Embrace the Storm.</p>
+                                            <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
+                                                <p>逆境のない人生なんてつまらない。<br />ピンチが来たら「面白くなってきた」と笑え。</p>
+                                                <p className="font-medium text-gray-800">修羅場は、志を試される舞台だ。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </AnimatedSection>
+
+                            {/* Value 4 */}
+                            <AnimatedSection delay={400}>
+                                <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div className="flex items-start gap-4 md:gap-6">
+                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                                            04
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">背中で語れ</h3>
+                                            <p className="text-sm md:text-base text-orange-500 italic mb-4">Be the Captain.</p>
+                                            <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
+                                                <p>一番ストイックに、一番楽しそうに。<br />その背中が、次の世代の未来になる。</p>
+                                                <p className="font-medium text-gray-800">語るな、走れ。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </AnimatedSection>
+
+                            {/* Value 5 */}
+                            <AnimatedSection delay={500}>
+                                <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div className="flex items-start gap-4 md:gap-6">
+                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                                            05
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">稼ぐことは、愛だ</h3>
+                                            <p className="text-sm md:text-base text-orange-500 italic mb-4">Earn for the Crew.</p>
+                                            <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
+                                                <p>守るために、結果を出す。<br />仲間、家族、約束。</p>
+                                                <p className="font-medium text-gray-800">全てに、責任を持て。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </AnimatedSection>
+                        </div>
                     </div>
                 </section>
 
