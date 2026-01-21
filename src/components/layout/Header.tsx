@@ -8,12 +8,10 @@ import { Logo } from "@/components/common/Logo";
 const MENU_ITEMS = [
     { en: "TOP", jp: "トップページ", href: "/" },
     { en: "WE ARE", jp: "何者？", href: "/weare" },
-    { en: "SERVICE", jp: "サービス", href: "/service" },
+    { en: "BUSINESS", jp: "ビジネス", href: "/service" },
     { en: "COMPANY", jp: "会社概要", href: "/company" },
-    { en: "BLOG", jp: "ブログ", href: "/blog" },
     { en: "FAQ", jp: "よくある質問", href: "/faq" },
     { en: "NEWS", jp: "お知らせ", href: "/news" },
-    { en: "RECRUIT", jp: "採用情報", href: "/recruit" },
 ];
 
 export function Header() {
@@ -146,19 +144,24 @@ export function Header() {
 
                 {/* Desktop Navigation */}
                 <nav className={`hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 transition-opacity duration-300 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                    {['WE ARE', 'SERVICE', 'COMPANY', 'BLOG', 'FAQ'].map((label) => (
+                    {[
+                        { label: 'WE ARE', href: '/weare' },
+                        { label: 'BUSINESS', href: '/service' },
+                        { label: 'COMPANY', href: '/company' },
+                        { label: 'FAQ', href: '/faq' },
+                    ].map((item) => (
                         <Link
-                            key={label}
-                            href={`/${label.toLowerCase().replace(' ', '')}`}
+                            key={item.label}
+                            href={item.href}
                             className={`text-[11px] font-bold tracking-[0.1em] ${isOverDark ? 'text-white' : 'text-black'}`}
                             style={{
-                                textDecoration: hoveredLink === label ? 'underline' : 'none',
+                                textDecoration: hoveredLink === item.label ? 'underline' : 'none',
                                 textUnderlineOffset: '4px',
                             }}
-                            onMouseEnter={() => setHoveredLink(label)}
+                            onMouseEnter={() => setHoveredLink(item.label)}
                             onMouseLeave={() => setHoveredLink(null)}
                         >
-                            {label}
+                            {item.label}
                         </Link>
                     ))}
                 </nav>
