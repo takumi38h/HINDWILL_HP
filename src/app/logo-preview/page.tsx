@@ -27,7 +27,7 @@ const Logo1 = () => (
                 <path d="M14 20H26" stroke="url(#gold-grad)" strokeWidth="2" />
 
                 {/* Diamond Eye */}
-                <rect x="18.5" y="18.5" width="3" height="3" rotate="45" fill="#F97316" />
+                <rect x="18.5" y="18.5" width="3" height="3" rotate="45" fill="#1F2937" />
             </svg>
         </div>
         <div>
@@ -54,8 +54,8 @@ const Logo2 = () => (
                 <path d="M8 8L32 32" stroke="#94A3B8" strokeWidth="4" strokeLinecap="square" />
                 <path d="M32 8L8 32" stroke="#94A3B8" strokeWidth="4" strokeLinecap="square" />
                 {/* Central Plate */}
-                <rect x="13" y="13" width="14" height="14" fill="#333" stroke="#F97316" strokeWidth="2" />
-                <circle cx="20" cy="20" r="3" fill="#F97316" />
+                <rect x="13" y="13" width="14" height="14" fill="#333" stroke="#1F2937" strokeWidth="2" />
+                <circle cx="20" cy="20" r="3" fill="#1F2937" />
             </svg>
         </div>
         <span className="font-sans font-black text-3xl tracking-tighter text-zinc-800 uppercase" style={{ textShadow: '2px 2px 0px #ccc' }}>HINDWILL</span>
@@ -69,22 +69,22 @@ const Logo3 = () => (
             <svg viewBox="0 0 40 40" fill="none" className="w-full h-full p-2">
                 {/* Circuit Skull */}
                 <path d="M12 10H28V30H12V10Z" stroke="#333" strokeWidth="1" />
-                <path d="M10 14C10 8 14 6 20 6C26 6 30 8 30 14V22H10V14Z" stroke="#F97316" strokeWidth="1.5" fill="none" />
+                <path d="M10 14C10 8 14 6 20 6C26 6 30 8 30 14V22H10V14Z" stroke="#1F2937" strokeWidth="1.5" fill="none" />
                 <rect x="13" y="24" width="4" height="6" fill="#333" />
                 <rect x="23" y="24" width="4" height="6" fill="#333" />
 
                 {/* Glowing Eye */}
-                <circle cx="24" cy="16" r="2" fill="#F97316" className="animate-pulse" />
+                <circle cx="24" cy="16" r="2" fill="#1F2937" className="animate-pulse" />
                 <path d="M14 16L18 16" stroke="#555" strokeWidth="2" />
 
                 {/* Data Lines */}
-                <path d="M4 20H10" stroke="#F97316" strokeOpacity="0.5" />
-                <path d="M30 20H36" stroke="#F97316" strokeOpacity="0.5" />
+                <path d="M4 20H10" stroke="#1F2937" strokeOpacity="0.5" />
+                <path d="M30 20H36" stroke="#1F2937" strokeOpacity="0.5" />
             </svg>
         </div>
         <div>
             <span className="font-mono font-bold text-2xl tracking-widest text-white">HINDWILL</span>
-            <div className="h-0.5 w-full bg-gradient-to-r from-orange-600 to-transparent mt-1" />
+            <div className="h-0.5 w-full bg-gradient-to-r from-gray-900 to-transparent mt-1" />
         </div>
     </div>
 );
@@ -102,7 +102,7 @@ const Logo4 = () => (
 
                 {/* Skull Abstract */}
                 <circle cx="16" cy="14" r="4" fill="white" />
-                <path d="M24 12L28 16M28 12L24 16" stroke="#F97316" strokeWidth="2" />
+                <path d="M24 12L28 16M28 12L24 16" stroke="#1F2937" strokeWidth="2" />
             </svg>
         </div>
         <span className="font-sans font-bold text-2xl tracking-tight text-gray-900">HINDWILL</span>

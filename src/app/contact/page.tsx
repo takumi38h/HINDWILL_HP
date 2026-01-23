@@ -46,7 +46,7 @@ export default function ContactPage() {
                         alt=""
                         className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-950/60 to-black/50" />
                     <div className="text-center text-white relative z-10">
                         <h1 key={animationKey} className="text-4xl md:text-6xl font-bold mb-4 overflow-hidden">
                             {title.split("").map((char, index) => (
@@ -101,7 +101,7 @@ export default function ContactPage() {
                                     required
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-4 py-3 border border-gray-300 focus:border-orange-500 outline-none transition-colors"
+                                    className="w-full px-4 py-3 border border-gray-300 focus:border-gray-800 outline-none transition-colors"
                                 />
                             </div>
                             <div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
                                     type="text"
                                     value={formData.company}
                                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                                    className="w-full px-4 py-3 border border-gray-300 focus:border-orange-500 outline-none transition-colors"
+                                    className="w-full px-4 py-3 border border-gray-300 focus:border-gray-800 outline-none transition-colors"
                                 />
                             </div>
                             <div>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                                     required
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full px-4 py-3 border border-gray-300 focus:border-orange-500 outline-none transition-colors"
+                                    className="w-full px-4 py-3 border border-gray-300 focus:border-gray-800 outline-none transition-colors"
                                 />
                             </div>
                             <div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                                     type="tel"
                                     value={formData.phone}
                                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                    className="w-full px-4 py-3 border border-gray-300 focus:border-orange-500 outline-none transition-colors"
+                                    className="w-full px-4 py-3 border border-gray-300 focus:border-gray-800 outline-none transition-colors"
                                 />
                             </div>
                             <div>
@@ -139,13 +139,13 @@ export default function ContactPage() {
                                     rows={6}
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full px-4 py-3 border border-gray-300 focus:border-orange-500 outline-none transition-colors resize-none"
+                                    className="w-full px-4 py-3 border border-gray-300 focus:border-gray-800 outline-none transition-colors resize-none"
                                 />
                             </div>
                             <div className="pt-4">
                                 <button
                                     type="submit"
-                                    className="w-full py-4 bg-orange-500 text-white font-bold tracking-wider hover:bg-orange-600 transition-colors"
+                                    className="w-full py-4 bg-gray-800 text-white font-bold tracking-wider hover:bg-gray-900 transition-colors"
                                 >
                                     送信する
                                 </button>

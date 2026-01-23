@@ -8,11 +8,11 @@ export function CompanyRecruit() {
                     {/* COMPANY */}
                     <Link
                         href="/company"
-                        className="group relative bg-orange-50 h-[140px] md:h-[250px] flex flex-col items-center justify-center hover:bg-orange-100 transition-colors"
+                        className="group relative bg-gray-50 h-[140px] md:h-[250px] flex flex-col items-center justify-center hover:bg-gray-100 transition-colors"
                     >
                         {/* Building Icon - ビル */}
                         <svg
-                            className="w-8 h-8 md:w-12 md:h-12 mb-2 md:mb-4 text-orange-500"
+                            className="w-8 h-8 md:w-12 md:h-12 mb-2 md:mb-4 text-gray-800"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -44,11 +44,11 @@ export function CompanyRecruit() {
                     {/* RECRUIT */}
                     <Link
                         href="/recruit"
-                        className="group relative bg-orange-50 h-[140px] md:h-[250px] flex flex-col items-center justify-center hover:bg-orange-100 transition-colors"
+                        className="group relative bg-gray-50 h-[140px] md:h-[250px] flex flex-col items-center justify-center hover:bg-gray-100 transition-colors"
                     >
                         {/* People Icon - 人材 */}
                         <svg
-                            className="w-8 h-8 md:w-12 md:h-12 mb-2 md:mb-4 text-orange-500"
+                            className="w-8 h-8 md:w-12 md:h-12 mb-2 md:mb-4 text-gray-800"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"

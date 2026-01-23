@@ -56,7 +56,7 @@ export default function NewsPage() {
                             alt="ビジネスニュース"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-16">
                         <h1 key={animationKey} className="text-6xl font-bold mb-4 overflow-hidden">
@@ -114,7 +114,7 @@ export default function NewsPage() {
                                         className="py-4 md:py-5 border-b border-gray-200 flex flex-col md:flex-row md:items-center gap-2 md:gap-6 hover:bg-gray-50 transition-colors cursor-pointer group"
                                     >
                                         <span className="text-[11px] md:text-sm text-gray-400 shrink-0">{news.date}</span>
-                                        <span className="text-[13px] md:text-[15px] group-hover:text-orange-600 transition-colors">{news.title}</span>
+                                        <span className="text-[13px] md:text-[15px] group-hover:text-gray-900 transition-colors">{news.title}</span>
                                     </div>
                                 ))}
                             </div>
@@ -122,17 +122,17 @@ export default function NewsPage() {
                             {/* Right: 最新お知らせ (smaller) */}
                             <div className="md:w-[340px] shrink-0">
                                 <div className="md:sticky md:top-24">
-                                    <h2 className="text-sm md:text-base font-bold mb-4 text-orange-600 flex items-center gap-2">
-                                        <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <h2 className="text-sm md:text-base font-bold mb-4 text-gray-900 flex items-center gap-2">
+                                        <span className="w-2 h-2 bg-gray-800 rounded-full"></span>
                                         最新お知らせ
                                     </h2>
-                                    <div className="bg-orange-50/50 rounded-lg p-4">
+                                    <div className="bg-gray-50/50 rounded-lg p-4">
                                         {newsItems.slice(0, 3).map((news, index) => (
                                             <div
                                                 key={index}
-                                                className="py-3 border-b border-orange-100 last:border-b-0 hover:bg-orange-100/50 transition-colors cursor-pointer rounded px-2 -mx-2"
+                                                className="py-3 border-b border-gray-100 last:border-b-0 hover:bg-gray-100/50 transition-colors cursor-pointer rounded px-2 -mx-2"
                                             >
-                                                <span className="text-[10px] text-orange-400 block mb-1">{news.date}</span>
+                                                <span className="text-[10px] text-gray-600 block mb-1">{news.date}</span>
                                                 <span className="text-[12px] text-gray-700 leading-relaxed block">{news.title}</span>
                                             </div>
                                         ))}

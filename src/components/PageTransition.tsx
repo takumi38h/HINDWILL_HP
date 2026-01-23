@@ -33,7 +33,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
         <>
             {/* Loading Overlay */}
             <div
-                className={`fixed inset-0 z-[9999] bg-gradient-to-br from-orange-950 via-black to-orange-900 flex flex-col items-center justify-center transition-opacity duration-500 ${
+                className={`fixed inset-0 z-[9999] bg-gradient-to-br from-gray-950 via-black to-gray-900 flex flex-col items-center justify-center transition-opacity duration-500 ${
                     isLoading ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                 }`}
             >
@@ -42,7 +42,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
                     {[...Array(20)].map((_, i) => (
                         <div
                             key={i}
-                            className="absolute w-1 h-1 bg-orange-400/30 rounded-full animate-pulse"
+                            className="absolute w-1 h-1 bg-white/30 rounded-full animate-pulse"
                             style={{
                                 left: `${((i * 37 + 13) % 100)}%`,
                                 top: `${((i * 53 + 7) % 100)}%`,
@@ -57,14 +57,14 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
                 <div className="relative z-10 flex flex-col items-center">
                     {/* 炎アイコン with glow effect */}
                     <div className="relative mb-6">
-                        <div className="absolute inset-0 blur-2xl bg-orange-500/50 rounded-full scale-150 animate-pulse" />
+                        <div className="absolute inset-0 blur-2xl bg-white/20 rounded-full scale-150 animate-pulse" />
                         <svg
                             width="100"
                             height="120"
                             viewBox="0 0 24 30"
                             fill="none"
                             className="relative z-10 drop-shadow-2xl"
-                            style={{ filter: "drop-shadow(0 0 20px rgba(249, 115, 22, 0.5))" }}
+                            style={{ filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))" }}
                         >
                             <path
                                 d="M12 2C7 8 4 13 4 18C4 24 7.5 28 12 28C16.5 28 20 24 20 18C20 13 17 8 12 2Z"
@@ -88,18 +88,18 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
                             </path>
                             <path
                                 d="M12 16C11 18 10.5 19 10.5 20.5C10.5 22 11 23 12 23C13 23 13.5 22 13.5 20.5C13.5 19 13 18 12 16Z"
-                                fill="#FEF3C7"
+                                fill="#F3F4F6"
                                 className="animate-pulse"
                             />
                             <defs>
                                 <linearGradient id="flame-main-trans" x1="12" y1="2" x2="12" y2="28" gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#F97316"/>
-                                    <stop offset="0.5" stopColor="#EA580C"/>
-                                    <stop offset="1" stopColor="#C2410C"/>
+                                    <stop stopColor="#FFFFFF"/>
+                                    <stop offset="0.5" stopColor="#E5E7EB"/>
+                                    <stop offset="1" stopColor="#D1D5DB"/>
                                 </linearGradient>
                                 <linearGradient id="flame-inner-trans" x1="12" y1="10" x2="12" y2="24" gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#FBBF24"/>
-                                    <stop offset="1" stopColor="#F59E0B"/>
+                                    <stop stopColor="#FFFFFF"/>
+                                    <stop offset="1" stopColor="#F3F4F6"/>
                                 </linearGradient>
                             </defs>
                         </svg>
@@ -110,7 +110,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
 
                     {/* プログレスバー */}
                     <div className="w-48 h-0.5 bg-white/20 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-orange-500 to-yellow-400 rounded-full animate-loading-bar"
+                        <div className="h-full bg-gradient-to-r from-white to-gray-300 rounded-full animate-loading-bar"
                              style={{ animation: "loading-bar 1.2s ease-in-out infinite" }} />
                     </div>
                 </div>

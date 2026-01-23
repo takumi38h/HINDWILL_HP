@@ -38,7 +38,7 @@ export default function RecruitPage() {
                             alt="絶景"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
                         <h1 key={animationKey} className="text-3xl md:text-6xl font-bold mb-2 md:mb-4 overflow-hidden">
@@ -86,11 +86,11 @@ export default function RecruitPage() {
                 {/* Message */}
                 <section className="py-20 md:py-32 relative overflow-hidden">
                     {/* Background with gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-orange-50/30" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50/30" />
 
                     {/* Decorative elements */}
-                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-200 to-transparent" />
-                    <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-200 to-transparent" />
+                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+                    <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 
                     {/* Large decorative text in background */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
@@ -102,9 +102,9 @@ export default function RecruitPage() {
                     <div className="max-w-[900px] mx-auto px-6 text-center relative z-10">
                         {/* Decorative line above title */}
                         <div className="flex items-center justify-center gap-3 mb-6 md:mb-8">
-                            <div className="w-8 md:w-12 h-px bg-orange-400" />
-                            <div className="w-2 h-2 bg-orange-500 rounded-full" />
-                            <div className="w-8 md:w-12 h-px bg-orange-400" />
+                            <div className="w-8 md:w-12 h-px bg-gray-600" />
+                            <div className="w-2 h-2 bg-gray-800 rounded-full" />
+                            <div className="w-8 md:w-12 h-px bg-gray-600" />
                         </div>
 
                         <h2
@@ -114,9 +114,9 @@ export default function RecruitPage() {
                             style={{ transitionDelay: "0.3s" }}
                         >
                             <span className="text-gray-900">Be the </span>
-                            <span className="text-orange-500 relative">
+                            <span className="text-gray-800 relative">
                                 Hero
-                                <svg className="absolute -bottom-2 left-0 w-full h-3 text-orange-300" viewBox="0 0 100 12" preserveAspectRatio="none">
+                                <svg className="absolute -bottom-2 left-0 w-full h-3 text-gray-400" viewBox="0 0 100 12" preserveAspectRatio="none">
                                     <path d="M0,8 Q25,0 50,8 T100,8" stroke="currentColor" strokeWidth="3" fill="none" />
                                 </svg>
                             </span>
@@ -146,14 +146,14 @@ export default function RecruitPage() {
                 </section>
 
                 {/* Vision */}
-                <section className="py-16 md:py-24 bg-gradient-to-b from-orange-50 to-white">
+                <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
                     <div className="max-w-[1100px] mx-auto px-6">
                         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
                             {/* Left: Text */}
                             <div className="flex-1">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <div className="w-10 h-0.5 bg-orange-500" />
-                                    <span className="text-orange-500 text-sm tracking-[0.15em] font-medium">OUR VISION</span>
+                                    <div className="w-10 h-0.5 bg-gray-800" />
+                                    <span className="text-gray-800 text-sm tracking-[0.15em] font-medium">OUR VISION</span>
                                 </div>
                                 <h3 className="text-2xl md:text-3xl font-bold mb-6">私たちが目指すこと</h3>
                                 <p className="text-xl md:text-2xl font-bold text-gray-800 leading-relaxed mb-6">
@@ -173,7 +173,7 @@ export default function RecruitPage() {
                                         alt="チームワーク"
                                         className="w-full h-full object-cover"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent" />
                                 </div>
                             </div>
                         </div>
@@ -181,7 +181,7 @@ export default function RecruitPage() {
                         <div className="mt-12 md:mt-16 text-center">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 md:gap-4 px-5 md:px-10 py-3 md:py-4 bg-white text-black border border-black text-[11px] md:text-base font-bold tracking-wider hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-colors group"
+                                className="inline-flex items-center gap-2 md:gap-4 px-5 md:px-10 py-3 md:py-4 bg-white text-black border border-black text-[11px] md:text-base font-bold tracking-wider hover:bg-gray-800 hover:text-white hover:border-gray-800 transition-colors group"
                             >
                                 <span>応募・お問い合わせ</span>
                                 <span className="w-5 h-5 md:w-6 md:h-6 bg-black/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">

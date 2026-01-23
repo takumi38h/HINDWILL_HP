@@ -74,7 +74,7 @@ export default function FAQPage() {
                             alt="ビジネスミーティング"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
                         <h1 key={animationKey} className="text-3xl md:text-6xl font-bold mb-2 md:mb-4 overflow-hidden">
@@ -150,7 +150,7 @@ export default function FAQPage() {
                     <div className="max-w-[800px] mx-auto px-6 text-center">
                         <Link
                             href="/contact"
-                            className="inline-block border border-orange-500 text-orange-500 px-5 md:px-16 py-3 md:py-5 text-[11px] md:text-sm tracking-wider hover:bg-orange-500 hover:text-white transition-colors duration-300"
+                            className="inline-block border border-gray-800 text-gray-800 px-5 md:px-16 py-3 md:py-5 text-[11px] md:text-sm tracking-wider hover:bg-gray-800 hover:text-white transition-colors duration-300"
                         >
                             HINDWILLに問い合わせてみる →
                         </Link>

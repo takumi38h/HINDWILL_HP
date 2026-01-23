@@ -121,7 +121,7 @@ export default function WeArePage() {
                             alt="Hero image"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white px-6 md:px-16 relative z-10">
                         <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-2 md:mb-4">
@@ -160,9 +160,9 @@ export default function WeArePage() {
                         <AnimatedSection>
                             {/* Label with decorative lines */}
                             <div className="flex items-center justify-center gap-4 mb-8 md:mb-10">
-                                <div className="w-12 md:w-20 h-px bg-orange-300" />
-                                <p className="text-xs md:text-sm tracking-[0.3em] text-orange-500 font-medium">MISSION</p>
-                                <div className="w-12 md:w-20 h-px bg-orange-300" />
+                                <div className="w-12 md:w-20 h-px bg-gray-400" />
+                                <p className="text-xs md:text-sm tracking-[0.3em] text-gray-800 font-medium">MISSION</p>
+                                <div className="w-12 md:w-20 h-px bg-gray-400" />
                             </div>
 
                             {/* Main title */}
@@ -171,7 +171,7 @@ export default function WeArePage() {
                             </h2>
 
                             {/* English subtitle */}
-                            <p className="text-sm md:text-lg tracking-[0.15em] text-orange-500 font-medium italic">
+                            <p className="text-sm md:text-lg tracking-[0.15em] text-gray-800 font-medium italic">
                                 Ignite the World.
                             </p>
                         </AnimatedSection>
@@ -181,14 +181,14 @@ export default function WeArePage() {
                 {/* Vision Section */}
                 <section className="bg-white relative">
                     {/* Vision header */}
-                    <div className="bg-gradient-to-r from-orange-100 to-orange-50 py-8 md:py-14">
+                    <div className="bg-gradient-to-r from-gray-100 to-gray-50 py-8 md:py-14">
                         <AnimatedSection>
                             <div className="px-6 md:px-16 text-center md:text-left">
-                                <p className="text-xs md:text-sm tracking-[0.3em] text-orange-500 font-medium mb-3">VISION</p>
+                                <p className="text-xs md:text-sm tracking-[0.3em] text-gray-800 font-medium mb-3">VISION</p>
                                 <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">
                                     誇れる航海を、誇れる仲間と。
                                 </h2>
-                                <p className="text-sm md:text-lg tracking-[0.15em] text-orange-500 font-medium italic">
+                                <p className="text-sm md:text-lg tracking-[0.15em] text-gray-800 font-medium italic">
                                     A Voyage Worth Living.
                                 </p>
                             </div>
@@ -236,9 +236,9 @@ export default function WeArePage() {
                         <AnimatedSection>
                             <div className="text-center mb-12 md:mb-16">
                                 <div className="flex items-center justify-center gap-4 mb-6">
-                                    <div className="w-12 md:w-20 h-px bg-orange-300" />
-                                    <p className="text-xs md:text-sm tracking-[0.3em] text-orange-500 font-medium">VALUES</p>
-                                    <div className="w-12 md:w-20 h-px bg-orange-300" />
+                                    <div className="w-12 md:w-20 h-px bg-gray-400" />
+                                    <p className="text-xs md:text-sm tracking-[0.3em] text-gray-800 font-medium">VALUES</p>
+                                    <div className="w-12 md:w-20 h-px bg-gray-400" />
                                 </div>
                                 <h2 className="text-2xl md:text-4xl font-bold text-gray-900">私たちの価値観</h2>
                             </div>
@@ -249,12 +249,12 @@ export default function WeArePage() {
                             <AnimatedSection delay={100}>
                                 <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                                     <div className="flex items-start gap-4 md:gap-6">
-                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-gray-800 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
                                             01
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">人生を、本気で使え</h3>
-                                            <p className="text-sm md:text-base text-orange-500 italic mb-4">Life Is the Voyage.</p>
+                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">Life Is the Voyage.</p>
                                             <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
                                                 <p>時間は有限だ。<br />惰性で生きるほど、人生は長くない。</p>
                                                 <p>志を掲げて、熱狂しよう。<br />人の心を動かす仕事は、熱量からしか生まれない。</p>
@@ -268,12 +268,12 @@ export default function WeArePage() {
                             <AnimatedSection delay={200}>
                                 <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                                     <div className="flex items-start gap-4 md:gap-6">
-                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-gray-800 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
                                             02
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">かっこよくあれ</h3>
-                                            <p className="text-sm md:text-base text-orange-500 italic mb-4">Stay Cool. Stay Foolish.</p>
+                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">Stay Cool. Stay Foolish.</p>
                                             <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
                                                 <p>人生も、仕事も、振る舞いも。<br />自分の生き方を、自分で誇れるか。</p>
                                                 <p>ダサいことはしない。<br />人のせいにしない。<br />誰のことも見下さない。</p>
@@ -288,12 +288,12 @@ export default function WeArePage() {
                             <AnimatedSection delay={300}>
                                 <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                                     <div className="flex items-start gap-4 md:gap-6">
-                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-gray-800 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
                                             03
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">逆境を楽しめ</h3>
-                                            <p className="text-sm md:text-base text-orange-500 italic mb-4">Embrace the Storm.</p>
+                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">Embrace the Storm.</p>
                                             <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
                                                 <p>逆境のない人生なんてつまらない。<br />ピンチが来たら「面白くなってきた」と笑え。</p>
                                                 <p className="font-medium text-gray-800">修羅場は、志を試される舞台だ。</p>
@@ -307,12 +307,12 @@ export default function WeArePage() {
                             <AnimatedSection delay={400}>
                                 <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                                     <div className="flex items-start gap-4 md:gap-6">
-                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-gray-800 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
                                             04
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">背中で語れ</h3>
-                                            <p className="text-sm md:text-base text-orange-500 italic mb-4">Be the Captain.</p>
+                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">Be the Captain.</p>
                                             <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
                                                 <p>一番ストイックに、一番楽しそうに。<br />その背中が、次の世代の未来になる。</p>
                                                 <p className="font-medium text-gray-800">語るな、走れ。</p>
@@ -326,12 +326,12 @@ export default function WeArePage() {
                             <AnimatedSection delay={500}>
                                 <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                                     <div className="flex items-start gap-4 md:gap-6">
-                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-gray-800 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
                                             05
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">稼ぐことは、愛だ</h3>
-                                            <p className="text-sm md:text-base text-orange-500 italic mb-4">Earn for the Crew.</p>
+                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">Earn for the Crew.</p>
                                             <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
                                                 <p>守るために、結果を出す。<br />仲間、家族、約束。</p>
                                                 <p className="font-medium text-gray-800">全てに、責任を持て。</p>
@@ -383,7 +383,7 @@ export default function WeArePage() {
                         <AnimatedSection>
                             <a
                                 href="/contact"
-                                className="inline-block border border-orange-500 text-orange-500 px-5 md:px-16 py-3 md:py-5 text-[11px] md:text-sm tracking-wider hover:bg-orange-500 hover:text-white transition-colors duration-300"
+                                className="inline-block border border-gray-800 text-gray-800 px-5 md:px-16 py-3 md:py-5 text-[11px] md:text-sm tracking-wider hover:bg-gray-800 hover:text-white transition-colors duration-300"
                             >
                                 HINDWILLに問い合わせてみる →
                             </a>

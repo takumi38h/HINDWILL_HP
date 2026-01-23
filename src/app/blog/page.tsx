@@ -56,7 +56,7 @@ export default function BlogPage() {
                             alt="チームディスカッション"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/60 to-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
                         <h1 key={animationKey} className="text-3xl md:text-6xl font-bold mb-2 md:mb-4 overflow-hidden">
@@ -105,14 +105,14 @@ export default function BlogPage() {
                 <section className="py-6 md:py-8 bg-white border-b border-gray-100">
                     <div className="max-w-[1200px] mx-auto px-6">
                         <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3">
-                            <span className="w-3 h-3 bg-orange-500 rounded-full"></span>
+                            <span className="w-3 h-3 bg-gray-800 rounded-full"></span>
                             ブログ一覧
                         </h2>
                     </div>
                 </section>
 
                 {/* Blog Grid */}
-                <section className="py-12 md:py-20 bg-gradient-to-b from-orange-50 to-white">
+                <section className="py-12 md:py-20 bg-gradient-to-b from-gray-50 to-white">
                     <div className="max-w-[1200px] mx-auto px-6">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {blogPosts.slice(0, visibleCount).map((post) => (
@@ -148,7 +148,7 @@ export default function BlogPage() {
                             <div className="mt-12 md:mt-16 text-center">
                                 <button
                                     onClick={handleLoadMore}
-                                    className="inline-flex items-center gap-3 px-8 py-4 border-2 border-gray-300 text-gray-700 font-medium hover:border-orange-500 hover:text-orange-500 transition-colors"
+                                    className="inline-flex items-center gap-3 px-8 py-4 border-2 border-gray-300 text-gray-700 font-medium hover:border-gray-800 hover:text-gray-800 transition-colors"
                                 >
                                     <span>もっと見る</span>
                                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

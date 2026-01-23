@@ -34,10 +34,10 @@ export function NewsBar() {
     const currentNews = newsItems[currentIndex];
 
     return (
-        <section className="border-t border-b border-orange-200">
+        <section className="border-t border-b border-gray-200">
             <div className="flex">
                 {/* Left: NEWS Label */}
-                <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-3 py-2 md:px-6 md:py-4 flex items-center gap-2 md:gap-4 shrink-0">
+                <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white px-3 py-2 md:px-6 md:py-4 flex items-center gap-2 md:gap-4 shrink-0">
                     <span className="text-[11px] md:text-[13px] font-bold tracking-[0.05em]">NEWS</span>
                     <span className="text-[9px] md:text-[11px] text-gray-400">お知らせ</span>
                     <Link

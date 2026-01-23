@@ -19,8 +19,8 @@ const services = [
                 <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
         ),
-        color: "from-orange-500 to-orange-600",
-        bgColor: "bg-orange-500",
+        color: "from-gray-800 to-gray-900",
+        bgColor: "bg-gray-800",
         image: "/images/japanese_people/planning.png",
     },
     {
@@ -36,8 +36,8 @@ const services = [
                 <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
             </svg>
         ),
-        color: "from-orange-400 to-orange-500",
-        bgColor: "bg-orange-400",
+        color: "from-gray-600 to-gray-800",
+        bgColor: "bg-gray-600",
         image: "/images/japanese_people/creative.png",
     },
     {
@@ -52,8 +52,8 @@ const services = [
                 <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
         ),
-        color: "from-amber-500 to-orange-500",
-        bgColor: "bg-amber-500",
+        color: "from-gray-700 to-gray-800",
+        bgColor: "bg-gray-700",
         image: "/images/japanese_people/development.png",
     },
     {
@@ -68,7 +68,7 @@ const services = [
                 <path d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
         ),
-        color: "from-yellow-500 to-amber-500",
+        color: "from-yellow-500 to-gray-700",
         bgColor: "bg-yellow-500",
         image: "/images/japanese_people/entertainment.png",
     },
@@ -139,15 +139,15 @@ export default function ServicePage() {
                             alt="サービス"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/80 via-black/60 to-black/40" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/80 via-black/60 to-black/40" />
                     </div>
 
                     {/* Decorative elements */}
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-amber-400 to-transparent" />
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-gray-800 via-gray-600 to-transparent" />
 
                     <div className="relative z-10 px-6 md:px-16 max-w-[1200px] mx-auto w-full">
                         <p
-                            className={`text-orange-400 text-sm tracking-[0.3em] mb-4 transition-all duration-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                            className={`text-gray-600 text-sm tracking-[0.3em] mb-4 transition-all duration-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                                 }`}
                         >
                             WHAT WE DO
@@ -197,19 +197,19 @@ export default function ServicePage() {
                 {/* OUR SERVICE - Intro */}
                 <section className="py-20 md:py-32 bg-white relative overflow-hidden">
                     {/* Background decoration */}
-                    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-orange-50 to-transparent" />
-                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+                    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gray-50 to-transparent" />
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-gray-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
                     <div className="max-w-[1200px] mx-auto px-6 relative">
                         <AnimatedSection>
                             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 md:mb-20">
                                 <div>
                                     <div className="flex items-center gap-3 mb-5">
-                                        <div className="w-12 h-0.5 bg-orange-500" />
-                                        <span className="text-orange-500 text-sm tracking-[0.2em] font-medium">OUR SERVICE</span>
+                                        <div className="w-12 h-0.5 bg-gray-800" />
+                                        <span className="text-gray-800 text-sm tracking-[0.2em] font-medium">OUR SERVICE</span>
                                     </div>
                                     <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                                        <span className="text-orange-500">4</span>つのソリューションで<br />
+                                        <span className="text-gray-800">4</span>つのソリューションで<br />
                                         ビジネスを加速
                                     </h2>
                                 </div>
@@ -287,7 +287,7 @@ export default function ServicePage() {
                 </section>
 
                 {/* Service Details */}
-                <section className="py-16 md:py-24 bg-gradient-to-b from-orange-50/50 to-white">
+                <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50/50 to-white">
                     <div className="max-w-[1200px] mx-auto px-6">
                         {services.map((service, index) => (
                             <AnimatedSection key={service.id} delay={100}>
@@ -303,7 +303,7 @@ export default function ServicePage() {
                                                 <div className={`w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center text-white shadow-lg`}>
                                                     <span className="text-2xl md:text-3xl font-bold">{String(index + 1).padStart(2, '0')}</span>
                                                 </div>
-                                                <div className="h-px flex-1 bg-gradient-to-r from-orange-300 to-transparent" />
+                                                <div className="h-px flex-1 bg-gradient-to-r from-gray-400 to-transparent" />
                                             </div>
 
                                             {/* Title */}
@@ -348,7 +348,7 @@ export default function ServicePage() {
 
                                                 {/* Badge/Icon Overlay (Optional - kept minimal) */}
                                                 <div className="absolute bottom-6 right-6 w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-lg">
-                                                    <div className={`text-${service.id === 'outsourcing' ? 'yellow' : 'orange'}-500`}>
+                                                    <div className="text-white">
                                                         {service.id === 'consulting' && (
                                                             <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                                 <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -388,9 +388,9 @@ export default function ServicePage() {
                         <AnimatedSection>
                             <div className="text-center mb-12 md:mb-16">
                                 <div className="flex items-center justify-center gap-4 mb-6">
-                                    <div className="w-12 md:w-20 h-px bg-orange-300" />
-                                    <span className="text-orange-500 text-sm tracking-[0.3em] font-medium">BUSINESS</span>
-                                    <div className="w-12 md:w-20 h-px bg-orange-300" />
+                                    <div className="w-12 md:w-20 h-px bg-gray-400" />
+                                    <span className="text-gray-800 text-sm tracking-[0.3em] font-medium">BUSINESS</span>
+                                    <div className="w-12 md:w-20 h-px bg-gray-400" />
                                 </div>
                                 <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3">
                                     Sales Consulting
@@ -438,9 +438,9 @@ export default function ServicePage() {
                                 },
                             ].map((item, index) => (
                                 <AnimatedSection key={index} delay={index * 100}>
-                                    <div className="bg-white border border-gray-100 rounded-xl p-6 md:p-8 hover:shadow-lg hover:border-orange-200 transition-all h-full">
+                                    <div className="bg-white border border-gray-100 rounded-xl p-6 md:p-8 hover:shadow-lg hover:border-gray-200 transition-all h-full">
                                         <div className="flex items-start gap-4">
-                                            <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-lg">
+                                            <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-lg">
                                                 {item.step}
                                             </div>
                                             <div className="flex-1">
@@ -456,11 +456,11 @@ export default function ServicePage() {
                 </section>
 
                 {/* CTA */}
-                <section className="py-20 md:py-28 bg-gradient-to-br from-orange-600 via-orange-700 to-orange-800 relative overflow-hidden" data-header-theme="light">
+                <section className="py-20 md:py-28 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden" data-header-theme="light">
                     {/* Background pattern */}
                     <div className="absolute inset-0 opacity-10">
                         <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-                        <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-400 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+                        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gray-400 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
                     </div>
 
                     <div className="max-w-[800px] mx-auto px-6 text-center relative">
@@ -468,13 +468,13 @@ export default function ServicePage() {
                             <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
                                 まずはお気軽に<br className="md:hidden" />ご相談ください
                             </h2>
-                            <p className="text-orange-100 mb-10 text-sm md:text-base">
+                            <p className="text-gray-100 mb-10 text-sm md:text-base">
                                 御社の課題に合わせた最適なソリューションをご提案いたします。<br />
                                 初回のご相談は無料です。
                             </p>
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 md:gap-4 bg-white text-orange-600 px-5 py-3 md:px-10 md:py-4 font-bold text-[11px] md:text-base hover:bg-orange-50 transition-colors group"
+                                className="inline-flex items-center gap-2 md:gap-4 bg-white text-gray-900 px-5 py-3 md:px-10 md:py-4 font-bold text-[11px] md:text-base hover:bg-gray-50 transition-colors group"
                             >
                                 <span>HINDWILLに問い合わせる</span>
                                 <svg className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

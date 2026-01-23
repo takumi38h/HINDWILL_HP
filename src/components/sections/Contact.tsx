@@ -37,7 +37,7 @@ export function Contact() {
     return (
         <section ref={sectionRef} className="relative py-24 md:py-32 overflow-hidden" data-header-theme="light">
             {/* Dynamic gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-600 via-orange-700 to-orange-900" />
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
 
             {/* Animated gradient overlay */}
             <div
@@ -82,7 +82,7 @@ export function Contact() {
                     </h2>
                 </div>
                 <p
-                    className={`text-[14px] text-orange-200 mb-10 transition-all duration-700 ${
+                    className={`text-[14px] text-gray-200 mb-10 transition-all duration-700 ${
                         isVisible ? "opacity-100" : "opacity-0"
                     }`}
                     style={{ transitionDelay: "0.2s" }}
@@ -113,12 +113,12 @@ export function Contact() {
                         className="relative inline-flex items-center gap-2 md:gap-4 px-5 py-3 md:px-8 md:py-4 bg-white text-gray-900 text-[12px] md:text-[14px] font-bold hover:bg-gray-50 transition-all duration-300 group overflow-hidden"
                     >
                         {/* Shine effect */}
-                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-100/50 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-100/50 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
                         <span className="relative z-10">お問い合わせはこちら</span>
 
                         {/* Arrow with circle background */}
-                        <span className="relative z-10 w-6 h-6 md:w-8 md:h-8 bg-orange-500 rounded-full flex items-center justify-center group-hover:bg-orange-600 transition-colors duration-300">
+                        <span className="relative z-10 w-6 h-6 md:w-8 md:h-8 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-gray-900 transition-colors duration-300">
                             <svg
                                 className="w-3 h-3 md:w-4 md:h-4 text-white transform group-hover:translate-x-0.5 transition-transform duration-300"
                                 viewBox="0 0 24 24"

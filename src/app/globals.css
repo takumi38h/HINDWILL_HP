@@ -5,30 +5,24 @@
 @import "@fontsource/dm-sans/700.css";
 
 @theme {
-  /* Human Orange Palette - Option A: Apricot (Skin/Warmth) */
-  --color-orange-300: #FFD1A9;
-  --color-orange-400: #FBC595;
-  --color-orange-500: #FAB27B;
-  /* Base Apricot */
-  --color-orange-600: #E68A45;
-  --color-orange-700: #9E521C;
+  /* Monochrome Palette */
 }
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* HINDWILL Color Palette - Human Warmth (Apricot) */
-  --primary: #FAB27B;
-  --secondary: #FFD1A9;
-  --accent: #FBBF24;
-  --background: #FFF7ED;
-  --text: #7C2D12;
+  /* HINDWILL Color Palette - Monochrome */
+  --primary: #111827;
+  --secondary: #374151;
+  --accent: #6B7280;
+  --background: #FFFFFF;
+  --text: #111827;
 
   /* Legacy colors */
-  --black: #7C2D12;
+  --black: #111827;
   --white: #FFFFFF;
-  --surface: #FFF7ED;
-  --muted: #9E521C;
+  --surface: #F9FAFB;
+  --muted: #6B7280;
 
   /* Spacing */
   --section-py: 80px;

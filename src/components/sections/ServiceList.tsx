@@ -110,10 +110,10 @@ export function ServiceList() {
     return (
         <section ref={sectionRef} className="relative py-20 md:py-28 overflow-hidden">
             {/* Background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white via-orange-50/30 to-white" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white" />
 
             {/* Decorative elements */}
-            <div className="absolute top-20 right-0 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl" />
+            <div className="absolute top-20 right-0 w-64 h-64 bg-gray-200/20 rounded-full blur-3xl" />
             <div className="absolute bottom-20 left-0 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl" />
 
             {/* Container with left margin area and slider */}
@@ -146,7 +146,7 @@ export function ServiceList() {
                                 key={i}
                                 className={`w-1.5 h-8 rounded-full transition-all duration-300 ${
                                     (currentIndex % services.length) === i
-                                        ? "bg-gradient-to-b from-orange-500 to-orange-400 scale-y-110"
+                                        ? "bg-gradient-to-b from-gray-800 to-gray-600 scale-y-110"
                                         : "bg-gray-200"
                                 }`}
                             />
@@ -179,9 +179,9 @@ export function ServiceList() {
                             style={{ width: cardWidth }}
                         >
                             {/* Image with hover glow */}
-                            <div className="relative aspect-[4/3] bg-gradient-to-br from-orange-100 to-amber-50 overflow-hidden mb-6 rounded-sm">
+                            <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 overflow-hidden mb-6 rounded-sm">
                                 {/* Hover glow effect */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 to-orange-500/0 group-hover:from-orange-400/10 group-hover:to-orange-500/20 transition-all duration-500 z-10" />
+                                <div className="absolute inset-0 bg-gradient-to-br from-gray-600/0 to-gray-800/0 group-hover:from-gray-600/10 group-hover:to-gray-800/20 transition-all duration-500 z-10" />
                                 <img
                                     src={service.image}
                                     alt={service.title}
@@ -195,7 +195,7 @@ export function ServiceList() {
                             <div className="flex items-start justify-between -mt-12 relative z-10">
                                 <div className="flex-1">
                                     <div className="flex items-baseline mb-4">
-                                        <span className="text-5xl md:text-6xl font-bold leading-none tracking-tight bg-gradient-to-br from-orange-600 to-orange-500 bg-clip-text text-transparent group-hover:from-orange-500 group-hover:to-amber-500 transition-all duration-300">
+                                        <span className="text-5xl md:text-6xl font-bold leading-none tracking-tight bg-gradient-to-br from-gray-900 to-gray-800 bg-clip-text text-transparent group-hover:from-gray-800 group-hover:to-gray-700 transition-all duration-300">
                                             {service.title.charAt(0)}
                                         </span>
                                         <span className="text-lg md:text-xl font-bold tracking-wide ml-1 text-gray-800">
@@ -207,9 +207,9 @@ export function ServiceList() {
                                     </p>
                                 </div>
                                 {/* Arrow with hover animation */}
-                                <div className="mt-2 p-2 rounded-full bg-transparent group-hover:bg-orange-100 transition-all duration-300">
+                                <div className="mt-2 p-2 rounded-full bg-transparent group-hover:bg-gray-100 transition-all duration-300">
                                     <svg
-                                        className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transform group-hover:translate-x-1 transition-all duration-300"
+                                        className="w-5 h-5 text-gray-400 group-hover:text-gray-800 transform group-hover:translate-x-1 transition-all duration-300"
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         stroke="currentColor"

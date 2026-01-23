@@ -71,7 +71,7 @@ export default function PrivacyPage() {
                             alt="ビジネス"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/70 to-black/60" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/70 to-black/60" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
                         <h1 key={animationKey} className="text-2xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 overflow-hidden">
@@ -132,7 +132,7 @@ export default function PrivacyPage() {
                             <AnimatedSection delay={100}>
                                 <div className="bg-gray-50 rounded-lg p-6 md:p-8">
                                     <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-gray-900 flex items-center gap-3">
-                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">1</span>
+                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-gray-800 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">1</span>
                                         個人情報の定義
                                     </h3>
                                     <p className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-loose pl-11 md:pl-12">
@@ -144,7 +144,7 @@ export default function PrivacyPage() {
                             <AnimatedSection delay={150}>
                                 <div className="bg-gray-50 rounded-lg p-6 md:p-8">
                                     <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-gray-900 flex items-center gap-3">
-                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">2</span>
+                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-gray-800 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">2</span>
                                         個人情報の収集方法
                                     </h3>
                                     <p className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-loose pl-11 md:pl-12">
@@ -152,19 +152,19 @@ export default function PrivacyPage() {
                                     </p>
                                     <ul className="mt-4 space-y-2 pl-11 md:pl-12">
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>お問い合わせフォームからのご連絡</span>
                                         </li>
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>電話、メール、書面等によるお問い合わせ</span>
                                         </li>
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>名刺交換等の商談・打ち合わせ</span>
                                         </li>
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>契約締結時の書類提出</span>
                                         </li>
                                     </ul>
@@ -174,7 +174,7 @@ export default function PrivacyPage() {
                             <AnimatedSection delay={200}>
                                 <div className="bg-gray-50 rounded-lg p-6 md:p-8">
                                     <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-gray-900 flex items-center gap-3">
-                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">3</span>
+                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-gray-800 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">3</span>
                                         個人情報の利用目的
                                     </h3>
                                     <p className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-loose pl-11 md:pl-12 mb-4">
@@ -182,27 +182,27 @@ export default function PrivacyPage() {
                                     </p>
                                     <ul className="space-y-2 pl-11 md:pl-12">
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>当社サービスの提供・運営</span>
                                         </li>
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>お客様からのお問い合わせへの対応</span>
                                         </li>
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>契約の履行、請求書の発行等の事務処理</span>
                                         </li>
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>当社サービスに関する情報のご案内</span>
                                         </li>
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>サービス改善のための分析・調査</span>
                                         </li>
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>その他上記利用目的に付随する目的</span>
                                         </li>
                                     </ul>
@@ -212,7 +212,7 @@ export default function PrivacyPage() {
                             <AnimatedSection delay={250}>
                                 <div className="bg-gray-50 rounded-lg p-6 md:p-8">
                                     <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-gray-900 flex items-center gap-3">
-                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">4</span>
+                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-gray-800 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">4</span>
                                         個人情報の第三者提供
                                     </h3>
                                     <p className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-loose pl-11 md:pl-12 mb-4">
@@ -220,19 +220,19 @@ export default function PrivacyPage() {
                                     </p>
                                     <ul className="space-y-2 pl-11 md:pl-12">
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>法令に基づく場合</span>
                                         </li>
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>人の生命、身体または財産の保護のために必要がある場合であって、お客様の同意を得ることが困難であるとき</span>
                                         </li>
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、お客様の同意を得ることが困難であるとき</span>
                                         </li>
                                         <li className="text-gray-700 text-sm md:text-base leading-relaxed flex items-start gap-2">
-                                            <span className="text-orange-500 mt-1">•</span>
+                                            <span className="text-gray-800 mt-1">•</span>
                                             <span>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、お客様の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</span>
                                         </li>
                                     </ul>
@@ -242,7 +242,7 @@ export default function PrivacyPage() {
                             <AnimatedSection delay={300}>
                                 <div className="bg-gray-50 rounded-lg p-6 md:p-8">
                                     <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-gray-900 flex items-center gap-3">
-                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">5</span>
+                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-gray-800 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">5</span>
                                         個人情報の安全管理
                                     </h3>
                                     <p className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-loose pl-11 md:pl-12">
@@ -254,7 +254,7 @@ export default function PrivacyPage() {
                             <AnimatedSection delay={350}>
                                 <div className="bg-gray-50 rounded-lg p-6 md:p-8">
                                     <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-gray-900 flex items-center gap-3">
-                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">6</span>
+                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-gray-800 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">6</span>
                                         個人情報の開示・訂正・削除
                                     </h3>
                                     <p className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-loose pl-11 md:pl-12">
@@ -266,7 +266,7 @@ export default function PrivacyPage() {
                             <AnimatedSection delay={400}>
                                 <div className="bg-gray-50 rounded-lg p-6 md:p-8">
                                     <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-gray-900 flex items-center gap-3">
-                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">7</span>
+                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-gray-800 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">7</span>
                                         Cookieの使用について
                                     </h3>
                                     <p className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-loose pl-11 md:pl-12">
@@ -278,7 +278,7 @@ export default function PrivacyPage() {
                             <AnimatedSection delay={450}>
                                 <div className="bg-gray-50 rounded-lg p-6 md:p-8">
                                     <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-gray-900 flex items-center gap-3">
-                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">8</span>
+                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-gray-800 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">8</span>
                                         プライバシーポリシーの変更
                                     </h3>
                                     <p className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-loose pl-11 md:pl-12">
@@ -288,9 +288,9 @@ export default function PrivacyPage() {
                             </AnimatedSection>
 
                             <AnimatedSection delay={500}>
-                                <div className="bg-orange-50 rounded-lg p-6 md:p-8 border border-orange-100">
+                                <div className="bg-gray-50 rounded-lg p-6 md:p-8 border border-gray-100">
                                     <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-gray-900 flex items-center gap-3">
-                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">9</span>
+                                        <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 bg-gray-800 rounded-full flex items-center justify-center text-white text-sm md:text-base font-bold">9</span>
                                         お問い合わせ窓口
                                     </h3>
                                     <div className="pl-11 md:pl-12">
@@ -301,7 +301,7 @@ export default function PrivacyPage() {
                                             <p className="font-bold text-gray-900 text-sm md:text-base mb-3">株式会社HINDWILL</p>
                                             <div className="text-sm md:text-base text-gray-700">
                                                 <p className="flex items-center gap-2">
-                                                    <svg className="w-4 h-4 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <svg className="w-4 h-4 text-gray-800 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                                     </svg>
                                                     <span>Email: takumi1127h@gmail.com</span>
@@ -330,7 +330,7 @@ export default function PrivacyPage() {
                         <AnimatedSection>
                             <Link
                                 href="/contact"
-                                className="inline-block border border-orange-500 text-orange-500 px-5 md:px-16 py-3 md:py-5 text-[11px] md:text-sm tracking-wider hover:bg-orange-500 hover:text-white transition-colors duration-300"
+                                className="inline-block border border-gray-800 text-gray-800 px-5 md:px-16 py-3 md:py-5 text-[11px] md:text-sm tracking-wider hover:bg-gray-800 hover:text-white transition-colors duration-300"
                             >
                                 お問い合わせはこちら →
                             </Link>

@@ -81,7 +81,7 @@ export default function CompanyPage() {
                             alt="絶景"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/70 to-black/60" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/70 to-black/60" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
                         <h1 key={animationKey} className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 overflow-hidden">
@@ -132,8 +132,8 @@ export default function CompanyPage() {
                         <AnimatedSection>
                             <div className="mb-8 md:mb-12">
                                 <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-8 md:w-12 h-px bg-orange-400" />
-                                    <p className="text-xs md:text-sm tracking-[0.2em] text-orange-500 font-medium">COMPANY PROFILE</p>
+                                    <div className="w-8 md:w-12 h-px bg-gray-600" />
+                                    <p className="text-xs md:text-sm tracking-[0.2em] text-gray-800 font-medium">COMPANY PROFILE</p>
                                 </div>
                                 <h2 className="text-xl md:text-2xl font-bold text-gray-900">会社情報</h2>
                             </div>
@@ -160,14 +160,14 @@ export default function CompanyPage() {
                 </section>
 
                 {/* Philosophy */}
-                <section className="py-12 md:py-20 bg-gradient-to-b from-orange-50 to-white">
+                <section className="py-12 md:py-20 bg-gradient-to-b from-gray-50 to-white">
                     <div className="max-w-[900px] mx-auto px-6">
                         <AnimatedSection>
                             <div className="mb-8 md:mb-12 text-center">
                                 <div className="flex items-center justify-center gap-4 mb-4">
-                                    <div className="w-8 md:w-12 h-px bg-orange-400" />
-                                    <p className="text-xs md:text-sm tracking-[0.2em] text-orange-500 font-medium">PHILOSOPHY</p>
-                                    <div className="w-8 md:w-12 h-px bg-orange-400" />
+                                    <div className="w-8 md:w-12 h-px bg-gray-600" />
+                                    <p className="text-xs md:text-sm tracking-[0.2em] text-gray-800 font-medium">PHILOSOPHY</p>
+                                    <div className="w-8 md:w-12 h-px bg-gray-600" />
                                 </div>
                                 <h2 className="text-xl md:text-2xl font-bold text-gray-900">企業理念</h2>
                             </div>
@@ -177,7 +177,7 @@ export default function CompanyPage() {
                             <div className="bg-white rounded-xl p-6 md:p-10 shadow-sm border border-gray-100">
                                 <div className="text-center mb-6 md:mb-8">
                                     <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-2">Beyond the Technology.</h3>
-                                    <p className="text-orange-500 text-sm md:text-base italic">テクノロジーを超えて、その先へ。</p>
+                                    <p className="text-gray-800 text-sm md:text-base italic">テクノロジーを超えて、その先へ。</p>
                                 </div>
                                 <div className="max-w-[700px] mx-auto">
                                     <p className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-loose text-center md:text-left">
@@ -199,9 +199,9 @@ export default function CompanyPage() {
                         <AnimatedSection>
                             <div className="mb-8 md:mb-12 text-center">
                                 <div className="flex items-center justify-center gap-4 mb-4">
-                                    <div className="w-8 md:w-12 h-px bg-orange-400" />
-                                    <p className="text-xs md:text-sm tracking-[0.2em] text-orange-500 font-medium">REPRESENTATIVE</p>
-                                    <div className="w-8 md:w-12 h-px bg-orange-400" />
+                                    <div className="w-8 md:w-12 h-px bg-gray-600" />
+                                    <p className="text-xs md:text-sm tracking-[0.2em] text-gray-800 font-medium">REPRESENTATIVE</p>
+                                    <div className="w-8 md:w-12 h-px bg-gray-600" />
                                 </div>
                                 <h2 className="text-xl md:text-2xl font-bold text-gray-900">代表紹介</h2>
                             </div>
@@ -218,7 +218,7 @@ export default function CompanyPage() {
                                         />
                                     </div>
                                     <div className="flex-1 text-center md:text-left">
-                                        <p className="text-xs md:text-sm text-orange-500 font-medium mb-1">代表取締役</p>
+                                        <p className="text-xs md:text-sm text-gray-800 font-medium mb-1">代表取締役</p>
                                         <h3 className="text-xl md:text-3xl font-bold mb-1 text-gray-900">橋爪 拓海</h3>
                                         <p className="text-gray-500 text-xs md:text-sm mb-4 md:mb-6">Takumi Hashizume</p>
                                         <div className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-loose space-y-3">
@@ -245,9 +245,9 @@ export default function CompanyPage() {
                         <AnimatedSection>
                             <div className="mb-8 md:mb-12 text-center">
                                 <div className="flex items-center justify-center gap-4 mb-4">
-                                    <div className="w-8 md:w-12 h-px bg-orange-400" />
-                                    <p className="text-xs md:text-sm tracking-[0.2em] text-orange-500 font-medium">CONTACT</p>
-                                    <div className="w-8 md:w-12 h-px bg-orange-400" />
+                                    <div className="w-8 md:w-12 h-px bg-gray-600" />
+                                    <p className="text-xs md:text-sm tracking-[0.2em] text-gray-800 font-medium">CONTACT</p>
+                                    <div className="w-8 md:w-12 h-px bg-gray-600" />
                                 </div>
                                 <h2 className="text-xl md:text-2xl font-bold text-gray-900">お問い合わせ</h2>
                             </div>
@@ -256,14 +256,14 @@ export default function CompanyPage() {
                         <AnimatedSection delay={100}>
                             <div className="bg-white rounded-xl p-6 md:p-10 shadow-sm border border-gray-100">
                                 <div className="flex items-start gap-4 justify-center">
-                                    <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-5 h-5 md:w-6 md:h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                         </svg>
                                     </div>
                                     <div>
                                         <p className="font-bold text-gray-900 text-sm md:text-base mb-1">メール</p>
-                                        <a href="mailto:takumi1127h@gmail.com" className="text-gray-600 text-sm md:text-base hover:text-orange-500 transition-colors break-all">
+                                        <a href="mailto:takumi1127h@gmail.com" className="text-gray-600 text-sm md:text-base hover:text-gray-800 transition-colors break-all">
                                             takumi1127h@gmail.com
                                         </a>
                                     </div>
@@ -279,7 +279,7 @@ export default function CompanyPage() {
                         <AnimatedSection>
                             <Link
                                 href="/contact"
-                                className="inline-block border border-orange-500 text-orange-500 px-5 md:px-16 py-3 md:py-5 text-[11px] md:text-sm tracking-wider hover:bg-orange-500 hover:text-white transition-colors duration-300"
+                                className="inline-block border border-gray-800 text-gray-800 px-5 md:px-16 py-3 md:py-5 text-[11px] md:text-sm tracking-wider hover:bg-gray-800 hover:text-white transition-colors duration-300"
                             >
                                 お問い合わせフォームへ →
                             </Link>

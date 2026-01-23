@@ -34,7 +34,7 @@ export const Logo: React.FC<LogoProps> = ({ className = "", variant = "dark" }) 
 
                     {/* Skull Abstract */}
                     <circle cx="16" cy="14" r="4" fill={variant === 'light' ? '#111' : '#fff'} />
-                    <path d="M24 12L28 16M28 12L24 16" stroke="#F97316" strokeWidth="2" />
+                    <path d="M24 12L28 16M28 12L24 16" stroke="#1F2937" strokeWidth="2" />
                 </svg>
             </div>
 

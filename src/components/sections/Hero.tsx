@@ -42,7 +42,7 @@ export function Hero() {
 
             {/* Bottom accent line - Simplified */}
             <div className="absolute bottom-0 left-0 right-0 h-1 overflow-hidden">
-                <div className="h-full bg-orange-400/80" />
+                <div className="h-full bg-gray-600/80" />
             </div>
 
             {/* Content */}
@@ -77,7 +77,7 @@ export function Hero() {
                             <span
                                 key={`line2-${index}`}
                                 className={`inline-block transition-all duration-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"
-                                    } ${char === "." ? "text-orange-300" : ""}`}
+                                    } ${char === "." ? "text-gray-400" : ""}`}
                                 style={{
                                     transitionDelay: `${0.3 + (line1.length + index) * 0.04}s`,
                                 }}

@@ -24,9 +24,9 @@ export function Feature() {
     }, []);
 
     return (
-        <section className="relative py-20 md:py-32 overflow-hidden md:overflow-visible bg-[#FFF7ED]">
+        <section className="relative py-20 md:py-32 overflow-hidden md:overflow-visible bg-gray-50">
             {/* Simple subtle background element */}
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-orange-50/50" />
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50/50" />
 
             <div className="relative max-w-[1200px] mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
@@ -37,11 +37,11 @@ export function Feature() {
                             className={`flex items-center gap-3 mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                                 }`}
                         >
-                            <div className="w-8 h-px bg-orange-400" />
-                            <span className="text-orange-800 text-sm tracking-[0.2em] font-medium">OUR VALUE</span>
+                            <div className="w-8 h-px bg-gray-600" />
+                            <span className="text-gray-900 text-sm tracking-[0.2em] font-medium">OUR VALUE</span>
                         </div>
 
-                        <h2 className="text-[40px] md:text-[60px] lg:text-[72px] font-bold leading-[1.3] mb-10 text-orange-950">
+                        <h2 className="text-[40px] md:text-[60px] lg:text-[72px] font-bold leading-[1.3] mb-10 text-gray-950">
                             {["届", "け", "る", "。"].map((char, i) => (
                                 <span
                                     key={`line1-${i}`}
@@ -76,7 +76,7 @@ export function Feature() {
                                 {["熱", "狂"].map((char, i) => (
                                     <span
                                         key={`line3-${i}`}
-                                        className={`inline-block text-orange-600 transition-all duration-600 ease-out ${isVisible
+                                        className={`inline-block text-gray-900 transition-all duration-600 ease-out ${isVisible
                                                 ? "opacity-100 translate-y-0"
                                                 : "opacity-0 translate-y-8"
                                             }`}
@@ -111,11 +111,11 @@ export function Feature() {
                                 }`}
                             style={{ transitionDelay: '1.5s' }}
                         >
-                            <span className="text-orange-600 font-bold">AI</span>には届かない、最後の1マイルを繋ぐ。<br />
-                            人間だけが持つ<span className="text-orange-600 font-bold">熱量</span>で、心を動かす。<br />
+                            <span className="text-gray-900 font-bold">AI</span>には届かない、最後の1マイルを繋ぐ。<br />
+                            人間だけが持つ<span className="text-gray-900 font-bold">熱量</span>で、心を動かす。<br />
                             あなたのビジネスに<span className="relative inline-block">
                                 <span className="relative z-10">『熱狂』</span>
-                                <span className="absolute bottom-1 left-0 w-full h-3 bg-orange-100 -z-0" />
+                                <span className="absolute bottom-1 left-0 w-full h-3 bg-gray-100 -z-0" />
                             </span>を届けます。
                         </p>
                     </div>
@@ -125,14 +125,14 @@ export function Feature() {
                         <div ref={frameRef} className="relative w-[320px] h-[400px] md:w-[420px] md:h-[500px]">
 
                             {/* Simple ring instead of circuit lines */}
-                            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-orange-100 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} />
-                            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full border border-orange-50 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} />
+                            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-gray-100 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} />
+                            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full border border-gray-50 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} />
 
                             {/* Central Flame - Cleaner, less neon */}
                             <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
                                 }`}>
                                 {/* Soft warm glow behind */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-orange-200/30 blur-2xl" />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-gray-200/30 blur-2xl" />
 
                                 <svg
                                     width="120"
@@ -143,8 +143,8 @@ export function Feature() {
                                 >
                                     <defs>
                                         <linearGradient id="warmFlame" x1="50" y1="0" x2="50" y2="130" gradientUnits="userSpaceOnUse">
-                                            <stop stopColor="#FDBA74" /> {/* Orange 300 */}
-                                            <stop offset="1" stopColor="#EA580C" /> {/* Orange 600 */}
+                                            <stop stopColor="#D1D5DB" /> {/* Gray 300 */}
+                                            <stop offset="1" stopColor="#374151" /> {/* Gray 700 */}
                                         </linearGradient>
                                     </defs>
 
@@ -164,7 +164,7 @@ export function Feature() {
                                     {/* Inner bright core - white/yellow for warmth */}
                                     <path
                                         d="M50 35 C38 55 30 70 30 88 C30 105 38 115 50 115 C62 115 70 105 70 88 C70 70 62 55 50 35Z"
-                                        fill="#FFF7ED"
+                                        fill="#F9FAFB"
                                         className="opacity-40"
                                     >
                                         <animate attributeName="d" dur="2s" repeatCount="indefinite"
@@ -185,7 +185,7 @@ export function Feature() {
                             >
                                 <div className="relative group cursor-default text-center">
                                     <span className="block text-[10px] tracking-[0.2em] text-gray-400 mb-1">PASSION</span>
-                                    <span className="block text-[20px] font-bold text-orange-800">熱狂</span>
+                                    <span className="block text-[20px] font-bold text-gray-900">熱狂</span>
                                 </div>
                             </div>
 
@@ -197,7 +197,7 @@ export function Feature() {
                             >
                                 <div className="text-center">
                                     <span className="block text-[10px] tracking-[0.2em] text-gray-400 mb-1">TRUST</span>
-                                    <span className="block text-[20px] font-bold text-orange-800">信頼</span>
+                                    <span className="block text-[20px] font-bold text-gray-900">信頼</span>
                                 </div>
                             </div>
 
@@ -209,7 +209,7 @@ export function Feature() {
                             >
                                 <div className="text-center">
                                     <span className="block text-[10px] tracking-[0.2em] text-gray-400 mb-1">RESULTS</span>
-                                    <span className="block text-[20px] font-bold text-orange-800">成果</span>
+                                    <span className="block text-[20px] font-bold text-gray-900">成果</span>
                                 </div>
                             </div>
 
@@ -221,14 +221,14 @@ export function Feature() {
                             >
                                 <div className="text-center">
                                     <span className="block text-[10px] tracking-[0.2em] text-gray-400 mb-1">HUMAN</span>
-                                    <span className="block text-[20px] font-bold text-orange-800">人間力</span>
+                                    <span className="block text-[20px] font-bold text-gray-900">人間力</span>
                                 </div>
                             </div>
 
                             {/* Center label */}
                             <div className={`absolute bottom-[38%] left-1/2 -translate-x-1/2 text-center transition-all duration-1000 ${isVisible ? "opacity-100" : "opacity-0"
                                 }`} style={{ transitionDelay: "1.2s" }}>
-                                <span className="text-[10px] md:text-[11px] text-orange-400/80 tracking-[0.3em] font-medium">BEYOND AI</span>
+                                <span className="text-[10px] md:text-[11px] text-gray-600/80 tracking-[0.3em] font-medium">BEYOND AI</span>
                             </div>
                         </div>
                     </div>

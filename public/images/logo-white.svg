@@ -3,7 +3,7 @@
     <g transform="translate(0, 5)">
         <rect x="6" y="8" width="8" height="24" rx="1" fill="#FFFFFF"/>
         <rect x="26" y="8" width="8" height="24" rx="1" fill="#FFFFFF"/>
-        <path d="M16 16L24 20L16 24V16Z" fill="#F97316"/>
+        <path d="M16 16L24 20L16 24V16Z" fill="#1F2937"/>
     </g>
     
     <!-- Text HINDWILL -->
