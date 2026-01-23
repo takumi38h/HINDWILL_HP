@@ -44,10 +44,10 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
                             key={i}
                             className="absolute w-1 h-1 bg-orange-400/30 rounded-full animate-pulse"
                             style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                                animationDelay: `${Math.random() * 2}s`,
-                                animationDuration: `${2 + Math.random() * 2}s`
+                                left: `${((i * 37 + 13) % 100)}%`,
+                                top: `${((i * 53 + 7) % 100)}%`,
+                                animationDelay: `${(i * 0.1) % 2}s`,
+                                animationDuration: `${2 + (i % 5) * 0.4}s`
                             }}
                         />
                     ))}

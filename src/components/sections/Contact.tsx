@@ -7,14 +7,13 @@ export function Contact() {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef<HTMLElement>(null);
 
-    // Generate particles only once
     const particles = useMemo(() =>
         [...Array(15)].map((_, i) => ({
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            delay: `${Math.random() * 3}s`,
-            duration: `${4 + Math.random() * 3}s`,
-            size: `${3 + Math.random() * 5}px`,
+            left: `${((i * 41 + 11) % 100)}%`,
+            top: `${((i * 59 + 17) % 100)}%`,
+            delay: `${(i * 0.2) % 3}s`,
+            duration: `${4 + (i % 4) * 0.75}s`,
+            size: `${3 + (i % 6)}px`,
         }))
     , []);
 
