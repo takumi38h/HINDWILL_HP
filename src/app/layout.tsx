@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className="overflow-x-hidden">
+    <html lang="ja" className="overflow-x-hidden" suppressHydrationWarning>
       <body className={`${dmSans.variable} ${notoSansJP.variable} antialiased overflow-x-hidden`}>
         <LoadingProvider>
           <PageTransition>
