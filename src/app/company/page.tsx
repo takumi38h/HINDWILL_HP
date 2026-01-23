@@ -212,7 +212,7 @@ export default function CompanyPage() {
                                 <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-start">
                                     <div className="w-36 h-36 md:w-48 md:h-48 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 shadow-lg">
                                         <img
-                                            src="/images/japanese_people/ceo_takumi.png"
+                                            src="/images/japanese_people/ceo_takumi.jpg"
                                             alt="橋爪 拓海"
                                             className="w-full h-full object-cover"
                                         />

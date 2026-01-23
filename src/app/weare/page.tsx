@@ -6,7 +6,7 @@ import { useEffect, useState, useRef } from "react";
 import { usePageReady } from "@/contexts/LoadingContext";
 
 const crewMembers = [
-    { name: "橋爪 拓海", role: "代表取締役", avatar: "/images/japanese_people/ceo_takumi.png" },
+    { name: "橋爪 拓海", role: "代表取締役", avatar: "/images/japanese_people/ceo_takumi.jpg" },
 ];
 
 function AnimatedText({ text, className = "" }: { text: string; className?: string }) {

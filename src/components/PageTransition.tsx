@@ -55,53 +55,57 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
 
                 {/* メインコンテンツ */}
                 <div className="relative z-10 flex flex-col items-center">
-                    {/* 炎アイコン with glow effect */}
+                    {/* ヨットアイコン with wave animation */}
                     <div className="relative mb-6">
-                        <div className="absolute inset-0 blur-2xl bg-white/20 rounded-full scale-150 animate-pulse" />
+                        <div className="absolute inset-0 blur-2xl bg-white/15 rounded-full scale-150 animate-pulse" />
                         <svg
-                            width="100"
+                            width="120"
                             height="120"
-                            viewBox="0 0 24 30"
+                            viewBox="0 0 100 100"
                             fill="none"
                             className="relative z-10 drop-shadow-2xl"
-                            style={{ filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))" }}
+                            style={{ filter: "drop-shadow(0 0 15px rgba(255, 255, 255, 0.2))" }}
                         >
-                            <path
-                                d="M12 2C7 8 4 13 4 18C4 24 7.5 28 12 28C16.5 28 20 24 20 18C20 13 17 8 12 2Z"
-                                fill="url(#flame-main-trans)"
-                            >
-                                <animate attributeName="d" dur="1s" repeatCount="indefinite"
-                                    values="M12 2C7 8 4 13 4 18C4 24 7.5 28 12 28C16.5 28 20 24 20 18C20 13 17 8 12 2Z;
-                                            M12 3C8 8 5 13 5 17C5 23 8 27 12 27C16 27 19 23 19 17C19 13 16 8 12 3Z;
-                                            M12 2C7 8 4 13 4 18C4 24 7.5 28 12 28C16.5 28 20 24 20 18C20 13 17 8 12 2Z"
-                                />
-                            </path>
-                            <path
-                                d="M12 10C9.5 14 8 16.5 8 19C8 22 9.5 24 12 24C14.5 24 16 22 16 19C16 16.5 14.5 14 12 10Z"
-                                fill="url(#flame-inner-trans)"
-                            >
-                                <animate attributeName="d" dur="0.8s" repeatCount="indefinite"
-                                    values="M12 10C9.5 14 8 16.5 8 19C8 22 9.5 24 12 24C14.5 24 16 22 16 19C16 16.5 14.5 14 12 10Z;
-                                            M12 11C10 14 9 16 9 18.5C9 21.5 10 23 12 23C14 23 15 21.5 15 18.5C15 16 14 14 12 11Z;
-                                            M12 10C9.5 14 8 16.5 8 19C8 22 9.5 24 12 24C14.5 24 16 22 16 19C16 16.5 14.5 14 12 10Z"
-                                />
-                            </path>
-                            <path
-                                d="M12 16C11 18 10.5 19 10.5 20.5C10.5 22 11 23 12 23C13 23 13.5 22 13.5 20.5C13.5 19 13 18 12 16Z"
-                                fill="#F3F4F6"
-                                className="animate-pulse"
-                            />
                             <defs>
-                                <linearGradient id="flame-main-trans" x1="12" y1="2" x2="12" y2="28" gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#FFFFFF"/>
-                                    <stop offset="0.5" stopColor="#E5E7EB"/>
-                                    <stop offset="1" stopColor="#D1D5DB"/>
-                                </linearGradient>
-                                <linearGradient id="flame-inner-trans" x1="12" y1="10" x2="12" y2="24" gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#FFFFFF"/>
-                                    <stop offset="1" stopColor="#F3F4F6"/>
+                                <linearGradient id="sail-trans" x1="50" y1="10" x2="50" y2="65" gradientUnits="userSpaceOnUse">
+                                    <stop stopColor="#DAA520"/>
+                                    <stop offset="1" stopColor="#B8860B"/>
                                 </linearGradient>
                             </defs>
+                            {/* Yacht body - rocks on waves */}
+                            <g>
+                                <animateTransform
+                                    attributeName="transform"
+                                    type="rotate"
+                                    values="-3 50 70;3 50 70;-3 50 70"
+                                    dur="3s"
+                                    repeatCount="indefinite"
+                                />
+                                {/* Main sail */}
+                                <path d="M50 10L68 62H36Z" fill="url(#sail-trans)" />
+                                {/* Jib sail */}
+                                <path d="M46 18L32 58H46Z" fill="#B8860B" opacity="0.8" />
+                                {/* Hull */}
+                                <path d="M30 65L70 65L65 72H35Z" fill="#FFFFFF" opacity="0.9" />
+                            </g>
+                            {/* Wave 1 */}
+                            <path fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2" strokeLinecap="round">
+                                <animate
+                                    attributeName="d"
+                                    values="M10 78C20 74 30 74 40 78C50 82 60 82 70 78C80 74 90 74 100 78;M10 78C20 82 30 82 40 78C50 74 60 74 70 78C80 82 90 82 100 78;M10 78C20 74 30 74 40 78C50 82 60 82 70 78C80 74 90 74 100 78"
+                                    dur="3s"
+                                    repeatCount="indefinite"
+                                />
+                            </path>
+                            {/* Wave 2 */}
+                            <path fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeLinecap="round">
+                                <animate
+                                    attributeName="d"
+                                    values="M5 86C18 83 28 83 40 86C52 89 62 89 75 86C88 83 95 83 100 86;M5 86C18 89 28 89 40 86C52 83 62 83 75 86C88 89 95 89 100 86;M5 86C18 83 28 83 40 86C52 89 62 89 75 86C88 83 95 83 100 86"
+                                    dur="4s"
+                                    repeatCount="indefinite"
+                                />
+                            </path>
                         </svg>
                     </div>
 

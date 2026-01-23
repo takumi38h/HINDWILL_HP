@@ -1,11 +1,19 @@
 <svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Icon (40x40 equivalent scaled) -->
-    <g transform="translate(0, 5)">
-        <rect x="6" y="8" width="8" height="24" rx="1" fill="#171717"/>
-        <rect x="26" y="8" width="8" height="24" rx="1" fill="#171717"/>
-        <path d="M16 16L24 20L16 24V16Z" fill="#1F2937"/>
+    <defs>
+        <linearGradient id="sail-grad" x1="20" y1="5" x2="20" y2="38" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#DAA520"/>
+            <stop offset="1" stop-color="#B8860B"/>
+        </linearGradient>
+    </defs>
+    <g transform="translate(0, 3)">
+        <!-- Main sail -->
+        <path d="M20 4L30 34H12Z" fill="url(#sail-grad)"/>
+        <!-- Jib sail -->
+        <path d="M18 8L11 32H18Z" fill="#B8860B" opacity="0.8"/>
+        <!-- Wave -->
+        <path d="M4 38C9 35 14 35 20 37C26 39 31 39 36 36" stroke="#B8860B" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <path d="M6 42C11 40 15 40 20 41C25 42 29 42 34 40" stroke="#B8860B" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
     </g>
-    
     <!-- Text HINDWILL -->
     <text x="45" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="24" letter-spacing="0.1em" fill="#171717">HINDWILL</text>
 </svg>

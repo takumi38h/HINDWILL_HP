@@ -128,49 +128,58 @@ export function Feature() {
                             <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-gray-100 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} />
                             <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full border border-gray-50 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} />
 
-                            {/* Central Flame - Cleaner, less neon */}
+                            {/* Central Yacht - wave animation */}
                             <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
                                 }`}>
-                                {/* Soft warm glow behind */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-gray-200/30 blur-2xl" />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-gray-200/20 blur-2xl" />
 
                                 <svg
-                                    width="120"
+                                    width="140"
                                     height="150"
-                                    viewBox="0 0 100 130"
+                                    viewBox="0 0 120 130"
                                     fill="none"
-                                    className="md:w-[150px] md:h-[190px] relative z-10"
+                                    className="md:w-[170px] md:h-[180px] relative z-10"
                                 >
                                     <defs>
-                                        <linearGradient id="warmFlame" x1="50" y1="0" x2="50" y2="130" gradientUnits="userSpaceOnUse">
-                                            <stop stopColor="#D1D5DB" /> {/* Gray 300 */}
-                                            <stop offset="1" stopColor="#374151" /> {/* Gray 700 */}
+                                        <linearGradient id="sailGrad" x1="60" y1="10" x2="60" y2="85" gradientUnits="userSpaceOnUse">
+                                            <stop stopColor="#DAA520" />
+                                            <stop offset="1" stopColor="#B8860B" />
                                         </linearGradient>
                                     </defs>
 
-                                    {/* Outer flame shape - Cleaner fill */}
-                                    <path
-                                        d="M50 5 C30 35 15 60 15 85 C15 110 30 125 50 125 C70 125 85 110 85 85 C85 60 70 35 50 5Z"
-                                        fill="url(#warmFlame)"
-                                        className="opacity-90"
-                                    >
-                                        <animate attributeName="d" dur="3s" repeatCount="indefinite"
-                                            values="M50 5 C30 35 15 60 15 85 C15 110 30 125 50 125 C70 125 85 110 85 85 C85 60 70 35 50 5Z;
-                                                    M50 8 C32 35 18 58 18 83 C18 108 32 122 50 122 C68 122 82 108 82 83 C82 58 68 35 50 8Z;
-                                                    M50 5 C30 35 15 60 15 85 C15 110 30 125 50 125 C70 125 85 110 85 85 C85 60 70 35 50 5Z"
+                                    {/* Yacht body - rocks on waves */}
+                                    <g>
+                                        <animateTransform
+                                            attributeName="transform"
+                                            type="rotate"
+                                            values="-4 60 90;4 60 90;-4 60 90"
+                                            dur="4s"
+                                            repeatCount="indefinite"
+                                        />
+                                        {/* Main sail */}
+                                        <path d="M60 10L82 80H42Z" fill="url(#sailGrad)" className="opacity-90" />
+                                        {/* Jib sail */}
+                                        <path d="M56 20L38 75H56Z" fill="#B8860B" opacity="0.7" />
+                                        {/* Hull */}
+                                        <path d="M35 83L85 83L78 93H42Z" fill="#1F2937" opacity="0.8" />
+                                    </g>
+
+                                    {/* Wave 1 */}
+                                    <path fill="none" stroke="#B8860B" strokeWidth="2.5" strokeLinecap="round" opacity="0.6">
+                                        <animate
+                                            attributeName="d"
+                                            values="M5 100C20 95 35 95 50 100C65 105 80 105 95 100C110 95 115 95 120 100;M5 100C20 105 35 105 50 100C65 95 80 95 95 100C110 105 115 105 120 100;M5 100C20 95 35 95 50 100C65 105 80 105 95 100C110 95 115 95 120 100"
+                                            dur="3s"
+                                            repeatCount="indefinite"
                                         />
                                     </path>
-
-                                    {/* Inner bright core - white/yellow for warmth */}
-                                    <path
-                                        d="M50 35 C38 55 30 70 30 88 C30 105 38 115 50 115 C62 115 70 105 70 88 C70 70 62 55 50 35Z"
-                                        fill="#F9FAFB"
-                                        className="opacity-40"
-                                    >
-                                        <animate attributeName="d" dur="2s" repeatCount="indefinite"
-                                            values="M50 35 C38 55 30 70 30 88 C30 105 38 115 50 115 C62 115 70 105 70 88 C70 70 62 55 50 35Z;
-                                                    M50 38 C40 55 33 68 33 86 C33 103 40 112 50 112 C60 112 67 103 67 86 C67 68 60 55 50 38Z;
-                                                    M50 35 C38 55 30 70 30 88 C30 105 38 115 50 115 C62 115 70 105 70 88 C70 70 62 55 50 35Z"
+                                    {/* Wave 2 */}
+                                    <path fill="none" stroke="#B8860B" strokeWidth="1.5" strokeLinecap="round" opacity="0.3">
+                                        <animate
+                                            attributeName="d"
+                                            values="M0 112C15 109 30 109 48 112C66 115 80 115 98 112C112 109 118 109 120 112;M0 112C15 115 30 115 48 112C66 109 80 109 98 112C112 115 118 115 120 112;M0 112C15 109 30 109 48 112C66 115 80 115 98 112C112 109 118 109 120 112"
+                                            dur="5s"
+                                            repeatCount="indefinite"
                                         />
                                     </path>
                                 </svg>
