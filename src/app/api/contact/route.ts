@@ -24,7 +24,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const { error } = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "HINDWILL お問い合わせ <noreply@hindwill.com>",
       to: ["takumi.hashizume@hindwill.com"],
       subject: `【お問い合わせ】${name}様より`,
@@ -40,16 +40,19 @@ export async function POST(request: Request) {
     });
 
     if (error) {
+      console.error("[Resend Error]", JSON.stringify(error));
       return NextResponse.json(
-        { error: "メールの送信に失敗しました。" },
+        { error: "メールの送信に失敗しました。", detail: error },
         { status: 500 }
       );
     }
 
-    return NextResponse.json({ success: true });
-  } catch {
+    console.info("[Resend Success]", JSON.stringify(data));
+    return NextResponse.json({ success: true, emailId: data?.id });
+  } catch (err) {
+    console.error("[Contact API Error]", err);
     return NextResponse.json(
-      { error: "サーバーエラーが発生しました。" },
+      { error: "サーバーエラーが発生しました。", detail: String(err) },
       { status: 500 }
     );
   }
