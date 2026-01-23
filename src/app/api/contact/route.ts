@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 interface ContactFormData {
   name: string;
   company: string;
@@ -13,6 +11,7 @@ interface ContactFormData {
 
 export async function POST(request: Request) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const body: ContactFormData = await request.json();
 
     const { name, company, email, phone, message } = body;
