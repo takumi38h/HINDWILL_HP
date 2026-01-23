@@ -184,12 +184,12 @@ export default function WeArePage() {
                     <div className="bg-gradient-to-r from-gray-100 to-gray-50 py-8 md:py-14">
                         <AnimatedSection>
                             <div className="px-6 md:px-16 text-center md:text-left">
-                                <p className="text-xs md:text-sm tracking-[0.3em] text-gray-800 font-medium mb-3">VISION</p>
+                                <p className="text-xs md:text-sm tracking-[0.3em] text-gray-800 font-medium mb-3">Vision</p>
                                 <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">
-                                    誇れる航海を、誇れる仲間と。
+                                    Be the Hero
                                 </h2>
-                                <p className="text-sm md:text-lg tracking-[0.15em] text-gray-800 font-medium italic">
-                                    A Voyage Worth Living.
+                                <p className="text-sm md:text-lg tracking-[0.15em] text-gray-800 font-medium">
+                                    「次世代が夢を描ける、活気ある社会へ。」
                                 </p>
                             </div>
                         </AnimatedSection>
@@ -199,19 +199,15 @@ export default function WeArePage() {
                         {/* 左側：テキスト */}
                         <AnimatedSection delay={200}>
                             <div className="px-6 md:px-16 py-10 md:py-16 relative z-10">
-                                <p className="text-xl md:text-2xl font-bold mb-6 md:mb-8 leading-tight text-gray-800">
-                                    本気で生きる人が集まり、<br />
-                                    背中で語り合える組織であり続ける。
-                                </p>
                                 <div>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
                                         若者が未来を諦めているのは、楽しそうに働く大人がいないからだ。
                                     </p>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        我々は、誰よりもストイックに、誰よりも楽しそうに働く「ビジネスアスリート」だ。
+                                        働くことは、本来とてもクリエイティブで楽しいものです。
                                     </p>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] font-medium">
-                                        そう背中で語れるカッコいい大人が増えれば、未来は勝手に明るくなる。
+                                        背中を見た子供たちが、未来にワクワクできるような、憧れられる存在であり続けます。
                                     </p>
                                 </div>
                             </div>
