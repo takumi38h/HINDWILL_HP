@@ -48,6 +48,44 @@ export async function POST(request: Request) {
     }
 
     console.info("[Resend Success]", JSON.stringify(data));
+
+    const { error: autoReplyError } = await resend.emails.send({
+      from: "HINDWILL <noreply@hindwill.com>",
+      to: [email],
+      subject: "【HINDWILL】お問い合わせありがとうございます",
+      text: [
+        `${name} 様`,
+        "",
+        "この度はお問い合わせいただき、誠にありがとうございます。",
+        "以下の内容でお問い合わせを承りました。",
+        "",
+        "─────────────────────────────",
+        `お名前: ${name}`,
+        `会社名: ${company || "未入力"}`,
+        `メールアドレス: ${email}`,
+        `電話番号: ${phone || "未入力"}`,
+        "",
+        "お問い合わせ内容:",
+        message,
+        "─────────────────────────────",
+        "",
+        "内容を確認の上、担当者より折り返しご連絡いたします。",
+        "今しばらくお待ちくださいますようお願い申し上げます。",
+        "",
+        "※このメールは自動送信されています。",
+        "　このメールへの直接のご返信はお受けできませんのでご了承ください。",
+        "",
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+        "HINDWILL株式会社",
+        "https://hindwill.com",
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+      ].join("\n"),
+    });
+
+    if (autoReplyError) {
+      console.error("[Resend AutoReply Error]", JSON.stringify(autoReplyError));
+    }
+
     return NextResponse.json({ success: true, emailId: data?.id });
   } catch (err) {
     console.error("[Contact API Error]", err);
