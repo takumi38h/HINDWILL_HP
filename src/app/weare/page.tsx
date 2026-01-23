@@ -161,18 +161,18 @@ export default function WeArePage() {
                             {/* Label with decorative lines */}
                             <div className="flex items-center justify-center gap-4 mb-8 md:mb-10">
                                 <div className="w-12 md:w-20 h-px bg-gray-400" />
-                                <p className="text-xs md:text-sm tracking-[0.3em] text-gray-800 font-medium">MISSION</p>
+                                <p className="text-xs md:text-sm tracking-[0.3em] text-gray-800 font-medium">Mission</p>
                                 <div className="w-12 md:w-20 h-px bg-gray-400" />
                             </div>
 
                             {/* Main title */}
                             <h2 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight text-gray-900">
-                                熱狂で、世界を動かす。
+                                テクノロジーが届かない、最後の1マイルを。
                             </h2>
 
                             {/* English subtitle */}
                             <p className="text-sm md:text-lg tracking-[0.15em] text-gray-800 font-medium italic">
-                                Ignite the World.
+                                Beyond the Technology.
                             </p>
                         </AnimatedSection>
                     </div>
