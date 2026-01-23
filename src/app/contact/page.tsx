@@ -14,6 +14,8 @@ export default function ContactPage() {
         phone: "",
         message: "",
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
     const { isPageReady } = usePageReady();
 
     useEffect(() => {
@@ -30,9 +32,29 @@ export default function ContactPage() {
 
     const title = "CONTACT";
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        alert("お問い合わせありがとうございます。送信されました。");
+        setIsSubmitting(true);
+        setSubmitStatus("idle");
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error("送信に失敗しました");
+            }
+
+            setSubmitStatus("success");
+            setFormData({ name: "", company: "", email: "", phone: "", message: "" });
+        } catch {
+            setSubmitStatus("error");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -145,11 +167,22 @@ export default function ContactPage() {
                             <div className="pt-4">
                                 <button
                                     type="submit"
-                                    className="w-full py-4 bg-gray-800 text-white font-bold tracking-wider hover:bg-gray-900 transition-colors"
+                                    disabled={isSubmitting}
+                                    className="w-full py-4 bg-gray-800 text-white font-bold tracking-wider hover:bg-gray-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    送信する
+                                    {isSubmitting ? "送信中..." : "送信する"}
                                 </button>
                             </div>
+                            {submitStatus === "success" && (
+                                <p className="text-green-600 text-center font-medium">
+                                    お問い合わせありがとうございます。送信されました。
+                                </p>
+                            )}
+                            {submitStatus === "error" && (
+                                <p className="text-red-600 text-center font-medium">
+                                    送信に失敗しました。時間をおいて再度お試しください。
+                                </p>
+                            )}
                         </form>
                     </div>
                 </section>
