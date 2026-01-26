@@ -167,12 +167,12 @@ export default function WeArePage() {
 
                             {/* Main title */}
                             <h2 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight text-gray-900">
-                                テクノロジーが届かない、最後の1マイルを。
+                                Beyond the Technology.
                             </h2>
 
-                            {/* English subtitle */}
-                            <p className="text-sm md:text-lg tracking-[0.15em] text-gray-800 font-medium italic">
-                                Beyond the Technology.
+                            {/* Japanese subtitle */}
+                            <p className="text-sm md:text-lg tracking-[0.15em] text-gray-800 font-medium">
+                                テクノロジーが届かない、最後の1マイルを。
                             </p>
                         </AnimatedSection>
                     </div>
@@ -189,7 +189,7 @@ export default function WeArePage() {
                                     Be the Hero
                                 </h2>
                                 <p className="text-sm md:text-lg tracking-[0.15em] text-gray-800 font-medium">
-                                    「次世代が夢を描ける、活気ある社会へ。」
+                                    「次世代が夢を描ける、活気ある社会へ」
                                 </p>
                             </div>
                         </AnimatedSection>
@@ -201,13 +201,10 @@ export default function WeArePage() {
                             <div className="px-6 md:px-16 py-10 md:py-16 relative z-10">
                                 <div>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        若者が未来を諦めているのは、楽しそうに働く大人がいないからだ。
-                                    </p>
-                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        働くことは、本来とてもクリエイティブで楽しいものです。
+                                        若者が未来を諦めるのは、楽しそうに働く大人を見たことがないからだ。働くことは、本当はもっと自由で、熱狂的だ。
                                     </p>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] font-medium">
-                                        背中を見た子供たちが、未来にワクワクできるような、憧れられる存在であり続けます。
+                                        だからこそ、人が成長できる仕事と環境をつくり続ける。
                                     </p>
                                 </div>
                             </div>
@@ -249,11 +246,10 @@ export default function WeArePage() {
                                             01
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">人生を、本気で使え</h3>
-                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">Life Is the Voyage.</p>
+                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">GIVE FIRST</h3>
+                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">期待を超える貢献を</p>
                                             <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
-                                                <p>時間は有限だ。<br />惰性で生きるほど、人生は長くない。</p>
-                                                <p>志を掲げて、熱狂しよう。<br />人の心を動かす仕事は、熱量からしか生まれない。</p>
+                                                <p>まずは自分から。相手の想像を一段上回る価値を提供し続けよう。その積み重ねが信頼となり、最終的に自分を動かす大きな力に変わる。</p>
                                             </div>
                                         </div>
                                     </div>
@@ -268,12 +264,10 @@ export default function WeArePage() {
                                             02
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">かっこよくあれ</h3>
-                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">Stay Cool. Stay Foolish.</p>
+                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">ALWAYS ENJOY</h3>
+                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">挑戦のドラマを楽しもう</p>
                                             <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
-                                                <p>人生も、仕事も、振る舞いも。<br />自分の生き方を、自分で誇れるか。</p>
-                                                <p>ダサいことはしない。<br />人のせいにしない。<br />誰のことも見下さない。</p>
-                                                <p className="font-medium text-gray-800">楽な道より、誇れる選択を。</p>
+                                                <p>失敗のない道に成長はない。あえて困難な道を選び、壁を乗り越えていく姿を見せよう。誰もが憧れる、挑戦に満ちた物語の主人公であれ。</p>
                                             </div>
                                         </div>
                                     </div>
@@ -288,11 +282,10 @@ export default function WeArePage() {
                                             03
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">逆境を楽しめ</h3>
-                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">Embrace the Storm.</p>
+                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">SHARE ENTHUSIASM</h3>
+                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">熱狂を分かち合う</p>
                                             <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
-                                                <p>逆境のない人生なんてつまらない。<br />ピンチが来たら「面白くなってきた」と笑え。</p>
-                                                <p className="font-medium text-gray-800">修羅場は、志を試される舞台だ。</p>
+                                                <p>ひとりの成果より、チームの感動を。同じ志を持つ仲間と高みを目指し、成し遂げた瞬間の熱狂を分かち合う。それこそが、私たちが働く最大の理由だ。</p>
                                             </div>
                                         </div>
                                     </div>
@@ -307,30 +300,10 @@ export default function WeArePage() {
                                             04
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">背中で語れ</h3>
-                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">Be the Captain.</p>
+                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">STAY HUNGRY</h3>
+                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">誠実に、どん欲に</p>
                                             <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
-                                                <p>一番ストイックに、一番楽しそうに。<br />その背中が、次の世代の未来になる。</p>
-                                                <p className="font-medium text-gray-800">語るな、走れ。</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </AnimatedSection>
-
-                            {/* Value 5 */}
-                            <AnimatedSection delay={500}>
-                                <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                    <div className="flex items-start gap-4 md:gap-6">
-                                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-gray-800 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
-                                            05
-                                        </div>
-                                        <div className="flex-1">
-                                            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-1">稼ぐことは、愛だ</h3>
-                                            <p className="text-sm md:text-base text-gray-800 italic mb-4">Earn for the Crew.</p>
-                                            <div className="text-gray-700 text-sm md:text-[15px] leading-[1.9] space-y-2">
-                                                <p>守るために、結果を出す。<br />仲間、家族、約束。</p>
-                                                <p className="font-medium text-gray-800">全てに、責任を持て。</p>
+                                                <p>結果には誇りを、プロセスには謙虚さを。自分の未熟さを認め、周囲から学ぶ素直さを忘れない。その泥臭い努力が、圧倒的な実力を作る。</p>
                                             </div>
                                         </div>
                                     </div>

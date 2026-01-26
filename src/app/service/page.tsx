@@ -6,74 +6,6 @@ import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { usePageReady } from "@/contexts/LoadingContext";
 
-const services = [
-    {
-        id: "consulting",
-        letter: "C",
-        title: "ONSULTING",
-        subtitle: "戦略コンサルティング",
-        description: "営業戦略の立案から組織構築まで、御社のビジネス成長を加速させる最適なソリューションをご提案。数字だけでなく、チームの熱量を引き出し、持続的な成果を実現します。",
-        features: ["営業戦略立案", "組織設計", "KPI設計", "業務プロセス改善"],
-        icon: (
-            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-        ),
-        color: "from-gray-800 to-gray-900",
-        bgColor: "bg-gray-800",
-        image: "/images/japanese_people/planning.png",
-    },
-    {
-        id: "training",
-        letter: "T",
-        title: "RAINING",
-        subtitle: "人材育成・研修",
-        description: "「売れる営業」ではなく「熱狂を生む営業」を育成。実践型研修で、お客様の心を動かすヒューマン・タッチの技術を伝授します。",
-        features: ["営業研修", "ロールプレイング", "メンタリング", "スキル評価"],
-        icon: (
-            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-            </svg>
-        ),
-        color: "from-gray-600 to-gray-800",
-        bgColor: "bg-gray-600",
-        image: "/images/japanese_people/creative.png",
-    },
-    {
-        id: "support",
-        letter: "S",
-        title: "UPPORT",
-        subtitle: "営業伴走支援",
-        description: "営業現場に伴走し、リアルタイムで課題を解決。AIでは埋められない「ラストワンマイル」を、私たちが一緒に繋ぎます。",
-        features: ["現場同行", "商談支援", "課題分析", "改善提案"],
-        icon: (
-            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-        ),
-        color: "from-gray-700 to-gray-800",
-        bgColor: "bg-gray-700",
-        image: "/images/japanese_people/development.png",
-    },
-    {
-        id: "outsourcing",
-        letter: "O",
-        title: "UTSOURCING",
-        subtitle: "営業代行",
-        description: "御社の営業部隊として、新規開拓から既存顧客のフォローまで代行。ビジネスアスリートが、成果にコミットします。",
-        features: ["新規開拓", "アポイント獲得", "クロージング", "顧客フォロー"],
-        icon: (
-            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-        ),
-        color: "from-yellow-500 to-gray-700",
-        bgColor: "bg-yellow-500",
-        image: "/images/japanese_people/entertainment.png",
-    },
-];
-
 function AnimatedSection({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
@@ -107,7 +39,6 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
 }
 
 export default function ServicePage() {
-    const [activeService, setActiveService] = useState<string | null>(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [animationKey, setAnimationKey] = useState(0);
     const { isPageReady } = usePageReady();
@@ -194,212 +125,39 @@ export default function ServicePage() {
                     </div>
                 </section>
 
-                {/* OUR SERVICE - Intro */}
-                <section className="py-20 md:py-32 bg-white relative overflow-hidden">
-                    {/* Background decoration */}
-                    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gray-50 to-transparent" />
-                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-gray-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-
-                    <div className="max-w-[1200px] mx-auto px-6 relative">
-                        <AnimatedSection>
-                            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 md:mb-20">
-                                <div>
-                                    <div className="flex items-center gap-3 mb-5">
-                                        <div className="w-12 h-0.5 bg-gray-800" />
-                                        <span className="text-gray-800 text-sm tracking-[0.2em] font-medium">OUR SERVICE</span>
-                                    </div>
-                                    <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                                        <span className="text-gray-800">4</span>つのソリューションで<br />
-                                        ビジネスを加速
-                                    </h2>
-                                </div>
-                                <p className="text-gray-600 leading-relaxed max-w-md text-sm md:text-base">
-                                    AIには届かない「ラストワンマイル」を繋ぐ。<br />
-                                    人間だけが持つ熱量（ヒューマン・タッチ）で、<br />
-                                    御社のビジネス成長をサポートします。
-                                </p>
-                            </div>
-                        </AnimatedSection>
-
-                        {/* Service Overview Cards - New Human Design */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                            {services.map((service, index) => (
-                                <AnimatedSection key={service.id} delay={index * 100}>
-                                    <a
-                                        href={`#${service.id}`}
-                                        className="group block relative h-[240px] md:h-[320px] lg:h-[400px] rounded-2xl overflow-hidden cursor-pointer"
-                                        onMouseEnter={() => setActiveService(service.id)}
-                                        onMouseLeave={() => setActiveService(null)}
-                                    >
-                                        {/* Background Image with Zoom Effect */}
-                                        <div className="absolute inset-0">
-                                            <img
-                                                src={service.image}
-                                                alt={service.subtitle}
-                                                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                                            />
-                                            {/* Gradient Overlay */}
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:via-black/40 transition-colors duration-500" />
-                                        </div>
-
-                                        {/* Content */}
-                                        <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
-                                            {/* Number */}
-                                            <div className="absolute top-6 right-6 md:top-8 md:right-8 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white font-bold text-base md:text-lg opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-y-2 group-hover:translate-y-0">
-                                                {String(index + 1).padStart(2, '0')}
-                                            </div>
-
-                                            {/* Large Letter */}
-                                            <div className="mb-2 transform transition-transform duration-500 group-hover:-translate-y-2">
-                                                <span className={`text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-br ${service.color} bg-clip-text text-transparent opacity-90`}>
-                                                    {service.letter}
-                                                </span>
-                                            </div>
-
-                                            {/* Title & Subtitle */}
-                                            <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
-                                                <div className="flex items-baseline gap-2 md:gap-3 mb-1 md:mb-2">
-                                                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white tracking-wide">
-                                                        {service.title.substring(1)}
-                                                    </h3>
-                                                    <div className={`h-px w-8 md:w-12 bg-gradient-to-r ${service.color}`} />
-                                                </div>
-                                                <p className="text-white/90 font-medium text-base md:text-lg">
-                                                    {service.subtitle}
-                                                </p>
-                                            </div>
-
-                                            {/* View More Button */}
-                                            <div className="hidden lg:flex mt-6 items-center gap-2 text-white/80 text-sm font-bold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                                                <span>View Detail</span>
-                                                <div className={`w-8 h-8 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm group-hover:bg-gradient-to-r ${service.color}`}>
-                                                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                        <path d="M5 12h14M12 5l7 7-7 7" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </AnimatedSection>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Service Details */}
-                <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50/50 to-white">
-                    <div className="max-w-[1200px] mx-auto px-6">
-                        {services.map((service, index) => (
-                            <AnimatedSection key={service.id} delay={100}>
-                                <div
-                                    id={service.id}
-                                    className={`mb-16 md:mb-24 last:mb-0 scroll-mt-24`}
-                                >
-                                    <div className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-16 items-center`}>
-                                        {/* Content */}
-                                        <div className="flex-1">
-                                            {/* Number badge */}
-                                            <div className="flex items-center gap-4 mb-6">
-                                                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center text-white shadow-lg`}>
-                                                    <span className="text-2xl md:text-3xl font-bold">{String(index + 1).padStart(2, '0')}</span>
-                                                </div>
-                                                <div className="h-px flex-1 bg-gradient-to-r from-gray-400 to-transparent" />
-                                            </div>
-
-                                            {/* Title */}
-                                            <div className="mb-6">
-                                                <div className="flex items-baseline gap-2 mb-2">
-                                                    <span className={`text-5xl md:text-7xl font-bold bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>
-                                                        {service.letter}
-                                                    </span>
-                                                    <span className="text-2xl md:text-4xl font-bold text-gray-800">{service.title}</span>
-                                                </div>
-                                                <p className="text-sm md:text-base text-gray-500">{service.subtitle}</p>
-                                            </div>
-
-                                            {/* Description */}
-                                            <p className="text-gray-600 leading-[2] text-[14px] md:text-[16px] mb-8">
-                                                {service.description}
-                                            </p>
-
-                                            {/* Features */}
-                                            <div className="grid grid-cols-2 gap-3">
-                                                {service.features.map((feature, i) => (
-                                                    <div key={i} className="flex items-center gap-2">
-                                                        <div className={`w-2 h-2 rounded-full ${service.bgColor}`} />
-                                                        <span className="text-sm text-gray-700">{feature}</span>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        {/* Visual */}
-                                        <div className="flex-1 w-full">
-                                            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-2xl">
-                                                {/* Image */}
-                                                <img
-                                                    src={service.image}
-                                                    alt={service.title}
-                                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                />
-
-                                                {/* Overlay Gradient */}
-                                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
-
-                                                {/* Badge/Icon Overlay (Optional - kept minimal) */}
-                                                <div className="absolute bottom-6 right-6 w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-lg">
-                                                    <div className="text-white">
-                                                        {service.id === 'consulting' && (
-                                                            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                                <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                                            </svg>
-                                                        )}
-                                                        {service.id === 'training' && (
-                                                            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                                            </svg>
-                                                        )}
-                                                        {service.id === 'support' && (
-                                                            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                            </svg>
-                                                        )}
-                                                        {service.id === 'outsourcing' && (
-                                                            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                                            </svg>
-                                                        )}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </AnimatedSection>
-                        ))}
-                    </div>
-                </section>
-
                 {/* BUSINESS - Sales Consulting */}
                 <section className="py-16 md:py-28 bg-white" id="business">
                     <div className="max-w-[1200px] mx-auto px-6">
-                        {/* Section Header */}
+                        {/* Section Header with Image */}
                         <AnimatedSection>
-                            <div className="text-center mb-12 md:mb-16">
-                                <div className="flex items-center justify-center gap-4 mb-6">
-                                    <div className="w-12 md:w-20 h-px bg-gray-400" />
-                                    <span className="text-gray-800 text-sm tracking-[0.3em] font-medium">BUSINESS</span>
-                                    <div className="w-12 md:w-20 h-px bg-gray-400" />
+                            <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center mb-12 md:mb-16">
+                                {/* Image */}
+                                <div className="w-full md:w-1/2">
+                                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                                        <img
+                                            src="/images/japanese_people/planning.png"
+                                            alt="Sales Consulting"
+                                            className="w-full h-full object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                                    </div>
                                 </div>
-                                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3">
-                                    Sales Consulting
-                                </h2>
-                                <p className="text-lg md:text-xl text-gray-600 mb-6">営業支援</p>
-                                <p className="text-gray-700 leading-[1.9] text-sm md:text-base max-w-2xl mx-auto">
-                                    「勝てる戦略」と「動ける現場」を同時に構築。<br />
-                                    成果にコミットする、ハンズオン型コンサルティングサービスです。
-                                </p>
+                                {/* Text */}
+                                <div className="w-full md:w-1/2 text-center md:text-left">
+                                    <div className="flex items-center justify-center md:justify-start gap-4 mb-6">
+                                        <div className="w-12 md:w-20 h-px bg-gray-400" />
+                                        <span className="text-gray-800 text-sm tracking-[0.3em] font-medium">BUSINESS</span>
+                                        <div className="w-12 md:w-20 h-px bg-gray-400 md:hidden" />
+                                    </div>
+                                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3">
+                                        Sales Consulting
+                                    </h2>
+                                    <p className="text-lg md:text-xl text-gray-600 mb-6">営業支援</p>
+                                    <p className="text-gray-700 leading-[1.9] text-sm md:text-base">
+                                        「勝てる戦略」と「動ける現場」を同時に構築。<br />
+                                        成果にコミットする、ハンズオン型コンサルティングサービスです。
+                                    </p>
+                                </div>
                             </div>
                         </AnimatedSection>
 

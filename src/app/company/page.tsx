@@ -46,7 +46,7 @@ const companyInfo = [
     { label: "資本金", value: "500万円" },
     { label: "事業内容", value: "セールスコンサルティング事業" },
     { label: "所在地", value: "東京都" },
-    { label: "連絡先", value: "Email: takumi1127h@gmail.com" },
+    { label: "連絡先", value: "takumi.hashizume@hindwill.com" },
 ];
 
 export default function CompanyPage() {
@@ -228,8 +228,8 @@ export default function CompanyPage() {
                                                 パラリーガル事業マネージャーに就任し、総勢200名の事業を牽引。
                                             </p>
                                             <p>
-                                                その後、セールスコンサルティングの経験を積み、株式会社HINDWILLを設立。
-                                                「人の心を動かす熱狂」を武器に、クライアント企業の成長を支援している。
+                                                その後、数多くの組織変革を主導した経験を経て、株式会社HINDWILLを設立。
+                                                人にしかできないことで、ビジネスの勝ち筋をデザインする。
                                             </p>
                                         </div>
                                     </div>
@@ -263,8 +263,8 @@ export default function CompanyPage() {
                                     </div>
                                     <div>
                                         <p className="font-bold text-gray-900 text-sm md:text-base mb-1">メール</p>
-                                        <a href="mailto:takumi1127h@gmail.com" className="text-gray-600 text-sm md:text-base hover:text-gray-800 transition-colors break-all">
-                                            takumi1127h@gmail.com
+                                        <a href="mailto:takumi.hashizume@hindwill.com" className="text-gray-600 text-sm md:text-base hover:text-gray-800 transition-colors break-all">
+                                            takumi.hashizume@hindwill.com
                                         </a>
                                     </div>
                                 </div>

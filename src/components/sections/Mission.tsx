@@ -31,8 +31,8 @@ export function Mission() {
             <div className="max-w-[900px] mx-auto px-6 text-center">
                 {/* Main Copy */}
                 <h2 className="text-[22px] md:text-[32px] lg:text-[38px] font-bold leading-[1.6] mb-10">
-                    Beyond the Technology.<br />
-                    テクノロジーが届かない、最後の1マイルを。
+                    スマートな時代に、本質的な信頼を。<br />
+                    "Human Touch"で人とビジネスの勝ち筋を開拓する。
                 </h2>
 
                 {/* CTA Button */}
@@ -59,9 +59,9 @@ export function Mission() {
                         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/40 to-black/30" />
                     </div>
                 </div>
-                {/* The feature text - aligned to page right edge, partially hidden */}
+                {/* The feature text - aligned to page right edge */}
                 <span
-                    className={`absolute bottom-0 right-0 text-[12vw] md:text-[10vw] font-bold text-gray-200 whitespace-nowrap tracking-tighter leading-none select-none pointer-events-none transition-all duration-1000 ease-out ${isVisible ? 'translate-x-[15%] translate-y-1/2 opacity-100' : 'translate-x-full translate-y-1/2 opacity-0'
+                    className={`absolute bottom-0 right-6 md:right-16 text-[12vw] md:text-[10vw] font-bold text-gray-200 whitespace-nowrap tracking-tighter leading-none select-none pointer-events-none transition-all duration-1000 ease-out ${isVisible ? 'translate-y-1/2 opacity-100' : 'translate-x-1/4 translate-y-1/2 opacity-0'
                         }`}
                 >
                     Be the Hero

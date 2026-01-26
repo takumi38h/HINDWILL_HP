@@ -42,7 +42,7 @@ export function Feature() {
                         </div>
 
                         <h2 className="text-[40px] md:text-[60px] lg:text-[72px] font-bold leading-[1.3] mb-10 text-gray-950">
-                            {["届", "け", "る", "。"].map((char, i) => (
+                            {["こ", "こ", "ろ", "ざ", "す", "。"].map((char, i) => (
                                 <span
                                     key={`line1-${i}`}
                                     className={`inline-block transition-all duration-600 ease-out ${isVisible
@@ -57,7 +57,7 @@ export function Feature() {
                                 </span>
                             ))}
                             <br />
-                            {["響", "か", "せ", "る", "。"].map((char, i) => (
+                            {["た", "の", "し", "む", "。"].map((char, i) => (
                                 <span
                                     key={`line2-${i}`}
                                     className={`inline-block transition-all duration-600 ease-out ${isVisible
@@ -65,7 +65,7 @@ export function Feature() {
                                             : "opacity-0 translate-y-8"
                                         }`}
                                     style={{
-                                        transitionDelay: `${(i + 4) * 0.1}s`,
+                                        transitionDelay: `${(i + 6) * 0.1}s`,
                                     }}
                                 >
                                     {char}
@@ -73,24 +73,10 @@ export function Feature() {
                             ))}
                             <br />
                             <span className="relative">
-                                {["熱", "狂"].map((char, i) => (
+                                {["熱", "狂", "す", "る", "。"].map((char, i) => (
                                     <span
                                         key={`line3-${i}`}
                                         className={`inline-block text-gray-900 transition-all duration-600 ease-out ${isVisible
-                                                ? "opacity-100 translate-y-0"
-                                                : "opacity-0 translate-y-8"
-                                            }`}
-                                        style={{
-                                            transitionDelay: `${(i + 9) * 0.1}s`,
-                                        }}
-                                    >
-                                        {char}
-                                    </span>
-                                ))}
-                                {["を", "生", "む。"].map((char, i) => (
-                                    <span
-                                        key={`line3b-${i}`}
-                                        className={`inline-block transition-all duration-600 ease-out ${isVisible
                                                 ? "opacity-100 translate-y-0"
                                                 : "opacity-0 translate-y-8"
                                             }`}
@@ -111,12 +97,12 @@ export function Feature() {
                                 }`}
                             style={{ transitionDelay: '1.5s' }}
                         >
-                            <span className="text-gray-900 font-bold">AI</span>には届かない、最後の1マイルを繋ぐ。<br />
+                            テクノロジーの先にある、「人の心」に寄り添っていく。<br />
                             人間だけが持つ<span className="text-gray-900 font-bold">熱量</span>で、心を動かす。<br />
-                            あなたのビジネスに<span className="relative inline-block">
-                                <span className="relative z-10">『熱狂』</span>
+                            <span className="text-gray-900 font-bold">AI</span>には埋められない、<span className="relative inline-block">
+                                <span className="relative z-10">ラスト1マイル</span>
                                 <span className="absolute bottom-1 left-0 w-full h-3 bg-gray-100 -z-0" />
-                            </span>を届けます。
+                            </span>を繋いでいきます。
                         </p>
                     </div>
 
@@ -124,31 +110,35 @@ export function Feature() {
                     <div className="flex-1 flex justify-center" ref={frameRef}>
                         <div className={`relative w-[440px] h-[440px] md:w-[580px] md:h-[580px] transition-all duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}>
 
-                            {/* Compass image */}
+                            {/* Compass image with rotation animation */}
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <img
                                     src="/compass-values.png"
                                     alt="Company Values Compass"
-                                    className="w-[400px] md:w-[540px] h-auto"
+                                    className="w-[400px] md:w-[540px] h-auto animate-spin-slow"
                                 />
                             </div>
 
-                            {/* Top: 熱狂 */}
-                            <span className="absolute top-0 left-1/2 -translate-x-1/2 text-[27px] md:text-[30px] font-bold text-gray-900 tracking-wider">
-                                熱狂
-                            </span>
-                            {/* Bottom: 挑戦 */}
-                            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 text-[27px] md:text-[30px] font-bold text-gray-900 tracking-wider">
-                                挑戦
-                            </span>
-                            {/* Left: 利他 */}
-                            <span className="absolute top-1/2 left-0 -translate-y-1/2 text-[27px] md:text-[30px] font-bold text-gray-900 tracking-wider">
-                                利他
-                            </span>
-                            {/* Right: 信頼 */}
-                            <span className="absolute top-1/2 right-0 -translate-y-1/2 text-[27px] md:text-[30px] font-bold text-gray-900 tracking-wider">
-                                信頼
-                            </span>
+                            {/* Top: Will 志 */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center">
+                                <span className="block text-[20px] md:text-[24px] font-bold text-gray-900 tracking-wider">Will</span>
+                                <span className="block text-[14px] md:text-[16px] text-gray-600">志</span>
+                            </div>
+                            {/* Bottom: YOLO 常に楽しめ */}
+                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-center">
+                                <span className="block text-[20px] md:text-[24px] font-bold text-gray-900 tracking-wider">YOLO</span>
+                                <span className="block text-[14px] md:text-[16px] text-gray-600">常に楽しめ</span>
+                            </div>
+                            {/* Left: Civility 我以外皆我師 */}
+                            <div className="absolute top-1/2 left-0 -translate-y-1/2 text-center">
+                                <span className="block text-[20px] md:text-[24px] font-bold text-gray-900 tracking-wider">Civility</span>
+                                <span className="block text-[12px] md:text-[14px] text-gray-600">我以外皆我師</span>
+                            </div>
+                            {/* Right: Loyalty 信じ抜く */}
+                            <div className="absolute top-1/2 right-0 -translate-y-1/2 text-center">
+                                <span className="block text-[20px] md:text-[24px] font-bold text-gray-900 tracking-wider">Loyalty</span>
+                                <span className="block text-[14px] md:text-[16px] text-gray-600">信じ抜く</span>
+                            </div>
                         </div>
                     </div>
                 </div>

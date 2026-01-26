@@ -19,7 +19,7 @@ export function Footer() {
                         <div>
                             <p className="font-bold mb-2">Contact</p>
                             <p className="text-gray-400 leading-relaxed">
-                                Email: takumi1127h@gmail.com
+                                takumi.hashizume@hindwill.com
                             </p>
                         </div>
                     </div>
