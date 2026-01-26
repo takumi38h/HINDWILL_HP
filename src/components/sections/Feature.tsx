@@ -110,32 +110,63 @@ export function Feature() {
                     <div className="flex-1 flex justify-center" ref={frameRef}>
                         <div className={`relative w-[440px] h-[440px] md:w-[580px] md:h-[580px] transition-all duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}>
 
+                            {/* Decorative ring */}
+                            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] md:w-[420px] md:h-[420px] rounded-full border border-gray-200 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} />
+
+                            {/* Rotating pointers on the ring - 4 arrows at diagonal positions (45°, 135°, 225°, 315°) */}
+                            <div className={`absolute top-1/2 left-1/2 w-[320px] h-[320px] md:w-[420px] md:h-[420px] -translate-x-1/2 -translate-y-1/2 rotate-45 animate-spin-slow transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+                                {/* Top pointer (now at 45° position) */}
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <svg width="8" height="48" viewBox="0 0 8 48" fill="none" className="md:w-[10px] md:h-[60px]">
+                                        <path d="M4 0L8 48H0L4 0Z" fill="#B8860B" />
+                                    </svg>
+                                </div>
+                                {/* Right pointer (now at 135° position) */}
+                                <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 rotate-90">
+                                    <svg width="8" height="48" viewBox="0 0 8 48" fill="none" className="md:w-[10px] md:h-[60px]">
+                                        <path d="M4 0L8 48H0L4 0Z" fill="#B8860B" />
+                                    </svg>
+                                </div>
+                                {/* Bottom pointer (now at 225° position) */}
+                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rotate-180">
+                                    <svg width="8" height="48" viewBox="0 0 8 48" fill="none" className="md:w-[10px] md:h-[60px]">
+                                        <path d="M4 0L8 48H0L4 0Z" fill="#B8860B" />
+                                    </svg>
+                                </div>
+                                {/* Left pointer (now at 315° position) */}
+                                <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 -rotate-90">
+                                    <svg width="8" height="48" viewBox="0 0 8 48" fill="none" className="md:w-[10px] md:h-[60px]">
+                                        <path d="M4 0L8 48H0L4 0Z" fill="#B8860B" />
+                                    </svg>
+                                </div>
+                            </div>
+
                             {/* Compass image with rotation animation */}
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <img
                                     src="/compass-values.png"
                                     alt="Company Values Compass"
-                                    className="w-[400px] md:w-[540px] h-auto animate-spin-slow"
+                                    className="w-[280px] md:w-[380px] h-auto animate-spin-slow"
                                 />
                             </div>
 
                             {/* Top: Will 志 */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center">
+                            <div className={`absolute top-0 left-1/2 -translate-x-1/2 text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"}`} style={{ transitionDelay: "0.4s" }}>
                                 <span className="block text-[20px] md:text-[24px] font-bold text-gray-900 tracking-wider">Will</span>
                                 <span className="block text-[14px] md:text-[16px] text-gray-600">志</span>
                             </div>
                             {/* Bottom: YOLO 常に楽しめ */}
-                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-center">
+                            <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`} style={{ transitionDelay: "0.5s" }}>
                                 <span className="block text-[20px] md:text-[24px] font-bold text-gray-900 tracking-wider">YOLO</span>
                                 <span className="block text-[14px] md:text-[16px] text-gray-600">常に楽しめ</span>
                             </div>
                             {/* Left: Civility 我以外皆我師 */}
-                            <div className="absolute top-1/2 left-0 -translate-y-1/2 text-center">
+                            <div className={`absolute top-1/2 left-0 -translate-y-1/2 text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`} style={{ transitionDelay: "0.6s" }}>
                                 <span className="block text-[20px] md:text-[24px] font-bold text-gray-900 tracking-wider">Civility</span>
                                 <span className="block text-[12px] md:text-[14px] text-gray-600">我以外皆我師</span>
                             </div>
                             {/* Right: Loyalty 信じ抜く */}
-                            <div className="absolute top-1/2 right-0 -translate-y-1/2 text-center">
+                            <div className={`absolute top-1/2 right-0 -translate-y-1/2 text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`} style={{ transitionDelay: "0.7s" }}>
                                 <span className="block text-[20px] md:text-[24px] font-bold text-gray-900 tracking-wider">Loyalty</span>
                                 <span className="block text-[14px] md:text-[16px] text-gray-600">信じ抜く</span>
                             </div>
