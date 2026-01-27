@@ -51,8 +51,8 @@ export function Hero() {
                 <h1
                     className="text-white font-bold relative"
                     style={{
-                        fontSize: 'clamp(42px, 8vw, 100px)',
-                        lineHeight: '1.05',
+                        fontSize: 'clamp(32px, 6vw, 60px)',
+                        lineHeight: '1.1',
                         letterSpacing: '-0.02em',
                     }}
                 >

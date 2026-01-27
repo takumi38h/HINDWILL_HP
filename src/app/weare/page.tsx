@@ -125,7 +125,7 @@ export default function WeArePage() {
                         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white px-6 md:px-16 relative z-10">
-                        <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-2 md:mb-4">
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4">
                             <AnimatedText text="WE ARE" />
                         </h1>
                         <p className="text-xs md:text-sm tracking-[0.3em] text-gray-300">何者？</p>
@@ -167,7 +167,7 @@ export default function WeArePage() {
                             </div>
 
                             {/* Main title */}
-                            <h2 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight text-gray-900">
+                            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 leading-tight text-gray-900">
                                 Beyond the Technology.
                             </h2>
 
@@ -186,7 +186,7 @@ export default function WeArePage() {
                         <AnimatedSection>
                             <div className="px-6 md:px-16 text-center md:text-left">
                                 <p className="text-xs md:text-sm tracking-[0.3em] text-gray-800 font-medium mb-3">Vision</p>
-                                <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">
+                                <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
                                     Be the Hero
                                 </h2>
                                 <p className="text-sm md:text-lg tracking-[0.15em] text-gray-800 font-medium">
@@ -320,7 +320,7 @@ export default function WeArePage() {
                         <AnimatedSection>
                             <div className="text-center mb-10 md:mb-16">
                                 <p className="text-xs md:text-sm tracking-[0.2em] text-gray-400 mb-4 md:mb-6">TEAM</p>
-                                <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6">MEMBER</h2>
+                                <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">MEMBER</h2>
                                 <p className="text-gray-600 text-[13px] md:text-[15px] leading-relaxed">
                                     熱狂を生み出すプロフェッショナル集団
                                 </p>

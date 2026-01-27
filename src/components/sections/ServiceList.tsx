@@ -195,7 +195,7 @@ export function ServiceList() {
                             <div className="flex items-start justify-between -mt-12 relative z-10">
                                 <div className="flex-1">
                                     <div className="flex items-baseline mb-4">
-                                        <span className="text-5xl md:text-6xl font-bold leading-none tracking-tight bg-gradient-to-br from-gray-900 to-gray-800 bg-clip-text text-transparent group-hover:from-gray-800 group-hover:to-gray-700 transition-all duration-300">
+                                        <span className="text-4xl md:text-5xl font-bold leading-none tracking-tight bg-gradient-to-br from-gray-900 to-gray-800 bg-clip-text text-transparent group-hover:from-gray-800 group-hover:to-gray-700 transition-all duration-300">
                                             {service.title.charAt(0)}
                                         </span>
                                         <span className="text-lg md:text-xl font-bold tracking-wide ml-1 text-gray-800">

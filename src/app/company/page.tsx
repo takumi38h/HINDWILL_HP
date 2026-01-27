@@ -85,7 +85,7 @@ export default function CompanyPage() {
                         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/70 to-black/60" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
-                        <h1 key={animationKey} className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 overflow-hidden">
+                        <h1 key={animationKey} className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4 overflow-hidden">
                             {title.split("").map((char, index) => (
                                 <span
                                     key={index}
@@ -177,7 +177,7 @@ export default function CompanyPage() {
                         <AnimatedSection delay={100}>
                             <div className="bg-white rounded-xl p-6 md:p-10 shadow-sm border border-gray-100">
                                 <div className="text-center mb-6 md:mb-8">
-                                    <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-2">Beyond the Technology.</h3>
+                                    <h3 className="text-xl md:text-3xl font-bold text-gray-900 mb-2">Beyond the Technology.</h3>
                                     <p className="text-gray-800 text-sm md:text-base italic">テクノロジーを超えて、その先へ。</p>
                                 </div>
                                 <div className="max-w-[700px] mx-auto">

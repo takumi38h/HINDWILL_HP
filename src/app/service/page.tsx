@@ -83,7 +83,7 @@ export default function ServicePage() {
                         >
                             WHAT WE DO
                         </p>
-                        <h1 key={animationKey} className="text-4xl md:text-7xl font-bold text-white mb-4 overflow-hidden">
+                        <h1 key={animationKey} className="text-3xl md:text-5xl font-bold text-white mb-4 overflow-hidden">
                             {title.split("").map((char, index) => (
                                 <span
                                     key={index}
@@ -149,7 +149,7 @@ export default function ServicePage() {
                                         <span className="text-gray-800 text-sm tracking-[0.3em] font-medium">BUSINESS</span>
                                         <div className="w-12 md:w-20 h-px bg-gray-400 md:hidden" />
                                     </div>
-                                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3">
+                                    <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-3">
                                         Sales Consulting
                                     </h2>
                                     <p className="text-lg md:text-xl text-gray-600 mb-6">営業支援</p>

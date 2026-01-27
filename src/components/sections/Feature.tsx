@@ -41,7 +41,7 @@ export function Feature() {
                             <span className="text-gray-900 text-sm tracking-[0.2em] font-medium">OUR VALUE</span>
                         </div>
 
-                        <h2 className="text-[40px] md:text-[60px] lg:text-[72px] font-bold leading-[1.3] mb-10 text-gray-950">
+                        <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[1.3] mb-10 text-gray-950">
                             {["こ", "こ", "ろ", "ざ", "す", "。"].map((char, i) => (
                                 <span
                                     key={`line1-${i}`}
@@ -91,7 +91,7 @@ export function Feature() {
                         </h2>
 
                         <p
-                            className={`text-[16px] md:text-[20px] text-gray-700 leading-[2.2] font-medium transition-all duration-700 ease-out ${isVisible
+                            className={`text-[15px] md:text-[16px] text-gray-700 leading-[2] font-medium transition-all duration-700 ease-out ${isVisible
                                     ? "opacity-100 translate-y-0"
                                     : "opacity-0 translate-y-8"
                                 }`}

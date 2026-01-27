@@ -70,7 +70,7 @@ export default function ContactPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-gray-950/60 to-black/50" />
                     <div className="text-center text-white relative z-10">
-                        <h1 key={animationKey} className="text-4xl md:text-6xl font-bold mb-4 overflow-hidden">
+                        <h1 key={animationKey} className="text-3xl md:text-5xl font-bold mb-4 overflow-hidden">
                             {title.split("").map((char, index) => (
                                 <span
                                     key={index}

@@ -30,7 +30,7 @@ export function Mission() {
         <section className="py-20 md:py-28 bg-gradient-to-b from-white to-gray-50 overflow-x-hidden">
             <div className="max-w-[900px] mx-auto px-6 text-center">
                 {/* Main Copy */}
-                <h2 className="text-[22px] md:text-[32px] lg:text-[38px] font-bold leading-[1.6] mb-10">
+                <h2 className="text-[18px] md:text-[24px] lg:text-[28px] font-bold leading-[1.6] mb-10">
                     スマートな時代に、本質的な信頼を。<br />
                     "Human Touch"で人とビジネスの勝ち筋を開拓する。
                 </h2>
@@ -61,7 +61,7 @@ export function Mission() {
                 </div>
                 {/* The feature text - aligned to page right edge */}
                 <span
-                    className={`absolute bottom-0 right-6 md:right-16 text-[12vw] md:text-[10vw] font-bold text-gray-200 whitespace-nowrap tracking-tighter leading-none select-none pointer-events-none transition-all duration-1000 ease-out ${isVisible ? 'translate-y-1/2 opacity-100' : 'translate-x-1/4 translate-y-1/2 opacity-0'
+                    className={`absolute bottom-0 right-6 md:right-16 text-[10vw] md:text-[8vw] font-bold text-gray-200 whitespace-nowrap tracking-tighter leading-none select-none pointer-events-none transition-all duration-1000 ease-out ${isVisible ? 'translate-y-1/2 opacity-100' : 'translate-x-1/4 translate-y-1/2 opacity-0'
                         }`}
                 >
                     Be the Hero

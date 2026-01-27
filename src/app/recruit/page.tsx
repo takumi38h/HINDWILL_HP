@@ -41,7 +41,7 @@ export default function RecruitPage() {
                         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/60 to-black/50" />
                     </div>
                     <div className="text-left text-white relative z-10 px-6 md:px-16">
-                        <h1 key={animationKey} className="text-3xl md:text-6xl font-bold mb-2 md:mb-4 overflow-hidden">
+                        <h1 key={animationKey} className="text-2xl md:text-4xl font-bold mb-2 md:mb-4 overflow-hidden">
                             {title.split("").map((char, index) => (
                                 <span
                                     key={index}
@@ -108,7 +108,7 @@ export default function RecruitPage() {
                         </div>
 
                         <h2
-                            className={`text-5xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 tracking-tight transition-all duration-700 ${
+                            className={`text-3xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 tracking-tight transition-all duration-700 ${
                                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                             }`}
                             style={{ transitionDelay: "0.3s" }}
@@ -155,8 +155,8 @@ export default function RecruitPage() {
                                     <div className="w-10 h-0.5 bg-gray-800" />
                                     <span className="text-gray-800 text-sm tracking-[0.15em] font-medium">OUR VISION</span>
                                 </div>
-                                <h3 className="text-2xl md:text-3xl font-bold mb-6">私たちが目指すこと</h3>
-                                <p className="text-xl md:text-2xl font-bold text-gray-800 leading-relaxed mb-6">
+                                <h3 className="text-xl md:text-2xl font-bold mb-6">私たちが目指すこと</h3>
+                                <p className="text-lg md:text-xl font-bold text-gray-800 leading-relaxed mb-6">
                                     子供が早く大人になりたくなる、<br />背中を見せる。
                                 </p>
                                 <p className="text-gray-600 leading-[2] text-sm md:text-base">
