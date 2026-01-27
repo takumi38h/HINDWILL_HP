@@ -29,7 +29,7 @@ export function Feature() {
             <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50/50" />
 
             <div className="relative max-w-[1400px] mx-auto px-8 md:px-12">
-                <div className="flex flex-col md:flex-row items-start gap-12 md:gap-16">
+                <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
                     {/* Left: Text */}
                     <div className="flex-1 md:pl-8">
                         {/* Small accent text */}
