@@ -28,10 +28,10 @@ export function Feature() {
             {/* Simple subtle background element */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50/50" />
 
-            <div className="relative max-w-[1200px] mx-auto px-6">
-                <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+            <div className="relative max-w-[1400px] mx-auto px-8 md:px-12">
+                <div className="flex flex-col md:flex-row items-start gap-12 md:gap-16">
                     {/* Left: Text */}
-                    <div className="flex-1">
+                    <div className="flex-1 md:pl-8">
                         {/* Small accent text */}
                         <div
                             className={`flex items-center gap-3 mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
