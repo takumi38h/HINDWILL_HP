@@ -2,11 +2,12 @@
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import { usePageReady } from "@/contexts/LoadingContext";
 
 const crewMembers = [
-    { name: "橋爪 拓海", role: "代表取締役", avatar: "/images/japanese_people/ceo_takumi.jpg" },
+    { name: "橋爪 拓海", role: "代表取締役", avatar: "/images/japanese_people/ceo_takumi_new.jpg" },
 ];
 
 function AnimatedText({ text, className = "" }: { text: string; className?: string }) {
@@ -117,7 +118,7 @@ export default function WeArePage() {
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
-                            src="/images/japanese_people/weare_hero.png"
+                            src="/images/japanese_people/pirates_dock.jpeg"
                             alt="Hero image"
                             className="w-full h-full object-cover"
                         />
@@ -150,7 +151,7 @@ export default function WeArePage() {
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
-                            src="/images/japanese_people/weare_hero.png"
+                            src="/images/japanese_people/pirates_dock.jpeg"
                             alt="Background"
                             className="w-full h-full object-cover grayscale opacity-40"
                         />
@@ -330,11 +331,14 @@ export default function WeArePage() {
                             {crewMembers.map((member, index) => (
                                 <AnimatedSection key={member.name} delay={index * 100}>
                                     <div className="group text-center">
-                                        <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-100 mb-2 md:mb-4 overflow-hidden rounded-full mx-auto">
-                                            <img
+                                        <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-100 mb-2 md:mb-4 overflow-hidden rounded-full mx-auto relative">
+                                            <Image
                                                 src={member.avatar}
                                                 alt={member.name}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                                sizes="(max-width: 768px) 128px, 192px"
+                                                quality={95}
                                             />
                                         </div>
                                         <p className="text-[10px] md:text-xs text-gray-400 mb-0.5 md:mb-1">{member.role}</p>

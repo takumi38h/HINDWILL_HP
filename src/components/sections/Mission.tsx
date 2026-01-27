@@ -51,7 +51,7 @@ export function Mission() {
                     <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
                         {/* Background Image */}
                         <img
-                            src="/images/japanese_people/weare_hero.png"
+                            src="/images/japanese_people/weare_vision_pirates.jpeg"
                             alt="Creative digital"
                             className="absolute inset-0 w-full h-full object-cover"
                         />

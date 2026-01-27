@@ -3,6 +3,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import { usePageReady } from "@/contexts/LoadingContext";
 
@@ -77,7 +78,7 @@ export default function CompanyPage() {
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
-                            src="/images/japanese_people/weare_vision.png"
+                            src="/images/japanese_people/pirate_ship.jpg"
                             alt="絶景"
                             className="w-full h-full object-cover"
                         />
@@ -210,11 +211,14 @@ export default function CompanyPage() {
                         <AnimatedSection delay={100}>
                             <div className="bg-gray-50 rounded-xl p-6 md:p-10">
                                 <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-start">
-                                    <div className="w-36 h-36 md:w-48 md:h-48 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 shadow-lg">
-                                        <img
-                                            src="/images/japanese_people/ceo_takumi.jpg"
+                                    <div className="w-36 h-36 md:w-48 md:h-48 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 shadow-lg relative">
+                                        <Image
+                                            src="/images/japanese_people/ceo_takumi_new.jpg"
                                             alt="橋爪 拓海"
-                                            className="w-full h-full object-cover"
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 768px) 144px, 192px"
+                                            quality={95}
                                         />
                                     </div>
                                     <div className="flex-1 text-center md:text-left">

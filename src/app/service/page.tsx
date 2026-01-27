@@ -66,7 +66,7 @@ export default function ServicePage() {
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
-                            src="/images/japanese_people/planning.png"
+                            src="/images/japanese_people/pirates_dock.jpeg"
                             alt="サービス"
                             className="w-full h-full object-cover"
                         />
@@ -135,7 +135,7 @@ export default function ServicePage() {
                                 <div className="w-full md:w-1/2">
                                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                                         <img
-                                            src="/images/japanese_people/planning.png"
+                                            src="/images/japanese_people/pirates_pointing.jpeg"
                                             alt="Sales Consulting"
                                             className="w-full h-full object-cover"
                                         />

@@ -34,7 +34,7 @@ export default function RecruitPage() {
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
-                            src="/images/japanese_people/weare_hero.png"
+                            src="/images/japanese_people/pirates_dock.jpeg"
                             alt="絶景"
                             className="w-full h-full object-cover"
                         />

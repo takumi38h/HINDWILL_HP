@@ -8,25 +8,25 @@ const services = [
         id: "consulting",
         title: "CONSULTING",
         description: "営業戦略の立案から組織構築まで、御社のビジネス成長を加速させる最適なソリューションをご提案。数字だけでなく、チームの熱量を引き出します。",
-        image: "/images/japanese_people/planning.png",
+        image: "/images/japanese_people/pirates_pointing.jpeg",
     },
     {
         id: "training",
         title: "TRAINING",
         description: "「売れる営業」ではなく「熱狂を生む営業」を育成。実践型研修で、お客様の心を動かすヒューマン・タッチの技術を伝授します。",
-        image: "/images/japanese_people/creative.png",
+        image: "/images/japanese_people/pirates_treasure.jpeg",
     },
     {
         id: "support",
         title: "SUPPORT",
         description: "営業現場に伴走し、リアルタイムで課題を解決。AIでは埋められない「ラストワンマイル」を、私たちが一緒に繋ぎます。",
-        image: "/images/japanese_people/development.png",
+        image: "/images/japanese_people/pirates_beach_duo.jpeg",
     },
     {
         id: "outsourcing",
         title: "OUTSOURCING",
         description: "御社の営業部隊として、新規開拓から既存顧客のフォローまで代行。ビジネスアスリートが、成果にコミットします。",
-        image: "/images/japanese_people/entertainment.png",
+        image: "/images/japanese_people/pirates_telescope.jpeg",
     },
 ];
 
