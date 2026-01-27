@@ -214,7 +214,7 @@ export default function WeArePage() {
                         <ImageReveal className="h-full">
                             <div className="h-full bg-gray-50 overflow-hidden min-h-[300px] md:min-h-[400px]">
                                 <img
-                                    src="/images/japanese_people/weare_vision.png"
+                                    src="/images/japanese_people/weare_hero_pirates.jpeg"
                                     alt="絶景"
                                     className="w-full h-full object-cover"
                                 />
