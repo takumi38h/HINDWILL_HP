@@ -153,7 +153,7 @@ export function Header() {
                         <Link
                             key={item.label}
                             href={item.href}
-                            className={`text-[11px] font-bold tracking-[0.1em] ${isOverDark ? 'text-white' : 'text-black'}`}
+                            className={`text-[15px] font-bold tracking-[0.1em] ${isOverDark ? 'text-white' : 'text-black'}`}
                             style={{
                                 textDecoration: hoveredLink === item.label ? 'underline' : 'none',
                                 textUnderlineOffset: '4px',
@@ -173,7 +173,7 @@ export function Header() {
                     aria-label={menuOpen ? "Close menu" : "Open menu"}
                 >
                     {!menuOpen && (
-                        <span className={`hidden md:block text-[11px] font-bold tracking-[0.1em] transition-colors duration-300 ${isOverDark ? 'text-white' : 'text-black'}`}>
+                        <span className={`hidden md:block text-[15px] font-bold tracking-[0.1em] transition-colors duration-300 ${isOverDark ? 'text-white' : 'text-black'}`}>
                             MENU
                         </span>
                     )}

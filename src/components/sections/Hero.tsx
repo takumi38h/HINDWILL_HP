@@ -51,7 +51,7 @@ export function Hero() {
                 <h1
                     className="text-white font-bold relative"
                     style={{
-                        fontSize: 'clamp(32px, 6vw, 60px)',
+                        fontSize: 'clamp(40px, 8vw, 80px)',
                         lineHeight: '1.1',
                         letterSpacing: '-0.02em',
                     }}
@@ -91,7 +91,7 @@ export function Hero() {
                 {/* Subtitle with elegant underline */}
                 <div className="relative mt-6 md:mt-8">
                     <p
-                        className={`text-white/90 text-[14px] md:text-[16px] tracking-[0.05em] transition-all duration-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                        className={`text-white/90 text-[16px] md:text-[20px] tracking-[0.05em] transition-all duration-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                             }`}
                         style={{ transitionDelay: "1.2s" }}
                     >
