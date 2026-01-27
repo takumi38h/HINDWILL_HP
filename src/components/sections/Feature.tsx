@@ -42,7 +42,7 @@ export function Feature() {
                         </div>
 
                         <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[1.3] mb-10 text-gray-950">
-                            {["こ", "こ", "ろ", "ざ", "す", "。"].map((char, i) => (
+                            {["こ", "こ", "ろ", "ざ", "す", "。", "た", "の", "し", "む", "。"].map((char, i) => (
                                 <span
                                     key={`line1-${i}`}
                                     className={`inline-block transition-all duration-600 ease-out ${isVisible
@@ -57,25 +57,10 @@ export function Feature() {
                                 </span>
                             ))}
                             <br />
-                            {["た", "の", "し", "む", "。"].map((char, i) => (
-                                <span
-                                    key={`line2-${i}`}
-                                    className={`inline-block transition-all duration-600 ease-out ${isVisible
-                                            ? "opacity-100 translate-y-0"
-                                            : "opacity-0 translate-y-8"
-                                        }`}
-                                    style={{
-                                        transitionDelay: `${(i + 6) * 0.1}s`,
-                                    }}
-                                >
-                                    {char}
-                                </span>
-                            ))}
-                            <br />
                             <span className="relative">
                                 {["熱", "狂", "す", "る", "。"].map((char, i) => (
                                     <span
-                                        key={`line3-${i}`}
+                                        key={`line2-${i}`}
                                         className={`inline-block text-gray-900 transition-all duration-600 ease-out ${isVisible
                                                 ? "opacity-100 translate-y-0"
                                                 : "opacity-0 translate-y-8"
