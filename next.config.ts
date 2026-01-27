@@ -7,11 +7,7 @@ const nextConfig: NextConfig = {
     formats: ['image/webp'],
     qualities: [75, 95],
     minimumCacheTTL: 60,
-    dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [],
-    unoptimized: false,
   },
 };
 
