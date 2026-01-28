@@ -31,17 +31,8 @@ export function Feature() {
             <div className="relative max-w-[1400px] mx-auto px-8 md:px-12">
                 <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
                     {/* Left: Text */}
-                    <div className="flex-1 md:pl-8 flex flex-col justify-center">
-                        {/* Small accent text */}
-                        <div
-                            className={`flex items-center gap-3 mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                                }`}
-                        >
-                            <div className="w-8 h-px bg-gray-600" />
-                            <span className="text-gray-900 text-sm tracking-[0.2em] font-medium">OUR VALUE</span>
-                        </div>
-
-                        <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[1.3] mb-10 text-gray-950">
+                    <div className="flex-1 md:pl-2 flex flex-col justify-center">
+                        <h2 className="text-[40px] md:text-[52px] lg:text-[64px] font-bold leading-[1.3] mb-10 text-gray-950">
                             {["こ", "こ", "ろ", "ざ", "す", "。", "た", "の", "し", "む", "。"].map((char, i) => (
                                 <span
                                     key={`line1-${i}`}
@@ -76,7 +67,7 @@ export function Feature() {
                         </h2>
 
                         <p
-                            className={`text-[15px] md:text-[16px] text-gray-700 leading-[2] font-medium transition-all duration-700 ease-out ${isVisible
+                            className={`text-[18px] md:text-[20px] text-gray-700 leading-[2] font-medium transition-all duration-700 ease-out ${isVisible
                                     ? "opacity-100 translate-y-0"
                                     : "opacity-0 translate-y-8"
                                 }`}
@@ -94,12 +85,12 @@ export function Feature() {
                     {/* Right: Compass with Values */}
                     <div className="flex-1 flex justify-center md:justify-end" ref={frameRef}>
                         <div className={`relative w-[660px] h-[660px] md:w-[870px] md:h-[870px] transition-all duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}>
-                            {/* Compass image with rotation animation */}
+                            {/* Will Logo Compass */}
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <img
-                                    src="/compass-values-new.png"
-                                    alt="Company Values Compass"
-                                    className="w-[570px] md:w-[750px] h-auto animate-spin-slow"
+                                    src="/will-logo-compass.png"
+                                    alt="Will Logo Compass"
+                                    className="w-[570px] md:w-[750px] h-auto"
                                 />
                             </div>
                         </div>
