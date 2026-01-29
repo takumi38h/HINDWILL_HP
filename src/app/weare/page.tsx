@@ -202,10 +202,18 @@ export default function WeArePage() {
                             <div className="px-6 md:px-16 py-10 md:py-16 relative z-10">
                                 <div>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
-                                        若者が未来を諦めるのは、楽しそうに働く大人を見たことがないからだ。働くことは、本当はもっと自由で、熱狂的だ。
+                                        若者が未来に期待できなくなってしまうのは、楽しそうに働く大人に出会えていないからだと思うのです。<br />
+                                        働くことは、本当はもっと自由で、ワクワクするような熱狂に満ちているはず。
+                                    </p>
+                                    <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] mb-4 md:mb-6 font-medium">
+                                        効率や正解なら、AIがすぐに教えてくれる時代になりました。<br />
+                                        だからこそ、私たちは「なぜやるのか」という意味や、心からの納得感を求めて動き出します。<br />
+                                        計算式ではたどり着けない、あの心が震える瞬間を、分かち合いたい。<br />
+                                        一度きりの人生を、ただ時間が過ぎるのを待つように生きるのは、あまりにもったいないですから。<br />
+                                        自分の手で旗を掲げ、最高の仲間と一緒に熱狂の渦を創り出していく。
                                     </p>
                                     <p className="text-gray-700 leading-[2] text-[13px] md:text-[15px] font-medium">
-                                        だからこそ、人が成長できる仕事と環境をつくり続ける。
+                                        そんな風に、人が心から成長していける仕事と環境を、私たちはつくり続けます。
                                     </p>
                                 </div>
                             </div>
@@ -310,42 +318,6 @@ export default function WeArePage() {
                                     </div>
                                 </div>
                             </AnimatedSection>
-                        </div>
-                    </div>
-                </section>
-
-                {/* TEAM */}
-                <section className="py-16 md:py-32 bg-white">
-                    <div className="max-w-[1200px] mx-auto px-6">
-                        <AnimatedSection>
-                            <div className="text-center mb-10 md:mb-16">
-                                <p className="text-xs md:text-sm tracking-[0.2em] text-gray-400 mb-4 md:mb-6">TEAM</p>
-                                <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">MEMBER</h2>
-                                <p className="text-gray-600 text-[13px] md:text-[15px] leading-relaxed">
-                                    熱狂を生み出すプロフェッショナル集団
-                                </p>
-                            </div>
-                        </AnimatedSection>
-
-                        <div className="flex justify-center">
-                            {crewMembers.map((member, index) => (
-                                <AnimatedSection key={member.name} delay={index * 100}>
-                                    <div className="group text-center">
-                                        <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-100 mb-2 md:mb-4 overflow-hidden rounded-full mx-auto relative">
-                                            <Image
-                                                src={member.avatar}
-                                                alt={member.name}
-                                                fill
-                                                className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                                sizes="(max-width: 768px) 128px, 192px"
-                                                quality={95}
-                                            />
-                                        </div>
-                                        <p className="text-[10px] md:text-xs text-gray-400 mb-0.5 md:mb-1">{member.role}</p>
-                                        <p className="text-sm md:text-lg font-bold">{member.name}</p>
-                                    </div>
-                                </AnimatedSection>
-                            ))}
                         </div>
                     </div>
                 </section>

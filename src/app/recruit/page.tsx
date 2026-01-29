@@ -169,8 +169,8 @@ export default function RecruitPage() {
                             <div className="flex-1 w-full">
                                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
                                     <img
-                                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
-                                        alt="チームワーク"
+                                        src="/images/japanese_people/pirate_ship.jpg"
+                                        alt="船出"
                                         className="w-full h-full object-cover"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent" />
