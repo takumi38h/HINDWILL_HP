@@ -33,7 +33,7 @@ export function Feature() {
                     {/* Left: Text */}
                     <div className="flex-1 md:pl-2 flex flex-col justify-center">
                         <h2 className="text-[40px] md:text-[52px] lg:text-[64px] font-bold leading-[1.3] mb-10 text-gray-950">
-                            {["こ", "こ", "ろ", "ざ", "す", "。", "た", "の", "し", "む", "。"].map((char, i) => (
+                            {["こ", "こ", "ろ", "ざ", "す", "。"].map((char, i) => (
                                 <span
                                     key={`line1-${i}`}
                                     className={`inline-block transition-all duration-600 ease-out ${isVisible
@@ -48,10 +48,25 @@ export function Feature() {
                                 </span>
                             ))}
                             <br />
+                            {["た", "の", "し", "む", "。"].map((char, i) => (
+                                <span
+                                    key={`line2-${i}`}
+                                    className={`inline-block transition-all duration-600 ease-out ${isVisible
+                                            ? "opacity-100 translate-y-0"
+                                            : "opacity-0 translate-y-8"
+                                        }`}
+                                    style={{
+                                        transitionDelay: `${(i + 6) * 0.1}s`,
+                                    }}
+                                >
+                                    {char}
+                                </span>
+                            ))}
+                            <br />
                             <span className="relative">
                                 {["熱", "狂", "す", "る", "。"].map((char, i) => (
                                     <span
-                                        key={`line2-${i}`}
+                                        key={`line3-${i}`}
                                         className={`inline-block text-gray-900 transition-all duration-600 ease-out ${isVisible
                                                 ? "opacity-100 translate-y-0"
                                                 : "opacity-0 translate-y-8"
@@ -88,7 +103,7 @@ export function Feature() {
                             {/* Compass with rotating values */}
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <img
-                                    src="/compass-values-trimmed.png"
+                                    src="/compass-values-new-trimmed.png"
                                     alt="Company Values Compass"
                                     className="w-[428px] md:w-[563px] h-auto animate-spin-slow"
                                 />
