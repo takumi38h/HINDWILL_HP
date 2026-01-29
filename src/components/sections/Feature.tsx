@@ -83,14 +83,14 @@ export function Feature() {
                     </div>
 
                     {/* Right: Compass with Values */}
-                    <div className="flex-1 flex justify-center md:justify-end" ref={frameRef}>
-                        <div className={`relative w-[660px] h-[660px] md:w-[870px] md:h-[870px] transition-all duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}>
-                            {/* Will Logo Compass */}
+                    <div className="flex-1 flex justify-end" ref={frameRef}>
+                        <div className={`relative w-[495px] h-[495px] md:w-[653px] md:h-[653px] transition-all duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}>
+                            {/* Compass with rotating values */}
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <img
-                                    src="/will-logo-compass.png"
-                                    alt="Will Logo Compass"
-                                    className="w-[570px] md:w-[750px] h-auto"
+                                    src="/compass-values-trimmed.png"
+                                    alt="Company Values Compass"
+                                    className="w-[428px] md:w-[563px] h-auto animate-spin-slow"
                                 />
                             </div>
                         </div>
