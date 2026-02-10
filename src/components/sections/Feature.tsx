@@ -105,7 +105,7 @@ export function Feature() {
                                 <img
                                     src="/compass-values-new-trimmed.png"
                                     alt="Company Values Compass"
-                                    className="w-[428px] md:w-[563px] h-auto animate-spin-slow"
+                                    className="w-[480px] md:w-[640px] h-auto animate-spin-slow"
                                 />
                             </div>
                         </div>
