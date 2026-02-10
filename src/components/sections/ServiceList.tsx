@@ -8,7 +8,7 @@ const services = [
         id: "consulting",
         title: "CONSULTING",
         description: "営業戦略の立案から組織構築まで、御社のビジネス成長を加速させる最適なソリューションをご提案。数字だけでなく、チームの熱量を引き出します。",
-        image: "/images/japanese_people/pirates_pointing.jpeg",
+        image: "/images/japanese_people/treasure_map.jpeg",
     },
     {
         id: "training",
@@ -26,7 +26,7 @@ const services = [
         id: "outsourcing",
         title: "OUTSOURCING",
         description: "御社の営業部隊として、新規開拓から既存顧客のフォローまで代行。ビジネスアスリートが、成果にコミットします。",
-        image: "/images/japanese_people/pirates_telescope.jpeg",
+        image: "/images/japanese_people/small_boat.jpeg",
     },
 ];
 

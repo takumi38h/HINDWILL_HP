@@ -70,7 +70,7 @@ export default function FAQPage() {
                     {/* 背景画像 */}
                     <div className="absolute inset-0">
                         <img
-                            src="https://images.unsplash.com/photo-1552581234-26160f608093?w=1600&q=80"
+                            src="/images/japanese_people/small_boat.jpeg"
                             alt="ビジネスミーティング"
                             className="w-full h-full object-cover"
                         />
