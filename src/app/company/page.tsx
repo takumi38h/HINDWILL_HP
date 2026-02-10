@@ -178,7 +178,6 @@ export default function CompanyPage() {
                             <div className="bg-white rounded-xl p-6 md:p-10 shadow-sm border border-gray-100">
                                 <div className="text-center mb-6 md:mb-8">
                                     <h3 className="text-xl md:text-3xl font-bold text-gray-900 mb-2">Beyond the Technology.</h3>
-                                    <p className="text-gray-800 text-sm md:text-base italic">テクノロジーを超えて、その先へ。</p>
                                 </div>
                                 <div className="max-w-[700px] mx-auto">
                                     <p className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-loose text-center md:text-left">
