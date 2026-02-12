@@ -1,34 +1,72 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
+
+const HERO_VIDEOS = ["/videos/hero-1.mp4", "/videos/hero-2.mp4"] as const;
+const PLAYBACK_RATE = 0.8;
 
 export function Hero() {
     const [isLoaded, setIsLoaded] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
+
+    const handleVideoEnded = useCallback(() => {
+        setActiveIndex((prev) => (prev === 0 ? 1 : 0));
+    }, []);
 
     useEffect(() => {
-        // Start animation after mount
         const timer = setTimeout(() => {
             setIsLoaded(true);
         }, 100);
         return () => clearTimeout(timer);
     }, []);
 
+    useEffect(() => {
+        for (const ref of videoRefs) {
+            const video = ref.current;
+            if (video) {
+                video.playbackRate = PLAYBACK_RATE;
+            }
+        }
+    }, []);
+
+    useEffect(() => {
+        const activeVideo = videoRefs[activeIndex]?.current;
+        const inactiveVideo = videoRefs[activeIndex === 0 ? 1 : 0]?.current;
+
+        if (activeVideo) {
+            activeVideo.currentTime = 0;
+            activeVideo.play().catch(() => {});
+        }
+        if (inactiveVideo) {
+            inactiveVideo.pause();
+            inactiveVideo.currentTime = 0;
+        }
+    }, [activeIndex]);
+
     const line1 = "Beyond the";
     const line2 = "Technology.";
 
     return (
         <section className="relative h-screen w-full overflow-hidden bg-black" data-header-theme="dark">
-            {/* Background Video */}
-            <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover scale-105"
-                style={{ animation: "slowZoom 20s ease-in-out infinite alternate" }}
-            >
-                <source src="/videos/hero.mp4" type="video/mp4" />
-            </video>
+            {/* Background Videos - alternating */}
+            {HERO_VIDEOS.map((src, index) => (
+                <video
+                    key={src}
+                    ref={videoRefs[index]}
+                    muted
+                    playsInline
+                    autoPlay={index === 0}
+                    onEnded={handleVideoEnded}
+                    className="absolute inset-0 w-full h-full object-cover scale-105 transition-opacity duration-1000"
+                    style={{
+                        animation: "slowZoom 20s ease-in-out infinite alternate",
+                        opacity: activeIndex === index ? 1 : 0,
+                    }}
+                >
+                    <source src={src} type="video/mp4" />
+                </video>
+            ))}
 
             {/* Simple Overlay - Cleaner look */}
             <div className="absolute inset-0 bg-black/40" />
