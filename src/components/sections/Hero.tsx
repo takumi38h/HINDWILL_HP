@@ -2,17 +2,19 @@
 
 import { useEffect, useState, useRef, useCallback } from "react";
 
-const HERO_VIDEOS = ["/videos/hero-1.mp4", "/videos/hero-2.mp4"] as const;
+const HERO_VIDEO = "/videos/hero-3.mp4";
 const PLAYBACK_RATE = 0.8;
+const CROSSFADE_DURATION = 1.5;
 
 export function Hero() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
-    const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
+    const videoRefA = useRef<HTMLVideoElement>(null);
+    const videoRefB = useRef<HTMLVideoElement>(null);
+    const crossfadeTimerRef = useRef<number | null>(null);
 
-    const handleVideoEnded = useCallback(() => {
-        setActiveIndex((prev) => (prev === 0 ? 1 : 0));
-    }, []);
+    const getActiveVideo = useCallback(() => activeIndex === 0 ? videoRefA.current : videoRefB.current, [activeIndex]);
+    const getStandbyVideo = useCallback(() => activeIndex === 0 ? videoRefB.current : videoRefA.current, [activeIndex]);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -21,8 +23,9 @@ export function Hero() {
         return () => clearTimeout(timer);
     }, []);
 
+    // Set playback rate for both videos
     useEffect(() => {
-        for (const ref of videoRefs) {
+        for (const ref of [videoRefA, videoRefB]) {
             const video = ref.current;
             if (video) {
                 video.playbackRate = PLAYBACK_RATE;
@@ -30,41 +33,60 @@ export function Hero() {
         }
     }, []);
 
+    // Crossfade logic: when active video nears the end, start standby and swap
     useEffect(() => {
-        const activeVideo = videoRefs[activeIndex]?.current;
-        const inactiveVideo = videoRefs[activeIndex === 0 ? 1 : 0]?.current;
+        const active = getActiveVideo();
+        if (!active) return;
 
-        if (activeVideo) {
-            activeVideo.currentTime = 0;
-            activeVideo.play().catch(() => {});
-        }
-        if (inactiveVideo) {
-            inactiveVideo.pause();
-            inactiveVideo.currentTime = 0;
-        }
-    }, [activeIndex]);
+        const checkTime = () => {
+            if (active.duration && active.currentTime >= active.duration - CROSSFADE_DURATION) {
+                const standby = getStandbyVideo();
+                if (standby) {
+                    standby.currentTime = 0;
+                    standby.play().catch(() => {});
+                }
+                setActiveIndex((prev) => (prev === 0 ? 1 : 0));
+            }
+        };
+
+        const interval = window.setInterval(checkTime, 200);
+        crossfadeTimerRef.current = interval;
+        return () => window.clearInterval(interval);
+    }, [activeIndex, getActiveVideo, getStandbyVideo]);
+
+    // Pause standby video after crossfade completes
+    useEffect(() => {
+        const standby = getStandbyVideo();
+        if (!standby) return;
+
+        const pauseTimer = window.setTimeout(() => {
+            standby.pause();
+        }, CROSSFADE_DURATION * 1000);
+
+        return () => window.clearTimeout(pauseTimer);
+    }, [activeIndex, getStandbyVideo]);
 
     const line1 = "Beyond the";
     const line2 = "Technology.";
 
     return (
         <section className="relative h-screen w-full overflow-hidden bg-black" data-header-theme="dark">
-            {/* Background Videos - alternating */}
-            {HERO_VIDEOS.map((src, index) => (
+            {/* Background Videos - crossfade pair */}
+            {[videoRefA, videoRefB].map((ref, index) => (
                 <video
-                    key={src}
-                    ref={videoRefs[index]}
+                    key={index}
+                    ref={ref}
                     muted
                     playsInline
                     autoPlay={index === 0}
-                    onEnded={handleVideoEnded}
-                    className="absolute inset-0 w-full h-full object-cover scale-105 transition-opacity duration-1000"
+                    className="absolute inset-0 w-full h-full object-cover scale-105"
                     style={{
                         animation: "slowZoom 20s ease-in-out infinite alternate",
                         opacity: activeIndex === index ? 1 : 0,
+                        transition: `opacity ${CROSSFADE_DURATION}s ease-in-out`,
                     }}
                 >
-                    <source src={src} type="video/mp4" />
+                    <source src={HERO_VIDEO} type="video/mp4" />
                 </video>
             ))}
 
