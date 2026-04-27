@@ -19,7 +19,7 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   metadataBase: new URL("https://hindwill.com"),
   title: "株式会社HINDWILL | HINDWILL Inc.",
-  description: "Beyond the Technology. テクノロジーが届かない、最後の1マイルを。",
+  description: "Beyond the Technology. テクノロジーが届かない、最後の1マイルを。ハンズオン型コンサルティングサービスです。",
   alternates: {
     canonical: "/",
   },
