@@ -17,8 +17,25 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hindwill.com"),
   title: "株式会社HINDWILL | HINDWILL Inc.",
   description: "Beyond the Technology. テクノロジーが届かない、最後の1マイルを。",
+  alternates: {
+    canonical: "/",
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
