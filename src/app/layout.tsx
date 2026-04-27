@@ -3,6 +3,14 @@ import { DM_Sans, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { PageTransition } from "@/components/PageTransition";
 import { LoadingProvider } from "@/contexts/LoadingContext";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_NAME_EN,
+  SITE_LOGO,
+  SITE_DESCRIPTION,
+  jsonLdScript,
+} from "@/lib/seo";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -16,15 +24,12 @@ const notoSansJP = Noto_Sans_JP({
   weight: ["400", "500", "700"],
 });
 
-const SITE_URL = "https://hindwill.com";
-const SITE_NAME = "株式会社HINDWILL";
-const SITE_DESCRIPTION =
-  "Beyond the Technology. テクノロジーが届かない、最後の1マイルを。ハンズオン型コンサルティングサービスです。";
-const SITE_LOGO = `${SITE_URL}/will-logo-compass.png`;
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: `${SITE_NAME} | HINDWILL Inc.`,
+  title: {
+    default: `${SITE_NAME} | ${SITE_NAME_EN}`,
+    template: `%s | ${SITE_NAME}`,
+  },
   description: SITE_DESCRIPTION,
   alternates: {
     canonical: "/",
@@ -47,7 +52,7 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | HINDWILL Inc.`,
+    title: `${SITE_NAME} | ${SITE_NAME_EN}`,
     description: SITE_DESCRIPTION,
     images: [
       {
@@ -60,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | HINDWILL Inc.`,
+    title: `${SITE_NAME} | ${SITE_NAME_EN}`,
     description: SITE_DESCRIPTION,
     images: [SITE_LOGO],
   },
@@ -73,11 +78,35 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
-  alternateName: "HINDWILL Inc.",
+  alternateName: SITE_NAME_EN,
   url: SITE_URL,
-  logo: SITE_LOGO,
+  logo: {
+    "@type": "ImageObject",
+    url: SITE_LOGO,
+    contentUrl: SITE_LOGO,
+  },
+  image: SITE_LOGO,
   description: SITE_DESCRIPTION,
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    email: "takumi.hashizume@hindwill.com",
+    url: `${SITE_URL}/contact`,
+    availableLanguage: ["ja", "en"],
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  inLanguage: "ja-JP",
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 export default function RootLayout({
@@ -88,10 +117,8 @@ export default function RootLayout({
   return (
     <html lang="ja" className="overflow-x-hidden" suppressHydrationWarning>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        <script {...jsonLdScript(organizationJsonLd)} />
+        <script {...jsonLdScript(websiteJsonLd)} />
       </head>
       <body className={`${dmSans.variable} ${notoSansJP.variable} antialiased overflow-x-hidden`}>
         <LoadingProvider>
