@@ -16,10 +16,16 @@ const notoSansJP = Noto_Sans_JP({
   weight: ["400", "500", "700"],
 });
 
+const SITE_URL = "https://hindwill.com";
+const SITE_NAME = "株式会社HINDWILL";
+const SITE_DESCRIPTION =
+  "Beyond the Technology. テクノロジーが届かない、最後の1マイルを。ハンズオン型コンサルティングサービスです。";
+const SITE_LOGO = `${SITE_URL}/will-logo-compass.png`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hindwill.com"),
-  title: "株式会社HINDWILL | HINDWILL Inc.",
-  description: "Beyond the Technology. テクノロジーが届かない、最後の1マイルを。ハンズオン型コンサルティングサービスです。",
+  metadataBase: new URL(SITE_URL),
+  title: `${SITE_NAME} | HINDWILL Inc.`,
+  description: SITE_DESCRIPTION,
   alternates: {
     canonical: "/",
   },
@@ -36,6 +42,42 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} | HINDWILL Inc.`,
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: SITE_LOGO,
+        width: 1200,
+        height: 630,
+        alt: "HINDWILL",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} | HINDWILL Inc.`,
+    description: SITE_DESCRIPTION,
+    images: [SITE_LOGO],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/will-logo-compass.png",
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_NAME,
+  alternateName: "HINDWILL Inc.",
+  url: SITE_URL,
+  logo: SITE_LOGO,
+  description: SITE_DESCRIPTION,
 };
 
 export default function RootLayout({
@@ -45,6 +87,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className="overflow-x-hidden" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className={`${dmSans.variable} ${notoSansJP.variable} antialiased overflow-x-hidden`}>
         <LoadingProvider>
           <PageTransition>
