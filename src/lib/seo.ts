@@ -3,7 +3,7 @@ export const SITE_NAME = "株式会社HINDWILL";
 export const SITE_NAME_EN = "HINDWILL Inc.";
 export const SITE_LOGO = `${SITE_URL}/will-logo-compass.png`;
 export const SITE_DESCRIPTION =
-  "Beyond the Technology.  テクノロジーが届かない、最後の1マイルを。\nハンズオン型コンサルティングサービスです。";
+  "Beyond the Technology.  テクノロジーが届かない、最後の1マイルを。　ハンズオン型コンサルティングサービスです。";
 
 export type BreadcrumbItem = {
   name: string;
