@@ -27,8 +27,8 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | ${SITE_NAME_EN}`,
-    template: `%s | ${SITE_NAME}`,
+ 　 default: "株式会社HINDWILL｜ハンズオン型コンサルティング",
+     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   alternates: {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | ${SITE_NAME_EN}`,
+    title: "株式会社HINDWILL｜ハンズオン型コンサルティング",
     description: SITE_DESCRIPTION,
     images: [
       {
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | ${SITE_NAME_EN}`,
+    title: "株式会社HINDWILL｜ハンズオン型コンサルティング",
     description: SITE_DESCRIPTION,
     images: [SITE_LOGO],
   },
@@ -81,6 +81,11 @@ const organizationJsonLd = {
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   alternateName: SITE_NAME_EN,
+  founder: {
+  "@type": "Person",
+  name: "橋爪拓海",
+  jobTitle: "代表取締役",
+},
   url: SITE_URL,
   logo: {
     "@type": "ImageObject",
