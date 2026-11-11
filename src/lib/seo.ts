@@ -3,7 +3,7 @@ export const SITE_NAME = "株式会社HINDWILL";
 export const SITE_NAME_EN = "HINDWILL Inc.";
 export const SITE_LOGO = `${SITE_URL}/will-logo-compass.png`;
 export const SITE_DESCRIPTION =
-  "Beyond the Technology.  テクノロジーが届かない、最後の1マイルを。　ハンズオン型コンサルティングサービスです。";
+  "株式会社HINDWILL（代表取締役：橋爪拓海）。テクノロジーが届かない、最後の1マイルを。人と組織の可能性を引き出し、企業の成長を支援するハンズオン型コンサルティング会社です。";
 
 export type BreadcrumbItem = {
   name: string;
